@@ -1,0 +1,143 @@
+# Quy tắc làm việc: bảng Loss time White Wood
+
+Tài liệu này tóm tắt những gì đã chốt trong phiên làm việc với người dùng (nhân viên văn phòng, 2 tuần đầu đi làm). Đọc hết trước khi làm. Trả lời bằng tiếng Việt, ngắn gọn.
+
+## 1. Mục tiêu hằng ngày
+Người dùng yêu cầu: "lập bảng loss time ngày dd/mm". Bạn tạo:
+1. Bảng loss time của ngày đó (file Excel) theo cấu trúc sheet "Total loss time".
+2. Bảng nhập liệu xếp theo thứ tự ô trên form (mục 7).
+3. Với mỗi lần người dùng đưa danh sách nhân viên mới: tạo dòng P22 cho ngày vào làm VÀ danh sách A2 cho 12 ngày làm việc tiếp theo (không được quên A2), kèm ngày kết thúc của nhóm.
+
+Phạm vi: mã cố định (P20, P26), mã nhân viên mới (P22, A2) và, từ tuần 42, mã S32 theo báo cáo của Assembly (mục 11). Mã P24 (Kaizen) chỉ thêm khi người dùng xác nhận lịch. BỎ QUA mã lỗi máy móc (A10 và liên quan) và các mã khác (O15, P24...) vì người dùng chưa được hướng dẫn.
+
+## 2. Dữ liệu và file
+- File gốc: "Loss time White Wood 2026" (sheet "Total loss time", cột: Week, Date, Item's, Code Máy Hư, Q'ty, Số NCR/ME, Khu vực phát sinh, Code, Name code, Chart/bộ phận chịu trách nhiệm, Lí Do, Ghi chú, From, To, LossTime (Hr), HC, Loss time labor (Hrs)). Week = "W"&WEEKNUM(Date,21). LossTime = (To-From)*24. Loss time labor = LossTime*HC.
+- Sheet "Loss time categoty" là bảng 35 mã (A1-A11, O11-O19, P20-P26, Q25-Q30, S31-S32).
+- Dữ liệu trong file chỉ có đến 3/10/2026. Các ngày sau do bạn lập theo quy tắc. Bảng 5/10 đến 17/10 đã được lập (xem mục 9).
+- Danh sách nhân viên mới (có tên, mã nhân viên, lương) là dữ liệu cá nhân, người dùng nói chỉ để tham khảo. KHÔNG đưa tên, mã, lương vào bất kỳ file nào, không commit lên git, chỉ dùng ngày vào làm, bộ phận, số người để đếm.
+
+## 3. Mã cố định hằng ngày (20 dòng ở đầu mỗi ngày làm việc: 5 P20 + 15 P26)
+Mẫu lấy từ thứ Sáu 2/10/2026. Giờ trong bảng là giờ ngày thường (có tăng ca đến 20:00 từ 28/9):
+
+| # | Code | Process (khu vực) | Dept In Charge | Notes (lí do) | Ghi chú cũ | From | To | HC |
+|---|---|---|---|---|---|---|---|---|
+| 1 | P20 | RC - WOOD | RC WOOD | Vệ sinh khu vực máy móc RC WOOD |  | 07:00 | 07:30 | 7 |
+| 2 | P20 | RC - PANEL | RC - PANEL | Vệ sinh khu vực máy móc RC PANEL |  | 07:00 | 07:30 | 18 |
+| 3 | P20 | Machining | Machining | Vệ sinh khu vực máy móc MAC FINAL |  | 07:00 | 07:30 | 7 |
+| 4 | P20 | Machining | Machining | Vệ sinh khu vực máy móc PRE MAC |  | 07:00 | 07:30 | 12 |
+| 5 | P20 | Assembly | Assembly | Quét nhà toàn xưởng khu vực ASSY |  | 07:30 | 20:00 | 2 |
+| 6 | P26 | RC - PANEL | RC - PANEL | Shop Floor data RC PANEL | Recorder | 07:30 | 20:00 | 4 |
+| 7 | P26 | Machining | Machining | Shop Floor data- STOCK ROOM | Recorder | 07:30 | 20:00 | 1 |
+| 8 | P26 | Machining | Machining | Shop Floor data MAC FINAL | Recorder | 07:30 | 20:00 | 1 |
+| 9 | P26 | RC - PANEL | RC - PANEL | Theo dõi Hàng venner làm xong | Recorder | 07:30 | 20:00 | 1 |
+| 10 | P26 | RC - PANEL | RC - PANEL | Nhận venner cho ép nóng | Supporter | 07:30 | 20:00 | 1 |
+| 11 | P26 | RC - WOOD | RC WOOD | Lựa hàng tinh giao mac- gỗ đẹp xấu | Supporter | 07:30 | 20:00 | 1 |
+| 12 | P26 | RC - PANEL | RC - PANEL | Ghi nhận hàng giao kho | Recorder | 07:30 | 20:00 | 1 |
+| 13 | P26 | RC - PANEL | RC - PANEL | Kiểm hàng chất lượng vào kho | Supporter | 07:30 | 20:00 | 1 |
+| 14 | P26 | RC - PANEL | Machining | Nhận hàng gỗ đầu vào từ RC | Supporter | 07:30 | 20:00 | 1 |
+| 15 | P26 | Machining | Machining | Ghi nhận hàng giao kho | Recorder | 07:30 | 20:00 | 1 |
+| 16 | P26 | Machining | Machining | quét nhà toàn xưởng khu vực ASSY | Supporter | 07:30 | 20:00 | 1 |
+| 17 | P26 | Machining | Machining | Theo hàng pilot -hàng test-spo-subcon-NCR | Recorder | 07:30 | 20:00 | 1 |
+| 18 | P26 | Machining | Machining | Giao nhận hàng hộc kéo | Supporter | 07:30 | 20:00 | 1 |
+| 19 | P26 | Assembly | Assembly | Báo output- sửa máy- giao nhận vật tư | Recorder | 07:30 | 20:00 | 1 |
+| 20 | P26 | Assembly | Assembly | Giao nhận HW- phát HW cho Line sx | Supporter | 07:30 | 20:00 | 1 |
+
+Lưu ý về mẫu: từ 23/9/2026 dòng P26 Machining "Nhận ván - venner ráp cụm & cảo bịch" (Supporter) được thay bằng "quét nhà toàn xưởng khu vực ASSY" (Supporter); trước đó dùng dòng cũ. Dòng "Nhận hàng gỗ đầu vào từ RC" ghi khu vực RC - PANEL, bộ phận Machining từ 14/3. Khi lập bảng mới luôn kiểm tra mẫu 20 dòng của ngày làm việc gần nhất trong file, vì nội dung có thể đổi.
+
+Quy ước giờ ngày thường của bộ phận sản xuất (RC, Machining, Assembly): ca chính thức 7:30-16:00; các dòng P26 và dòng P20 Assembly ghi 7:30-20:00 từ 28/9 (trước đó 7:00-19:30). Người dùng là nhân viên văn phòng (8:00-16:30), bỏ qua giờ đó.
+
+Thứ Bảy: số dòng giống ngày thường (20 dòng), nhưng bộ phận sản xuất về sớm nửa tiếng so với ngày thường: không tăng ca = 7:30-15:30 cho P26 và P20 Assembly. Thứ Bảy tăng ca (về 20:00) là hiếm (ví dụ 3/10). 4 dòng P20 ngắn mặc định 7:00-7:30 (thứ Bảy 3/10 từng ghi 7:30-8:00, cần xác nhận). Hỏi người dùng thứ Bảy đó có tăng ca không.
+
+Chủ nhật: thường nghỉ (từ tháng 9 hầu như không có dữ liệu). Chỉ lập khi người dùng nói có làm. Chủ nhật không tính vào 12 ngày A2.
+
+## 4. Nhân viên mới: P22 và A2
+- Ngày đầu: ghi P22 "HR Training New Workers", 8:00-16:00 (8 giờ), Dept In Charge HR/HSE, Notes "Đào tạo công nhân mới", một dòng mỗi khu vực với HC = số người. KHÔNG ghi thêm A2 cùng ngày (nhóm 4/3 từng bị ghi trùng).
+- 12 ngày làm việc sau đó (thứ Hai đến thứ Bảy, bỏ Chủ nhật): ghi A2 "Training" 7:30-12:00 (giờ gần nhất; trước 28/9 là 7:00-12:00), Dept In Charge HR/HSE, Notes "HC mới- 50% hiệu suất- 2 tuần-dd/mm" (dd/mm = ngày vào làm). Ghi chú cột "A2 ngày k/12 - nhóm dd/mm" để theo dõi.
+- Người ghi "0" ở cột CT/TV của danh sách vẫn tính vào HC (đã chốt tạm). NGOẠI LỆ: tài xế xe nâng (Grade "IDL-Forklift", lao động gián tiếp) KHÔNG tính vào P22/A2 (người dùng đã chốt; 12/10 có 1 người Machining như vậy bị loại).
+- Tên khu vực dùng: RC - WOOD, RC - PANEL, Machining, Assembly, Raw Cutting Panel (cách ghi gần nhất cho Raw Cutting). File cũ còn có "RC".
+- Mỗi khi có danh sách mới: thêm dòng vào sheet "Lịch A2 nhân viên mới" (đủ 12 ngày A2 của nhóm, dùng WORKDAY.INTL(ngày,1,11)) và lập sheet danh sách theo nhóm (ngày vào làm, khu vực, HC, mã từng ngày P22 hoặc A2 ngày k, ngày cuối A2 bằng WORKDAY.INTL(ngày, 12, 11)).
+
+## 5. Quy luật mã P24 (chỉ tham khảo, chưa đưa vào bảng)
+Kaizen thường thứ Hai và thứ Ba hằng tuần, 8:00-16:30, mỗi khu vực một dòng 1-4 người, Dept HR/HSE, Name "Planned Losstime". Gần nhất: 21-22/9 và 28-29/9: Machining 3, Assembly 2, RC - PANEL 2. Hỏi người dùng ngày nào có Kaizen và số người.
+
+## 6. Việc cần hỏi người dùng khi có dữ liệu mới
+- Danh sách nhân viên mới của ngày cần lập (hoặc "không có").
+- Thứ Bảy có tăng ca không; Chủ nhật có làm không; Kaizen (P24).
+
+## 7. Thứ tự cột nhập form (từ trái sang phải)
+LossTime Code, Notes, Process, Dept In Charge, From, To, Worker Qty. (Loss Date, LossTime Name, TotalLoss Hour do form tự điền.) Ghép cột: Notes = cột "Lí Do", Process = "Khu vực phát sinh", Dept In Charge = "Chart/bộ phận chịu trách nhiệm". Cột Ghi chú cũ (Recorder/Supporter, số ngày A2) để tham khảo, không nhập.
+
+## 8. Quy định còn mở (cần hỏi production engineer)
+- A2 kéo dài 12 hay 13 ngày làm việc (trong file: 12 ngày 43%, 13 ngày 28%).
+- Giờ A2: 7:00-12:00 hay 7:30-12:00; ghi chú "50% hiệu suất" nhưng 4,5-5 giờ trên 8 giờ là 56-62,5%.
+- Phân loại cho mã P26 trong bảng mã (chưa có nhóm loss, 33,7% giờ công).
+- Số A2 các nhóm cuối tháng 9 trong file có thể ghi thiếu ngày.
+
+## 9. Tình trạng đã lập (đến 17/10/2026)
+Đã lập bảng 5/10, 6/10, 7/10, 8/10, 9/10, 10/10, 12/10, 13/10, 14/10, 15/10, 16/10, 17/10. Ngày 16/10 có 1 nhân viên mới nhưng người dùng chưa nói khu vực (đang ghi tạm "Chưa rõ khu vực", cần cập nhật khi biết). Thứ Bảy 17/10 mặc định không tăng ca (P26 và P20 Assembly 7:30-15:30), chưa xác nhận; nhân viên mới ngày 17/10 người dùng sẽ báo sau. Chưa lập 18/10 (Chủ nhật, mặc định nghỉ) trở đi. Ngày 12/10 ban đầu báo không có nhân viên mới, sau đó người dùng cập nhật có 3 người (đã ghi ở bảng trên). Chưa có danh sách nhân viên mới của 9/10 và 10/10 (chờ admin); khi có phải bổ sung P22 cho ngày đó và A2 cho các ngày sau.
+
+Nhân viên mới đã ghi nhận (chỉ số người theo khu vực):
+| Ngày vào làm | Khu vực | Số người |
+|---|---|---|
+| 5/10 | Assembly | 6 |
+| 6/10 | Assembly | 7 |
+| 6/10 | Raw Cutting Panel | 4 |
+| 6/10 | Machining | 3 |
+| 7/10 | Assembly | 6 |
+| 7/10 | Raw Cutting Panel | 2 |
+| 8/10 | Raw Cutting Panel | 1 |
+| 8/10 | Machining | 3 |
+| 9/10, 10/10 | chờ danh sách | |
+| 12/10 | Assembly | 2 |
+| 12/10 | Raw Cutting Panel | 1 |
+| 13/10 | Assembly | 2 |
+| 13/10 | Raw Cutting Panel | 4 |
+| 13/10 | Machining | 1 |
+| 14/10 | Assembly | 1 |
+| 15/10 | Assembly | 4 |
+| 16/10 | chưa rõ khu vực | 1 |
+| 17/10 | chờ người dùng báo | ? |
+
+Các nhóm A2 cũ còn chạy (lấy từ file Loss time đến 3/10; "n" = số ngày A2 đã ghi trong file, HC = số người ngày ghi cuối). Ngày A2 hôm nay = n + số ngày làm việc (T2-T7) từ 4/10 đến hôm nay:
+| Nhóm | Khu vực | n | HC |
+|---|---|---|---|
+| 18/9 | Assembly | 4 | 7 |
+| 23/9 | Assembly | 9 | 3 |
+| 24/9 | Assembly | 4 | 5 |
+| 25/9 | Assembly | 4 | 1 |
+| 28/9 | Assembly | 5 | 3 |
+| 21/9 | Machining | 4 | 2 |
+| 22/9 | Machining | 4 | 4 |
+| 23/9 | Machining | 9 | 9 |
+| 24/9 | Machining | 4 | 3 |
+| 25/9 | Machining | 4 | 1 |
+| 22/9 | RC | 4 | 1 |
+| 23/9 | RC | 4 | 1 |
+| 24/9 | RC | 4 | 2 |
+| 26/9 | RC | 4 | 1 |
+| 23/9 | Raw Cutting Panel | 3 | 3 |
+| 25/9 | Raw Cutting Panel | 3 | 1 |
+Nhóm 19/9 (Assembly 13 ngày, Machining 12 ngày) đã xong A2 trước 5/10. Nhóm 23/9 Assembly và Machining xong 7/10. Nhóm 28/9 Assembly xong 12/10; các nhóm còn lại (k=11 hôm 12/10) kết thúc 13/10, nên từ 14/10 danh sách A2 chỉ còn các nhóm vào làm từ 5/10 trở đi và Raw Cutting Panel 23/9, 25/9.
+
+## 10. Chuẩn chất lượng khi xuất file
+- Font Times New Roman; công thức Excel thật (không gõ cứng kết quả): Week, LossTime, Loss time labor, tổng hợp bằng SUMIFS.
+- Tính lại công thức (LibreOffice), không có lỗi công thức, đối chiếu tổng với tính tay độc lập, và nêu rõ các chỗ chưa chắc.
+- Nói rõ phần nào là suy ra theo quy tắc, phần nào lấy trực tiếp từ file.
+
+## 11. Mã S32 hằng tuần (Assembly hỗ trợ bộ phận khác) - việc mới nhận từ tuần 42
+Người dùng mới được bàn giao việc này (chưa quen cách hoạt động), nên giải thích ngắn gọn và nêu các điểm cần xác nhận.
+- S32 = Other Support of Production (nhóm Support): người của một khu vực làm cho bộ phận khác hoặc nhà thầu. Có trong 37/38 tuần của file (418 dòng, 19,5% giờ công, lớn thứ ba sau P26 và A2). Không lặp cố định mỗi ngày; số dòng, HC và giờ thay đổi theo từng tuần, cần báo cáo của người gửi.
+- Khu vực Assembly không có S32 từ tuần 13/7 đến 28/9; tuần 21/9 và 28/9 gần như không có S32 (27 và 12 giờ). Tuần 38-41 người dùng nói đã có người nhập, KHÔNG cần bù.
+- Tiền lệ cách ghi: thợ sơn lòng trong tủ (Assembly, bộ phận Finishing, lí do "Không có bomtime sơn lòng trong"), tuần W23 ghi từng ngày HC gộp, thứ Hai-thứ Sáu 7:30-19:30, thứ Bảy và Chủ nhật 7:30-15:30; nửa đầu năm có kiểu "Tổng kết tuần" một dòng 00:00-23:59. Cào cước giống các dòng "Inlay hỗ trợ MAC" (Assembly, bộ phận Machining). Bắn cát dùng bộ phận Subcon (file viết "Subcon", báo cáo viết "Supcon").
+- Yêu cầu tuần 42 (do đồng nghiệp nhờ qua tin nhắn): thợ sơn lòng trong tủ 12 người (12 giờ/ngày T2-T6, 8 giờ T7, CN nghỉ, tổng 816 giờ, hỗ trợ Fin); cào cước 16/10 (2 dòng, 1 người mỗi dòng, 15:00-20:00 và 8:00-12:00, mã hàng RH893 và RH5061, hỗ trợ MAC, tổng 9 giờ); bắn cát Supcon Đại Xuyên 15/10 (4 người, mã hàng RH2252, số lượng 734 chân, báo cáo ghi 7:00-16:00 nhưng 8 giờ/người, tổng 32 giờ). Tổng 857 giờ công.
+- Đã lập bảng S32 tuần 42 (9 dòng, 857 giờ, khớp báo cáo), có sheet đối chiếu, nhập liệu theo form và giải thích. Các điểm còn chờ xác nhận: bắn cát ghi 7:00-15:00 để ra 8 giờ (7:00-16:00 sẽ thành 36 giờ); cào cước 15:00-20:00 ngày 16/10 và thợ sơn thứ Bảy 17/10 có thể là giờ dự kiến; giờ thợ sơn 7:30-19:30 hay 8:00-20:00; mã S32 và bộ phận chịu trách nhiệm cần production engineer xác nhận.
+- Form nhập chỉ có ô Notes (dùng cho lí do). Mã hàng và số lượng: chưa biết ô nào trên form tương ứng (có các ô Pa, WO, Suppl, Desc), người dùng sẽ xem form.
+- Mỗi tuần khi người dùng gửi báo cáo Assy mới (thợ sơn, cào cước, bắn cát, hỗ trợ khác), làm tương tự: lập bảng S32, đối chiếu với tổng giờ trong báo cáo, và hỏi giờ thực tế/dự kiến.
+
+### Quy tắc đã chốt cho S32 (cập nhật 19/10/2026)
+- LUÔN làm S32 RIÊNG: một file/bảng S32 riêng, không trộn S32 vào bảng hằng ngày P20/P26/P22/A2 (và không ghi S32 vào bảng ngày). Người dùng sẽ gửi cập nhật, phải lập lại bảng S32 theo dữ liệu mới nhất.
+- Nguồn S32 là gói zip "Lost time S32" (từ 5/10 đến nay) cộng báo cáo dạng hình: Beam saw (6 bản, mỗi bản là bản chụp tích lũy, lấy bản đầy đủ nhất), UV (báo cáo ngày + sheet phát sinh), Ép nóng (ÉP HÀNG SỬA), Veneer hàng BS (sheet "tổng"), và 3 hình của Assembly (thợ sơn lòng trong tủ tuần 42, cào cước 16/10, bắn cát 15/10). Luôn dùng bản mới nhất và chỉ lấy dòng từ 5/10.
+- Cách ghi: Code S32; Process thường RC - PANEL cho các file khu vực (UV, Ép nóng, Beam saw, Veneer) và Assembly cho 3 hình; Dept In Charge lấy từ cột Charge to/Hỗ trợ (P1, TF, ME, Finishing, Machining, Subcon; "Machining CNC" ghi "Machining"; "QA..." ghi "QC"; "Unassigned" phải hỏi). Nhiều mã hàng cùng một ca = một dòng, mã hàng nối bằng "+", không nhân giờ theo từng mã. UV báo cáo ngày: giờ = 8 x HC làm việc + 4 x HC tăng ca, tách 2 dòng/ngày (7:30-15:30 và 15:30-19:30) để đúng giờ báo cáo.
+- Luôn có sheet đối chiếu giờ công với số giờ trong nguồn (phải "Khớp") và sheet Chi tiết mã hàng.
+- Điểm còn chờ xác nhận: UV Chủ nhật 11/10; cách ghi 1 dòng hay 2 dòng/ngày; bộ phận của Beam saw "Unassigned" 16/10; khu vực Beam saw/Veneer (giả định RC - PANEL); giờ dự kiến (thợ sơn thứ Bảy 17/10, cào cước 15:00-20:00 ngày 16/10); bắn cát ghi 7:00-15:00 để ra 8 giờ.
+- Trạng thái: đã lập bảng S32 từ 5/10 đến 19/10: 42 dòng, 1.761,93 giờ công, khớp nguồn.
