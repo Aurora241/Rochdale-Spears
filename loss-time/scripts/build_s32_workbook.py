@@ -148,7 +148,7 @@ Lns=[('GHI CHÚ REVIEW - BẢNG S32 (LÀM RIÊNG)',True),
 ('6. UV: file báo cáo ngày chỉ đến 11/10; chưa có số liệu từ 12/10. UV phát sinh 12/10 có 23 mã hàng SLAT nhưng chỉ 2 dòng có giờ (HC 1, 9:30-20:00 và 7:30-15:00); danh sách mã ở sheet "Chi tiết mã hàng". Bộ phận ghi "QC" (báo cáo ghi "QC A HIẾU"), cần xác nhận.',False),
 ('7. Beam saw: 12 dòng từ 08/10 đến 19/10. Khu vực ghi RC - PANEL (Raw Cutting, người dùng xác nhận 20/10). Bộ phận lấy từ cột Charge to: Machining CNC và Machining ghi "Machining"; "QA ..." ghi "QC"; 2 dòng ngày 16/10 là "Unassigned" (chưa phân công), cần xác định bộ phận (tô cam).',False),
 ('8. Ép nóng: 3 nhóm (5/10 hỗ trợ P1 4 người 16 giờ; 5/10 ép lót 5 người 30 giờ; 6/10 ép chính 5 người 55 giờ). Mỗi nhóm có nhiều mã hàng cùng một ca nên ghi một dòng, mã hàng nối bằng "+" (xem sheet Chi tiết). Đừng nhân giờ cho từng mã. Giờ bắt đầu 6:30 hiếm, nên xác nhận.',False),
-('9. Veneer (làm mẫu): 10/10 (2 người 9:00-10:30, 3 giờ, bộ phận TF) và 15/10 (1 người 8:00-8:20, ME). Khu vực ghi RC - PANEL (giả định).',False),
+('9. Veneer (làm mẫu): 10/10 (2 người 9:00-10:30, 3 giờ, bộ phận TF) và 15/10 (1 người 8:00-8:20, ME). Khu vực ghi RC - PANEL (Raw Cutting, người dùng xác nhận 20/10).',False),
 ('10. Thợ sơn tuần 42: 12 người, 7:30-19:30 từ 12/10 đến 16/10 (720 giờ), thứ Bảy 17/10 7:30-15:30 (96 giờ, có thể là giờ dự kiến). Cào cước 16/10: dòng 15:00-20:00 có thể là giờ dự kiến. Bắn cát 15/10: ghi 7:00-15:00 để đúng 8 giờ/người (báo cáo ghi 7:00-16:00).',False),
 ('11. Tên bộ phận: báo cáo ghi "Supcon", file dùng "Subcon". Danh sách chọn trên form có thể khác tên, cần đối chiếu.',False)]
 rv.column_dimensions['A'].width=150
