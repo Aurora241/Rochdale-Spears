@@ -148,3 +148,9 @@ Người dùng mới được bàn giao việc này (chưa quen cách hoạt đ�
 - P22 LUÔN charge HR/ HSE. A2 hiện charge HR/ HSE (Tiến nhập từ 21/9; Hùng trước đó ghi theo khu vực).
 - Lỗi đã gặp: nhập nhầm mã (P26 thành P20 hoặc P22), nhập trùng cả ngày (9/10, 13/10). Mỗi tuần cộng P26 và P20 để đối chiếu: tuần đủ 6 ngày có tăng ca P26 1.350, P20 282; tuần có Thứ Bảy không tăng ca P26 1.269, P20 273. Nếu tuần lệch phải tìm dòng sai.
 - Beam saw và Veneer thuộc Raw Cutting. Cách ghi S32 của người trước: hỗ trợ P1 ép nóng, dept OTHERS (INVESTIGATE); veneer/bảng màu/làm mẫu, dept TECHNICAL FINISHING; bắn cát, dept SUBCON (process Assembly); UV, dept FINISHING, process Raw Cutting.
+
+## Cập nhật S32 ngày 21/10/2026
+- Bảng S32 hiện đến 20/10: `loss-time/outputs/Loss_time_S32_05-10_den_20-10.xlsx` (47 dòng, 1.766,18 giờ, mọi nguồn khớp). Nguồn mới: Beam saw bản 20/10 (14 dòng từ 8/10) và Veneer bản 20/10 (thêm 3 dòng ngày 20/10, 4 giờ).
+- Điểm cần xác nhận: Beam saw CZ567F09 20/10 ghi 18:15-18:13 (bảng ghi 0 giờ); Veneer walnut cắt ghép 20/10 Charge to "bs lại" (bộ phận chưa rõ); Beam saw "Unassigned" 16/10 và 20/10; 3 dòng Beam saw 19/10 trên hệ thống đang nhập ngày 18/10.
+- UV (báo cáo ngày đến 11/10, phát sinh đến 13/10) và Ép nóng (đến 6/10) chưa có số liệu mới; bắn cát 70 giờ chưa được giải thích.
+- Tên bộ phận và khu vực trong bảng S32 đã đổi theo dropdown hệ thống (xem mục "Quy tắc nhập vào hệ thống").

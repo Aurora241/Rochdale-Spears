@@ -18,8 +18,8 @@ def qty(x):
         q=[i[2] for i in its if i[2] is not None]
         return sum(q) if q else None
     return x['qty']
-wb=openpyxl.Workbook();ws=wb.active;ws.title='S32 5-10 đến 19-10'
-ws['A1']='LOSS TIME MÃ S32 (OTHER SUPPORT OF PRODUCTION) - 05/10 ĐẾN 19/10/2026 - LÀM RIÊNG, KHÔNG LẪN MÃ KHÁC';ws['A1'].font=Font(name=F,bold=True,size=15)
+wb=openpyxl.Workbook();ws=wb.active;ws.title='S32 5-10 đến 20-10'
+ws['A1']='LOSS TIME MÃ S32 (OTHER SUPPORT OF PRODUCTION) - 05/10 ĐẾN 20/10/2026 - LÀM RIÊNG, KHÔNG LẪN MÃ KHÁC';ws['A1'].font=Font(name=F,bold=True,size=15)
 H=['Week','Date \n(Ngày)',"Item's\nMã hàng",'Code Máy Hư',"Q'ty",'Số NCR/ME','Khu vực phát sinh/bộ phận hỗ trợ','Code','Name code','Chart / bộ phận chịu trách nhiệm','Lí Do','Ghi chú','From','To','LossTime (Hr)','HC','Loss time labor (Hrs)','Nguồn']
 for i,h in enumerate(H,1):
     c=ws.cell(2,i,h);c.fill=red;c.font=hf;c.alignment=ctr;c.border=bd
@@ -30,7 +30,7 @@ for k,x in enumerate(R):
     for c,v in enumerate(vals,1):
         a=ws.cell(r,c,v);a.font=Font(name=F);a.border=bd;a.alignment=Alignment(horizontal='center',vertical='center',wrap_text=c in(3,9,11,12))
         if x['flag'] in('P','A'): a.fill=yel
-        elif x['flag']=='U': a.fill=org
+        elif x['flag'] in('U','E'): a.fill=org
     ws.cell(r,2).number_format='d-mmm';ws.cell(r,13).number_format=ws.cell(r,14).number_format='h:mm;@'
     ws.cell(r,15).number_format='0.00';ws.cell(r,17).number_format='0.00'
 e=2+len(R)
@@ -38,7 +38,7 @@ ws.cell(e+1,16,'Tổng').font=Font(name=F,bold=True);ws.cell(e+1,17,f'=SUM(Q3:Q{
 ws.cell(e+3,1,'Vàng = giờ cần xác nhận (dự kiến hoặc giả định). Cam = dòng cần quyết định (Chủ nhật 11/10 UV; Beam saw 16/10 chưa phân công bộ phận).').font=Font(name=F,italic=True)
 for col,w in zip('ABCDEFGHIJKLMNOPQR',[7,9,28,10,8,10,16,8,26,16,42,36,9,9,10,8,15,22]): ws.column_dimensions[col].width=w
 ws.freeze_panes='A3';ws.auto_filter.ref=f'A2:R{e}'
-M=f"'S32 5-10 đến 19-10'"
+M=f"'S32 5-10 đến 20-10'"
 # ---- theo ngày
 dd=sorted({x['date'] for x in R});srcs=['Ép nóng','UV hằng ngày','Beam saw','Veneer','UV phát sinh','Thợ sơn (hình)','Cào cước (hình)','Bắn cát (hình)']
 sd=wb.create_sheet('Theo ngày')
@@ -85,7 +85,7 @@ for k,x in enumerate(R):
     for c,v in enumerate([x['date'],'S32',x['lido'],x['area'],x['dept'],x['fr'],x['to'],x['hc'],pn(x),qty(x),x['gc'],SRC[x['src']]],1):
         a=ip.cell(r,c,v);a.font=Font(name=F,color='000000' if c<=8 else '7F7F7F');a.border=bd;a.alignment=Alignment(horizontal='left' if c in(3,11) else 'center',vertical='center',wrap_text=c in(3,9,11))
         if x['flag'] in('P','A') and c<=8: a.fill=yel
-        elif x['flag']=='U' and c<=8: a.fill=org
+        elif x['flag'] in('U','E') and c<=8: a.fill=org
     ip.cell(r,1).number_format='dd/mm/yyyy';ip.cell(r,6).number_format=ip.cell(r,7).number_format='hh:mm'
 for col,w in zip('ABCDEFGHIJKL',[14,10,44,12,14,8,8,10,30,12,36,22]): ip.column_dimensions[col].width=w
 ip.freeze_panes='A2'
@@ -102,11 +102,11 @@ def sumcol(f,sheet,pred,col):
     return s
 D0=dt.datetime(2026,10,5)
 ref={
- 'File Beam saw':sumcol('LOST TIME BEMSAW ( NI ) (5).xlsx','data ',lambda r:isinstance(r[6],dt.datetime) and r[6]>=D0,10),
+ 'File Beam saw':sumcol('LOST TIME BEMSAW 20.10.xlsx','data ',lambda r:isinstance(r[6],dt.datetime) and r[6]>=D0 and r[10]>=0,10),
  'File UV (báo cáo ngày)':sumcol('lost time khu vực UV (1).xlsx','LOST TIME',lambda r:isinstance(r[1],dt.datetime) and r[1]>=D0,5),
  'File UV (phát sinh)':sumcol('lost time khu vực UV (1).xlsx','Sheet1',lambda r:isinstance(r[6],dt.datetime) and r[6]>=D0,10),
  'File Ép nóng':sumcol('FILE ÉP HÀNG SỬA ( KV ÉP NÓNG ) (1).xlsx','datta',lambda r:isinstance(r[6],dt.datetime) and r[6]>=D0,10),
- 'File Veneer':sumcol('26.10.15Lost time  veneer Hàng BS.xlsx','tổng',lambda r:r[11] is not None and isinstance(r[11],dt.datetime) and r[11]>=D0,10),
+ 'File Veneer':sumcol('26.10.20 Lost time veneer Hàng BS.xlsx','tổng',lambda r:r[11] is not None and isinstance(r[11],dt.datetime) and r[11]>=D0,10),
  'Hình: thợ sơn':816,'Hình: cào cước':9,'Hình: bắn cát':32}
 dr=wb.create_sheet('Đối chiếu nguồn')
 dr['A1']='ĐỐI CHIẾU GIỜ CÔNG VỚI SỐ GIỜ TRONG FILE/HÌNH NGUỒN';dr['A1'].font=Font(name=F,bold=True,size=14)
@@ -141,17 +141,17 @@ for col,w in zip('ABCDE',[12,24,26,16,10]): cd.column_dimensions[col].width=w
 rv=wb.create_sheet('Ghi chú review')
 Lns=[('GHI CHÚ REVIEW - BẢNG S32 (LÀM RIÊNG)',True),
 ('1. Bảng này CHỈ chứa mã S32, tách hoàn toàn khỏi bảng P20/P26/P22/A2 (không lẫn mã khác). Khi bạn cập nhật, tôi giữ nguyên nguyên tắc này.',False),
-('2. Nguồn: 5 file trong gói zip (lấy bản mới nhất mỗi loại: Beam saw bản (5), UV bản (1), Ép nóng bản (1), Veneer bản 15/10) và 3 hình (thợ sơn tuần 42, cào cước 16/10, bắn cát 15/10). Chỉ lấy dòng từ 05/10 đến nay (19/10).',False),
-('3. Tất cả giờ công trong bảng khớp với số giờ trong nguồn (sheet "Đối chiếu nguồn"). Tổng 1.761,93 giờ công.',False),
+('2. Nguồn: 5 file trong gói zip (lấy bản mới nhất mỗi loại: Beam saw bản 20/10, UV bản (1), Ép nóng bản (1), Veneer bản 20/10) và 3 hình (thợ sơn tuần 42, cào cước 16/10, bắn cát 15/10). Chỉ lấy dòng từ 05/10 đến 20/10. UV (báo cáo ngày đến 11/10, phát sinh đến 13/10) và Ép nóng (đến 6/10) chưa có số liệu mới.',False),
+('3. Tất cả giờ công trong bảng khớp với số giờ trong nguồn (sheet "Đối chiếu nguồn"). Tổng giờ công xem sheet "Đối chiếu nguồn". Riêng dòng Beam saw 20/10 (18:15-18:13) nguồn ghi -0,1 giờ nên bảng ghi 0 giờ và không tính vào đối chiếu.',False),
 ('4. UV báo cáo ngày: báo cáo ghi giờ = 8 giờ x HC làm việc + 4 giờ x HC tăng ca. Tôi tách mỗi ngày thành 2 dòng (ca thường 7:30-15:30; tăng ca 15:30-19:30) để ra đúng số giờ báo cáo. Tiền lệ trong file ghi 1 dòng/ngày (7:30-19:30), cần xác nhận cách ghi.',False),
 ('5. UV Chủ nhật 11/10: có 9 người làm 8 giờ (72 giờ). Cần xác nhận có nhập Chủ nhật không (tô cam).',False),
 ('6. UV: file báo cáo ngày chỉ đến 11/10; chưa có số liệu từ 12/10. UV phát sinh 12/10 có 23 mã hàng SLAT nhưng chỉ 2 dòng có giờ (HC 1, 9:30-20:00 và 7:30-15:00); danh sách mã ở sheet "Chi tiết mã hàng". Bộ phận ghi "QC" (báo cáo ghi "QC A HIẾU"), cần xác nhận.',False),
-('7. Beam saw: 12 dòng từ 08/10 đến 19/10. Khu vực ghi RC - PANEL (Raw Cutting, người dùng xác nhận 20/10). Bộ phận lấy từ cột Charge to: Machining CNC và Machining ghi "Machining"; "QA ..." ghi "QC"; 2 dòng ngày 16/10 là "Unassigned" (chưa phân công), cần xác định bộ phận (tô cam).',False),
+('7. Beam saw: 14 dòng từ 08/10 đến 20/10. Dòng CZ567F09 ngày 20/10 ghi 18:15-18:13 (giờ kết thúc nhỏ hơn giờ bắt đầu), cần xác nhận giờ đúng (tô cam). 3 dòng ngày 19/10 (18:00-18:07) trên hệ thống đang nhập ngày 18/10, nguồn ghi ngày 19/10, cần kiểm tra lại. Khu vực ghi RC - PANEL (Raw Cutting, người dùng xác nhận 20/10). Bộ phận lấy từ cột Charge to: Machining CNC và Machining ghi "Machining"; "QA ..." ghi "QC"; 4 dòng ngày 16/10 và 20/10 là "Unassigned" (chưa phân công), cần xác định bộ phận (tô cam).',False),
 ('8. Ép nóng: 3 nhóm (5/10 hỗ trợ P1 4 người 16 giờ; 5/10 ép lót 5 người 30 giờ; 6/10 ép chính 5 người 55 giờ). Mỗi nhóm có nhiều mã hàng cùng một ca nên ghi một dòng, mã hàng nối bằng "+" (xem sheet Chi tiết). Đừng nhân giờ cho từng mã. Giờ bắt đầu 6:30 hiếm, nên xác nhận.',False),
-('9. Veneer (làm mẫu): 10/10 (2 người 9:00-10:30, 3 giờ, bộ phận TF) và 15/10 (1 người 8:00-8:20, ME). Khu vực ghi RC - PANEL (Raw Cutting, người dùng xác nhận 20/10).',False),
+('9. Veneer (làm mẫu): 10/10 (2 người 9:00-10:30, 3 giờ, TF), 15/10 (1 người 8:00-8:20, ME) và 20/10 (code 191: 1 người 9:00-9:50, TF; walnut cắt ghép RH21-2184-492: 2 người 10:00-11:15, nguồn ghi Charge to "bs lại" nên bộ phận cần xác nhận, tô cam; code 014: 1 người 10:00-10:40, ME). Khu vực ghi RC - PANEL (Raw Cutting, người dùng xác nhận 20/10).',False),
 ('10. Thợ sơn tuần 42: 12 người, 7:30-19:30 từ 12/10 đến 16/10 (720 giờ), thứ Bảy 17/10 7:30-15:30 (96 giờ, có thể là giờ dự kiến). Cào cước 16/10: dòng 15:00-20:00 có thể là giờ dự kiến. Bắn cát 15/10: ghi 7:00-15:00 để đúng 8 giờ/người (báo cáo ghi 7:00-16:00).',False),
-('11. Tên bộ phận: báo cáo ghi "Supcon", file dùng "Subcon". Danh sách chọn trên form có thể khác tên, cần đối chiếu.',False)]
+('11. Tên bộ phận và khu vực đã đổi theo dropdown hệ thống (lấy từ file xuất 20/10): FINISHING, TECHNICAL FINISHING, OTHERS (INVESTIGATE) cho hỗ trợ P1, QA/QC/TESTING, SUBCON, MACHINING, ME; khu vực Raw Cutting và Assembly. Cách ghi này theo người nhập trước (Hùng, Tiến).',False)]
 rv.column_dimensions['A'].width=150
 for i,(tx,b) in enumerate(Lns,1):
     c=rv.cell(i,1,tx);c.font=Font(name=F,bold=b,size=12 if b else 11);c.alignment=Alignment(wrap_text=True,vertical='top')
-wb.save('Loss_time_S32_05-10_den_19-10.xlsx');print('ok',len(R))
+wb.save('Loss_time_S32_05-10_den_20-10.xlsx');print('ok',len(R))

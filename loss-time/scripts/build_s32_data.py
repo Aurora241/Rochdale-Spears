@@ -6,18 +6,24 @@ D0=dt.datetime(2026,10,5)
 T=lambda h,m:dt.time(h,m)
 def ld(f,sheet): return list(openpyxl.load_workbook(Z+f,read_only=True,data_only=True)[sheet].iter_rows(values_only=True))
 R=[]   # dict rows
+DM={'Finishing':'FINISHING','P1':'OTHERS (INVESTIGATE)','TF':'TECHNICAL FINISHING','ME':'ME','QC':'QA/QC/TESTING','Machining':'MACHINING','Subcon':'SUBCON'}
+AM={'RC - PANEL':'Raw Cutting'}
 def add(date,src,item,qty,area,dept,lido,gc,fr,to,hc,flag='',items=None,chk=None):
+    dept=DM.get(dept,dept);area=AM.get(area,area)
     R.append(dict(date=date,src=src,item=item,qty=qty,area=area,dept=dept,lido=lido,gc=gc,fr=fr,to=to,hc=hc,flag=flag,items=items or []))
-# 1. Beam saw (bản (5) mới nhất)
-bs=[r for r in ld('LOST TIME BEMSAW ( NI ) (5).xlsx','data ') if isinstance(r[6],dt.datetime) and r[6]>=D0]
-assert len(bs)==12
+# 1. Beam saw (bản 20/10 mới nhất)
+bs=[r for r in ld('LOST TIME BEMSAW 20.10.xlsx','data ') if isinstance(r[6],dt.datetime) and r[6]>=D0]
+assert len(bs)==14
 dm={'Machining CNC':'Machining','Machining':'Machining','Unassigned':'(chưa phân công)','QA do không test lú':'QC'}
 for r in bs:
     ch=str(r[13]).strip()
     dept='QC' if ch.upper().startswith('QA') else dm[ch]
     flag='U' if ch=='Unassigned' else ''
     gc=f'Charge to: {ch}' if (ch=='Unassigned' or ch.upper().startswith('QA')) else ''
-    add(r[6],'Beam saw',r[2],r[5],'RC - PANEL',dept,f'Beam saw - phát sinh (chi tiết {str(r[3]).strip()})',gc or f'STT {r[0]}',r[8],r[9],int(r[7]),flag)
+    fr_,to_=r[8],r[9]
+    if r[10]<0:
+        flag='E';gc=(gc+'; ' if gc else '')+f'Nguồn ghi {fr_:%H:%M}-{to_:%H:%M} (giờ kết thúc nhỏ hơn giờ bắt đầu, -0.1 giờ)';to_=fr_
+    add(r[6],'Beam saw',r[2],r[5],'RC - PANEL',dept,f'Beam saw - phát sinh (chi tiết {str(r[3]).strip()})',gc or f'STT {r[0]}',fr_,to_,int(r[7]),flag)
 # 2. UV hằng ngày (W41 từ 5/10): hàng làm việc 8h + OT 4h
 uv=[r for r in ld('lost time khu vực UV (1).xlsx','LOST TIME') if isinstance(r[1],dt.datetime) and r[1]>=D0]
 assert len(uv)==7
@@ -44,10 +50,13 @@ r=eprow(219);add(r[6],'Ép nóng',r[2],None,'RC - PANEL','P1','Hỗ trợ P1 ép
 r=eprow(222);add(r[6],'Ép nóng',r[2],None,'RC - PANEL','P1','Hỗ trợ P1 ép nóng - ép lót','Ép lót (2 mã hàng)',r[8],r[9],int(r[7]),'',grp(222,223))
 r=eprow(224);add(r[6],'Ép nóng',r[2],None,'RC - PANEL','P1','Hỗ trợ P1 ép nóng - ép chính','Ép chính (2 mã hàng)',r[8],r[9],int(r[7]),'',grp(224,225))
 # 5. Veneer hàng BS (bản 15/10)
-ve=ld('26.10.15Lost time  veneer Hàng BS.xlsx','tổng')
-v1,v2,v3=ve[1802],ve[1803],ve[1804]
+ve=ld('26.10.20 Lost time veneer Hàng BS.xlsx','tổng')
+v1,v2,v3,v4,v5,v6=ve[1802],ve[1803],ve[1804],ve[1805],ve[1806],ve[1807]
 add(v1[11],'Veneer',None,None,'RC - PANEL','TF','Làm mẫu (veneer)','2 mã (code 516, code 231), 1 ca',v1[8],v1[9],int(v1[7]),'',[(v1[1],v1[3],v1[5]),(v2[1],v2[3],v2[5])])
 add(v3[11],'Veneer',None,None,'RC - PANEL','ME','Làm mẫu (veneer)','code 229',v3[8],v3[9],int(v3[7]),'',[(v3[1],v3[3],v3[5])])
+add(v4[11],'Veneer',None,None,'RC - PANEL','TF','Làm mẫu (veneer)','code 191',v4[8],v4[9],int(v4[7]),'',[(v4[1],v4[3],v4[5])])
+add(v5[11],'Veneer',None,None,'RC - PANEL','(cần xác nhận)','Veneer walnut cắt ghép (bs lại)','Nguồn ghi Charge to: "bs lại"',v5[8],v5[9],int(v5[7]),'E',[(v5[2],v5[3],v5[5])])
+add(v6[11],'Veneer',None,None,'RC - PANEL','ME','Làm mẫu (veneer)','code 014',v6[8],v6[9],int(v6[7]),'',[(v6[1],v6[3],v6[5])])
 # 6. Ba hình (Assembly)
 for d in range(12,17): add(dt.datetime(2026,10,d),'Thợ sơn (hình)',None,None,'Assembly','Finishing','Không có bomtime sơn lòng trong','Thợ sơn lòng trong tủ - hỗ trợ Fin',T(7,30),T(19,30),12)
 add(dt.datetime(2026,10,17),'Thợ sơn (hình)',None,None,'Assembly','Finishing','Không có bomtime sơn lòng trong','Thợ sơn lòng trong tủ - hỗ trợ Fin (thứ Bảy)',T(7,30),T(15,30),12,'P')
