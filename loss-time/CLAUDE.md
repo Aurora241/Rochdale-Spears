@@ -74,7 +74,7 @@ LossTime Code, Notes, Process, Dept In Charge, From, To, Worker Qty. (Loss Date,
 - Số A2 các nhóm cuối tháng 9 trong file có thể ghi thiếu ngày.
 
 ## 9. Tình trạng đã lập (đến 17/10/2026)
-Đã lập bảng 5/10, 6/10, 7/10, 8/10, 9/10, 10/10, 12/10, 13/10, 14/10, 15/10, 16/10, 17/10. Ngày 16/10 có 1 nhân viên mới nhưng người dùng chưa nói khu vực (đang ghi tạm "Chưa rõ khu vực", cần cập nhật khi biết). Thứ Bảy 17/10 mặc định không tăng ca (P26 và P20 Assembly 7:30-15:30), chưa xác nhận; nhân viên mới ngày 17/10 người dùng sẽ báo sau. Chưa lập 18/10 (Chủ nhật, mặc định nghỉ) trở đi. Ngày 12/10 ban đầu báo không có nhân viên mới, sau đó người dùng cập nhật có 3 người (đã ghi ở bảng trên). Chưa có danh sách nhân viên mới của 9/10 và 10/10 (chờ admin); khi có phải bổ sung P22 cho ngày đó và A2 cho các ngày sau.
+Đã lập bảng 5/10 đến 20/10 (trừ Chủ nhật 11/10 và 18/10). Ngày 17/10 (Thứ Bảy) không tăng ca; 19/10 và 20/10 không có nhân viên mới, ghi theo mẫu ngày thường có tăng ca (cần xác nhận). Nhân viên mới: 9/10 Assembly 6 + Raw Cutting 2 (lấy theo P22 trên hệ thống, A2 từ 10/10), 10/10 chưa thấy có, 16/10 Assembly 1 (theo hệ thống). Đối chiếu với file xuất hệ thống ngày 20/10: A2 của nhóm 9/10 chưa được nhập từ 10/10; 10/10 nhóm 8/10 bị nhập Raw Cutting 4 thay vì Raw Cutting 1 + Machining 3; 19/10 nhóm 8/10 Machining nhập 1 thay vì 3.
 
 Nhân viên mới đã ghi nhận (chỉ số người theo khu vực):
 | Ngày vào làm | Khu vực | Số người |
@@ -141,3 +141,10 @@ Người dùng mới được bàn giao việc này (chưa quen cách hoạt đ�
 - Luôn có sheet đối chiếu giờ công với số giờ trong nguồn (phải "Khớp") và sheet Chi tiết mã hàng.
 - Điểm còn chờ xác nhận: UV Chủ nhật 11/10; cách ghi 1 dòng hay 2 dòng/ngày; bộ phận của Beam saw "Unassigned" 16/10; Beam saw và Veneer đã xác nhận là khu vực Raw Cutting (RC - PANEL) ngày 20/10; giờ dự kiến (thợ sơn thứ Bảy 17/10, cào cước 15:00-20:00 ngày 16/10); bắn cát ghi 7:00-15:00 để ra 8 giờ.
 - Trạng thái: đã lập bảng S32 từ 5/10 đến 19/10: 42 dòng, 1.761,93 giờ công, khớp nguồn.
+
+
+## Quy tắc nhập vào hệ thống (đối chiếu 20/10/2026)
+- Tên trong dropdown hệ thống: Process = Raw Cutting / Machining / Assembly / INLAY (không có "RC - PANEL"); Dept In Charge = MACHINING, RAW CUTTING, ASSEMBLY, HR/ HSE, FINISHING (có khoảng trắng cuối), TECHNICAL FINISHING, OTHERS (INVESTIGATE), ME, MAINTENANCE, QA/QC/TESTING, Prototype, SUBCON. File nhập liệu đã đổi sang các tên này.
+- P22 LUÔN charge HR/ HSE. A2 hiện charge HR/ HSE (Tiến nhập từ 21/9; Hùng trước đó ghi theo khu vực).
+- Lỗi đã gặp: nhập nhầm mã (P26 thành P20 hoặc P22), nhập trùng cả ngày (9/10, 13/10). Mỗi tuần cộng P26 và P20 để đối chiếu: tuần đủ 6 ngày có tăng ca P26 1.350, P20 282; tuần có Thứ Bảy không tăng ca P26 1.269, P20 273. Nếu tuần lệch phải tìm dòng sai.
+- Beam saw và Veneer thuộc Raw Cutting. Cách ghi S32 của người trước: hỗ trợ P1 ép nóng, dept OTHERS (INVESTIGATE); veneer/bảng màu/làm mẫu, dept TECHNICAL FINISHING; bắn cát, dept SUBCON (process Assembly); UV, dept FINISHING, process Raw Cutting.

@@ -20,7 +20,7 @@ for (tag,ar),dd in g.items():
     if n<12 and ds[-1]>=dt.date(2026,10,2): co.append((tag,ar,n,dd[ds[-1]],str(ds[-1])))
     elif n<12 and dt.date(2026,9,15)<=ds[-1]<dt.date(2026,10,2): stalled.append((tag.split('-')[-1],ar,n,str(ds[-1])))
 co.sort(key=lambda x:(x[1],x[0]))
-DAYS=[dt.datetime(2026,10,5),dt.datetime(2026,10,6),dt.datetime(2026,10,7),dt.datetime(2026,10,8),dt.datetime(2026,10,9),dt.datetime(2026,10,10),dt.datetime(2026,10,12),dt.datetime(2026,10,13),dt.datetime(2026,10,14),dt.datetime(2026,10,15),dt.datetime(2026,10,16),dt.datetime(2026,10,17)]
+DAYS=[dt.datetime(2026,10,5),dt.datetime(2026,10,6),dt.datetime(2026,10,7),dt.datetime(2026,10,8),dt.datetime(2026,10,9),dt.datetime(2026,10,10),dt.datetime(2026,10,12),dt.datetime(2026,10,13),dt.datetime(2026,10,14),dt.datetime(2026,10,15),dt.datetime(2026,10,16),dt.datetime(2026,10,17),dt.datetime(2026,10,19),dt.datetime(2026,10,20)]
 BASE=dt.datetime(2026,10,3)
 def wd(a,b):
     n=0;x=a
@@ -31,7 +31,7 @@ def wd(a,b):
 def kd(a,b):
     return -1 if b<a else wd(a,b)
 SAT_NO_OT={dt.datetime(2026,10,10),dt.datetime(2026,10,17)}
-HIRE={DAYS[0]:[('Assembly',6)],DAYS[1]:[('Assembly',7),('Raw Cutting Panel',4),('Machining',3)],DAYS[2]:[('Assembly',6),('Raw Cutting Panel',2)],DAYS[3]:[('Raw Cutting Panel',1),('Machining',3)],DAYS[4]:[],DAYS[5]:[],DAYS[6]:[('Assembly',2),('Raw Cutting Panel',1)],DAYS[7]:[('Assembly',2),('Raw Cutting Panel',4),('Machining',1)],DAYS[8]:[('Assembly',1)],DAYS[9]:[('Assembly',4)],DAYS[10]:[('Chưa rõ khu vực',1)],DAYS[11]:[]}
+HIRE={DAYS[0]:[('Assembly',6)],DAYS[1]:[('Assembly',7),('Raw Cutting Panel',4),('Machining',3)],DAYS[2]:[('Assembly',6),('Raw Cutting Panel',2)],DAYS[3]:[('Raw Cutting Panel',1),('Machining',3)],DAYS[4]:[('Assembly',6),('Raw Cutting Panel',2)],DAYS[5]:[],DAYS[6]:[('Assembly',2),('Raw Cutting Panel',1)],DAYS[7]:[('Assembly',2),('Raw Cutting Panel',4),('Machining',1)],DAYS[8]:[('Assembly',1)],DAYS[9]:[('Assembly',4)],DAYS[10]:[('Assembly',1)],DAYS[11]:[],DAYS[12]:[],DAYS[13]:[]}
 names={'P20':'Dailly Cleaning','P26':'Recorder/ Supporter','P22':'HR Training New Workers','A2':'Training'}
 T=lambda h,m:dt.time(h,m)
 def day_rows(D):
@@ -127,8 +127,8 @@ notes=['Quy ước: P22 ngày đầu (8:00-16:00); A2 các ngày sau (12 ngày l
 'Nhóm 18/9 Assembly: dòng A2 cuối là 02/10, không có 03/10. Nếu 03/10 bị bỏ sót thì số ngày A2 của nhóm này lớn hơn 1 ngày.',
 'Nhóm 19/9 Assembly (13 ngày) và 19/9 Machining (12 ngày) đã đủ A2 trước 05/10 nên không ghi. Nếu quy định là 13 ngày thì Machining 19/9 (8 người) còn 1 ngày.',
 'Người ghi "0" ở cột CT/TV vẫn tính vào HC (05/10: 1 người; 06/10: 3 người; 13/10: 3 người Raw Cutting Panel). Danh sách 07/10 không có cột CT/TV nên tính đủ 8 người; 08/10 có 4 người, đều NCU.',
-'Ngày 09/10 và 10/10 chưa có danh sách nhân viên mới (chờ admin): chưa ghi P22 cho 2 ngày này; khi có sẽ bổ sung P22 của ngày đó và A2 cho các ngày sau.',
-'Chủ nhật 11/10 không làm nên không tính vào số ngày A2. Ngày 12/10 có 3 nhân viên mới (Assembly 2, Raw Cutting Panel 1), A2 bắt đầu từ 13/10. Ngày 13/10 có 7 nhân viên mới (Assembly 2, Raw Cutting Panel 4, Machining 1), ngày 14/10 có 1 (Assembly), ngày 15/10 có 4 (Assembly), ngày 16/10 có 1 nhân viên mới nhưng chưa rõ khu vực (ghi tạm "Chưa rõ khu vực", cần cập nhật), ngày 17/10 chưa có danh sách nhân viên mới (người dùng sẽ báo sau). Thứ Bảy 17/10 mặc định không tăng ca (P26 và P20 Assembly 7:30-15:30), cần xác nhận. Tài xế xe nâng (Machining 12/10, nhóm IDL-Forklift) không tính theo yêu cầu.',
+'Ngày 09/10 có 8 nhân viên mới (Assembly 6, Raw Cutting Panel 2; lấy theo P22 đã nhập trên hệ thống), A2 bắt đầu từ 10/10. Ngày 10/10 chưa thấy có nhân viên mới (chờ xác nhận).',
+'Chủ nhật 11/10 không làm nên không tính vào số ngày A2. Ngày 12/10 có 3 nhân viên mới (Assembly 2, Raw Cutting Panel 1), A2 bắt đầu từ 13/10. Ngày 13/10 có 7 nhân viên mới (Assembly 2, Raw Cutting Panel 4, Machining 1), ngày 14/10 có 1 (Assembly), ngày 15/10 có 4 (Assembly), ngày 16/10 có 1 nhân viên mới (Assembly, theo dòng P22 đã nhập trên hệ thống), ngày 17/10, 19/10 và 20/10 không có nhân viên mới (người dùng báo). Thứ Bảy 17/10 không tăng ca (P26 và P20 Assembly 7:30-15:30). Thứ Hai 19/10 và Thứ Ba 20/10 ghi theo mẫu ngày thường có tăng ca đến 20:00 (cần xác nhận). Tài xế xe nâng (Machining 12/10, nhóm IDL-Forklift) không tính theo yêu cầu.',
 'Thứ Bảy 10/10 không tăng ca: P26 và P20 Assembly ghi 7:30-15:30 (sớm 30 phút so với ca ngày thường 7:30-16:00); 4 dòng P20 ngắn ghi 7:00-7:30 theo mặc định, chờ xác nhận.']
 for i,tx in enumerate(notes): st.cell(n0+i,1,tx).font=Font(name=F,italic=True)
 for col,w in zip('ABCDEFGHIJKLMNOP',[22,20,6,16,16,16,16,16,16,16,16,16,16,16,16,26]): st.column_dimensions[col].width=w
@@ -155,6 +155,6 @@ for hdate in DAYS:
 sc.cell(r+1,1,'Mỗi ngày trong lịch ghi A2 7:30-12:00, Notes "HC mới- 50% hiệu suất- 2 tuần-dd/mm" (dd/mm = ngày vào làm). Khi có nhóm mới, thêm một dòng.').font=Font(name=F,italic=True)
 sc.column_dimensions['A'].width=22;sc.column_dimensions['B'].width=20;sc.column_dimensions['C'].width=6
 for cc in range(4,17): sc.column_dimensions[L(cc)].width=11
-wb.save('Loss_time_05-10_den_17-10.xlsx')
+wb.save('Loss_time_05-10_den_20-10.xlsx')
 print('co',len(co),'stalled',stalled)
 for D in DAYS: print(D.date(),len(day_rows(D)))
