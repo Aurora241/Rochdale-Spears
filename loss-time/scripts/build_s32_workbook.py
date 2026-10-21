@@ -102,7 +102,7 @@ def sumcol(f,sheet,pred,col):
     return s
 D0=dt.datetime(2026,10,5)
 ref={
- 'File Beam saw':sumcol('LOST TIME BEMSAW 20.10.xlsx','data ',lambda r:isinstance(r[6],dt.datetime) and r[6]>=D0 and r[10]>=0,10),
+ 'File Beam saw':sumcol('LOST TIME BEMSAW 20.10new.xlsx','data ',lambda r:isinstance(r[6],dt.datetime) and r[6]>=D0 and r[10]>=0,10),
  'File UV (báo cáo ngày)':sumcol('lost time khu vực UV (1).xlsx','LOST TIME',lambda r:isinstance(r[1],dt.datetime) and r[1]>=D0,5),
  'File UV (phát sinh)':sumcol('lost time khu vực UV (1).xlsx','Sheet1',lambda r:isinstance(r[6],dt.datetime) and r[6]>=D0,10),
  'File Ép nóng':sumcol('FILE ÉP HÀNG SỬA ( KV ÉP NÓNG ) (1).xlsx','datta',lambda r:isinstance(r[6],dt.datetime) and r[6]>=D0,10),
@@ -141,12 +141,12 @@ for col,w in zip('ABCDE',[12,24,26,16,10]): cd.column_dimensions[col].width=w
 rv=wb.create_sheet('Ghi chú review')
 Lns=[('GHI CHÚ REVIEW - BẢNG S32 (LÀM RIÊNG)',True),
 ('1. Bảng này CHỈ chứa mã S32, tách hoàn toàn khỏi bảng P20/P26/P22/A2 (không lẫn mã khác). Khi bạn cập nhật, tôi giữ nguyên nguyên tắc này.',False),
-('2. Nguồn: 5 file trong gói zip (lấy bản mới nhất mỗi loại: Beam saw bản 20/10, UV bản (1), Ép nóng bản (1), Veneer bản 20/10) và 3 hình (thợ sơn tuần 42, cào cước 16/10, bắn cát 15/10). Chỉ lấy dòng từ 05/10 đến 20/10. UV (báo cáo ngày đến 11/10, phát sinh đến 13/10) và Ép nóng (đến 6/10) chưa có số liệu mới.',False),
-('3. Tất cả giờ công trong bảng khớp với số giờ trong nguồn (sheet "Đối chiếu nguồn"). Tổng giờ công xem sheet "Đối chiếu nguồn". Riêng dòng Beam saw 20/10 (18:15-18:13) nguồn ghi -0,1 giờ nên bảng ghi 0 giờ và không tính vào đối chiếu.',False),
+('2. Nguồn: 5 file trong gói zip (lấy bản mới nhất mỗi loại: Beam saw bản 20.10new, UV bản (1), Ép nóng bản (1), Veneer bản 20/10) và 3 hình (thợ sơn tuần 42, cào cước 16/10, bắn cát 15/10). Chỉ lấy dòng từ 05/10 đến 20/10. UV (báo cáo ngày đến 11/10, phát sinh đến 13/10) và Ép nóng (đến 6/10) chưa có số liệu mới.',False),
+('3. Tất cả giờ công trong bảng khớp với số giờ trong nguồn (sheet "Đối chiếu nguồn"). Tổng giờ công xem sheet "Đối chiếu nguồn".',False),
 ('4. UV báo cáo ngày: báo cáo ghi giờ = 8 giờ x HC làm việc + 4 giờ x HC tăng ca. Tôi tách mỗi ngày thành 2 dòng (ca thường 7:30-15:30; tăng ca 15:30-19:30) để ra đúng số giờ báo cáo. Tiền lệ trong file ghi 1 dòng/ngày (7:30-19:30), cần xác nhận cách ghi.',False),
 ('5. UV Chủ nhật 11/10: có 9 người làm 8 giờ (72 giờ). Cần xác nhận có nhập Chủ nhật không (tô cam).',False),
 ('6. UV: file báo cáo ngày chỉ đến 11/10; chưa có số liệu từ 12/10. UV phát sinh 12/10 có 23 mã hàng SLAT nhưng chỉ 2 dòng có giờ (HC 1, 9:30-20:00 và 7:30-15:00); danh sách mã ở sheet "Chi tiết mã hàng". Bộ phận ghi "QC" (báo cáo ghi "QC A HIẾU"), cần xác nhận.',False),
-('7. Beam saw: 14 dòng từ 08/10 đến 20/10. Dòng CZ567F09 ngày 20/10 ghi 18:15-18:13 (giờ kết thúc nhỏ hơn giờ bắt đầu), cần xác nhận giờ đúng (tô cam). 3 dòng ngày 19/10 (18:00-18:07) trên hệ thống đang nhập ngày 18/10, nguồn ghi ngày 19/10, cần kiểm tra lại. Khu vực ghi RC - PANEL (Raw Cutting, người dùng xác nhận 20/10). Bộ phận lấy từ cột Charge to: Machining CNC và Machining ghi "Machining"; "QA ..." ghi "QC"; 4 dòng ngày 16/10 và 20/10 là "Unassigned" (chưa phân công), cần xác định bộ phận (tô cam).',False),
+('7. Beam saw: 14 dòng từ 08/10 đến 20/10.  Dòng CZ567F09 ngày 20/10 đã được sửa trong file nguồn bản 20.10new thành 18:15-18:18. 3 dòng ngày 19/10 (18:00-18:07) trên hệ thống đang nhập ngày 18/10, nguồn ghi ngày 19/10, cần kiểm tra lại. Khu vực ghi RC - PANEL (Raw Cutting, người dùng xác nhận 20/10). Bộ phận lấy từ cột Charge to: Machining CNC và Machining ghi "Machining"; "QA ..." ghi "QC"; 4 dòng ngày 16/10 và 20/10 là "Unassigned" (chưa phân công), cần xác định bộ phận (tô cam).',False),
 ('8. Ép nóng: 3 nhóm (5/10 hỗ trợ P1 4 người 16 giờ; 5/10 ép lót 5 người 30 giờ; 6/10 ép chính 5 người 55 giờ). Mỗi nhóm có nhiều mã hàng cùng một ca nên ghi một dòng, mã hàng nối bằng "+" (xem sheet Chi tiết). Đừng nhân giờ cho từng mã. Giờ bắt đầu 6:30 hiếm, nên xác nhận.',False),
 ('9. Veneer (làm mẫu): 10/10 (2 người 9:00-10:30, 3 giờ, TF), 15/10 (1 người 8:00-8:20, ME) và 20/10 (code 191: 1 người 9:00-9:50, TF; walnut cắt ghép RH21-2184-492: 2 người 10:00-11:15, nguồn ghi Charge to "bs lại" nên bộ phận cần xác nhận, tô cam; code 014: 1 người 10:00-10:40, ME). Khu vực ghi RC - PANEL (Raw Cutting, người dùng xác nhận 20/10).',False),
 ('10. Thợ sơn tuần 42: 12 người, 7:30-19:30 từ 12/10 đến 16/10 (720 giờ), thứ Bảy 17/10 7:30-15:30 (96 giờ, có thể là giờ dự kiến). Cào cước 16/10: dòng 15:00-20:00 có thể là giờ dự kiến. Bắn cát 15/10: ghi 7:00-15:00 để đúng 8 giờ/người (báo cáo ghi 7:00-16:00).',False),

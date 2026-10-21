@@ -12,7 +12,7 @@ def add(date,src,item,qty,area,dept,lido,gc,fr,to,hc,flag='',items=None,chk=None
     dept=DM.get(dept,dept);area=AM.get(area,area)
     R.append(dict(date=date,src=src,item=item,qty=qty,area=area,dept=dept,lido=lido,gc=gc,fr=fr,to=to,hc=hc,flag=flag,items=items or []))
 # 1. Beam saw (bản 20/10 mới nhất)
-bs=[r for r in ld('LOST TIME BEMSAW 20.10.xlsx','data ') if isinstance(r[6],dt.datetime) and r[6]>=D0]
+bs=[r for r in ld('LOST TIME BEMSAW 20.10new.xlsx','data ') if isinstance(r[6],dt.datetime) and r[6]>=D0]
 assert len(bs)==14
 dm={'Machining CNC':'Machining','Machining':'Machining','Unassigned':'(chưa phân công)','QA do không test lú':'QC'}
 for r in bs:
