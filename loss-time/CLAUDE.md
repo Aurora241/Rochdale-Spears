@@ -74,7 +74,7 @@ LossTime Code, Notes, Process, Dept In Charge, From, To, Worker Qty. (Loss Date,
 - Số A2 các nhóm cuối tháng 9 trong file có thể ghi thiếu ngày.
 
 ## 9. Tình trạng đã lập (đến 17/10/2026)
-Đã lập bảng 5/10 đến 20/10 (trừ Chủ nhật 11/10 và 18/10). Ngày 17/10 (Thứ Bảy) không tăng ca; 19/10 và 20/10 ghi theo mẫu ngày thường có tăng ca (cần xác nhận). Nhân viên mới 19/10: Assembly 2, Machining 1; 20/10: Assembly 4 (2 người dưới Mr.Dũng-Inlay), Machining 2 (theo danh sách admin ngày 22/10). Chưa lập 21/10 và 22/10. Nhân viên mới: 9/10 Assembly 6 + Raw Cutting 2 (lấy theo P22 trên hệ thống, A2 từ 10/10), 10/10 chưa thấy có, 16/10 Assembly 1 (theo hệ thống). Đối chiếu với file xuất hệ thống ngày 20/10: A2 của nhóm 9/10 chưa được nhập từ 10/10; 10/10 nhóm 8/10 bị nhập Raw Cutting 4 thay vì Raw Cutting 1 + Machining 3; 19/10 nhóm 8/10 Machining nhập 1 thay vì 3.
+Đã lập bảng 5/10 đến 21/10 (trừ Chủ nhật 11/10 và 18/10). Ngày 17/10 (Thứ Bảy) không tăng ca; 19/10, 20/10 và 21/10 ghi theo mẫu ngày thường có tăng ca (cần xác nhận); 21/10 chưa có nhân viên mới (chờ báo). Nhân viên mới 19/10: Assembly 2, Machining 1; 20/10: Assembly 4 (2 người dưới Mr.Dũng-Inlay), Machining 2 (theo danh sách admin ngày 22/10). Chưa lập 22/10. Nhân viên mới: 9/10 Assembly 6 + Raw Cutting 2 (lấy theo P22 trên hệ thống, A2 từ 10/10), 10/10 chưa thấy có, 16/10 Assembly 1 (theo hệ thống). Đối chiếu với file xuất hệ thống ngày 20/10: A2 của nhóm 9/10 chưa được nhập từ 10/10; 10/10 nhóm 8/10 bị nhập Raw Cutting 4 thay vì Raw Cutting 1 + Machining 3; 19/10 nhóm 8/10 Machining nhập 1 thay vì 3.
 
 Nhân viên mới đã ghi nhận (chỉ số người theo khu vực):
 | Ngày vào làm | Khu vực | Số người |
