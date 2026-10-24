@@ -52,15 +52,16 @@ r=eprow(219);add(r[6],'Ép nóng',r[2],None,'RC - PANEL','P1','Hỗ trợ P1 ép
 r=eprow(222);add(r[6],'Ép nóng',r[2],None,'RC - PANEL','P1','Hỗ trợ P1 ép nóng - ép lót','Ép lót (2 mã hàng)',r[8],r[9],int(r[7]),'',grp(222,223))
 r=eprow(224);add(r[6],'Ép nóng',r[2],None,'RC - PANEL','P1','Hỗ trợ P1 ép nóng - ép chính','Ép chính (2 mã hàng)',r[8],r[9],int(r[7]),'',grp(224,225))
 # 5. Veneer hàng BS (bản 15/10)
-ve=ld('Lost time veneer 24.10.xlsx','tổng')
-v1,v2,v3,v4,v5,v6,v7,v8=[ve[i] for i in range(1802,1810)]
+ve=ld('Lost time veneer 24.10b.xlsx','tổng')
+v1,v2,v3,v4,v5,v6,v7,v8,v9=[ve[i] for i in range(1802,1811)]
 add(v1[11],'Veneer',None,None,'RC - PANEL','TF','Làm mẫu (veneer)','2 mã (code 516, code 231), 1 ca',v1[8],v1[9],int(v1[7]),'',[(v1[1],v1[3],v1[5]),(v2[1],v2[3],v2[5])])
 add(v3[11],'Veneer',None,None,'RC - PANEL','ME','Làm mẫu (veneer)','code 229',v3[8],v3[9],int(v3[7]),'',[(v3[1],v3[3],v3[5])])
 add(v4[11],'Veneer',None,None,'RC - PANEL','TF','Làm mẫu (veneer)','code 191',v4[8],v4[9],int(v4[7]),'',[(v4[1],v4[3],v4[5])])
 add(v5[11],'Veneer',None,None,'RC - PANEL','(cần xác nhận)','Veneer walnut cắt ghép (bs lại)','Nguồn ghi Charge to: "bs lại"',v5[8],v5[9],int(v5[7]),'E',[(v5[2],v5[3],v5[5])])
 add(v6[11],'Veneer',None,None,'RC - PANEL','ME','Làm mẫu (veneer)','code 014',v6[8],v6[9],int(v6[7]),'',[(v6[1],v6[3],v6[5])])
 add(v7[11],'Veneer',None,None,'RC - PANEL','ME','Soạn hàng veneer lỗi trả lại kho','code 239 (130 m2)',v7[8],v7[9],int(v7[7]),'',[(v7[1],v7[3],v7[5])])
-add(v8[11],'Veneer','RH12-4706-0423',v8[5],'RC - PANEL','ME','Sửa hàng hộc kéo (veneer)','Thứ Bảy 24/10 8:00-20:00 (có thể là giờ dự kiến)',v8[8],v8[9],int(v8[7]),'P')
+add(v8[11],'Veneer','RH12-4706-0423',v8[5],'RC - PANEL','ME','Sửa hàng hộc kéo (veneer)','Hàng hộc kéo, 4 người cả ngày',v8[8],v8[9],int(v8[7]),'')
+add(v9[11],'Veneer','RH12-4706-0423',v9[5],'RC - PANEL','ME','Sửa hàng hộc kéo (veneer)','Hàng hộc kéo, 2 người',v9[8],v9[9],int(v9[7]),'')
 # 5b. Hàng sửa khu vực MAC (Mr.Hiệp)
 mc=openpyxl.load_workbook(Z+'hang sua mac.b.xlsx',data_only=True)
 m2=[r for r in mc['Sheet2'].iter_rows(values_only=True) if isinstance(r[6],dt.datetime) and r[6]>=D0][0]

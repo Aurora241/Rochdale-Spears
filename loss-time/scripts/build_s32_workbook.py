@@ -106,7 +106,7 @@ ref={
  'File UV (báo cáo ngày)':sumcol('lost time khu vực UV (1).xlsx','LOST TIME',lambda r:isinstance(r[1],dt.datetime) and r[1]>=D0,5),
  'File UV (phát sinh)':sumcol('lost time khu vực UV (1).xlsx','Sheet1',lambda r:isinstance(r[6],dt.datetime) and r[6]>=D0,10),
  'File Ép nóng':sumcol('FILE ÉP HÀNG SỬA ( KV ÉP NÓNG ) (1).xlsx','datta',lambda r:isinstance(r[6],dt.datetime) and r[6]>=D0,10),
- 'File Veneer':sumcol('Lost time veneer 24.10.xlsx','tổng',lambda r:r[11] is not None and isinstance(r[11],dt.datetime) and r[11]>=D0,10),
+ 'File Veneer':sumcol('Lost time veneer 24.10b.xlsx','tổng',lambda r:r[11] is not None and isinstance(r[11],dt.datetime) and r[11]>=D0,10),
  'File sửa hàng MAC':2+2*(1+55/60),
  'Hình: thợ sơn':816,'Hình: cào cước':9,'Hình: bắn cát':32}
 dr=wb.create_sheet('Đối chiếu nguồn')
@@ -142,7 +142,7 @@ for col,w in zip('ABCDE',[12,24,26,16,10]): cd.column_dimensions[col].width=w
 rv=wb.create_sheet('Ghi chú review')
 Lns=[('GHI CHÚ REVIEW - BẢNG S32 (LÀM RIÊNG)',True),
 ('1. Bảng này CHỈ chứa mã S32, tách hoàn toàn khỏi bảng P20/P26/P22/A2 (không lẫn mã khác). Khi bạn cập nhật, tôi giữ nguyên nguyên tắc này.',False),
-('2. Nguồn: 5 file trong gói zip (lấy bản mới nhất mỗi loại: Beam saw bản 24/10, UV bản (1), Ép nóng bản (1), Veneer bản 24/10, file sửa hàng MAC Mr.Hiệp) và 3 hình (thợ sơn tuần 42, cào cước 16/10, bắn cát 15/10). Chỉ lấy dòng từ 05/10 đến 24/10. UV (báo cáo ngày đến 11/10, phát sinh đến 13/10) và Ép nóng (đến 6/10) chưa có số liệu mới.',False),
+('2. Nguồn: 5 file trong gói zip (lấy bản mới nhất mỗi loại: Beam saw bản 24/10, UV bản (1), Ép nóng bản (1), Veneer bản mới nhất 24/10, file sửa hàng MAC Mr.Hiệp) và 3 hình (thợ sơn tuần 42, cào cước 16/10, bắn cát 15/10). Chỉ lấy dòng từ 05/10 đến 24/10. UV (báo cáo ngày đến 11/10, phát sinh đến 13/10) và Ép nóng (đến 6/10) chưa có số liệu mới.',False),
 ('3. Tất cả giờ công trong bảng khớp với số giờ trong nguồn (sheet "Đối chiếu nguồn"). Tổng giờ công xem sheet "Đối chiếu nguồn".',False),
 ('4. UV báo cáo ngày: báo cáo ghi giờ = 8 giờ x HC làm việc + 4 giờ x HC tăng ca. Tôi tách mỗi ngày thành 2 dòng (ca thường 7:30-15:30; tăng ca 15:30-19:30) để ra đúng số giờ báo cáo. Tiền lệ trong file ghi 1 dòng/ngày (7:30-19:30), cần xác nhận cách ghi.',False),
 ('5. UV Chủ nhật 11/10: có 9 người làm 8 giờ (72 giờ). Cần xác nhận có nhập Chủ nhật không (tô cam).',False),
@@ -153,7 +153,7 @@ Lns=[('GHI CHÚ REVIEW - BẢNG S32 (LÀM RIÊNG)',True),
 ('10. Thợ sơn tuần 42: 12 người, 7:30-19:30 từ 12/10 đến 16/10 (720 giờ), thứ Bảy 17/10 7:30-15:30 (96 giờ, có thể là giờ dự kiến). Cào cước 16/10: dòng 15:00-20:00 có thể là giờ dự kiến. Bắn cát 15/10: ghi 7:00-15:00 để đúng 8 giờ/người (báo cáo ghi 7:00-16:00).',False),
 ('11. Tên bộ phận và khu vực đã đổi theo dropdown hệ thống (lấy từ file xuất 20/10): FINISHING, TECHNICAL FINISHING, OTHERS (INVESTIGATE) cho hỗ trợ P1, QA/QC/TESTING, SUBCON, MACHINING, ME; khu vực Raw Cutting và Assembly. Cách ghi này theo người nhập trước (Hùng, Tiến).',False),
 ('12. File sửa hàng MAC (Mr.Hiệp) là nguồn mới: 14/10 (AR1069F1233, chạy nhỏ lại mộng, 2 người, 9:00-10:00) và 23/10 (AR15-1016-892, khoan lại lỗ vít 11mm, 2 người, 9:32-11:20). Khu vực Machining, bộ phận ME (cột "Hỗ trợ sửa"). Dòng 23/10: cột tổng thời gian ghi 1:55 nhưng 9:32-11:20 là 1:48, bảng lấy theo giờ bắt đầu - kết thúc (3,6 giờ công) nên sheet Đối chiếu nguồn lệch 0,23 giờ (tô vàng).',False),
-('13. Veneer 24/10 (Thứ Bảy): soạn hàng veneer lỗi trả lại kho (2 người 8:00-9:30, 3 giờ, ME) và sửa hàng hộc kéo RH12-4706-0423 (4 người 8:00-20:00, 48 giờ, ME). Dòng 48 giờ có thể là giờ dự kiến (tô vàng).',False),
+('13. Veneer 23/10 và 24/10: sửa hàng hộc kéo RH12-4706-0423: 23/10 4 người 8:00-20:00 (48 giờ, ME; bản trước ghi nhầm ngày 24/10, bản mới đã đổi sang 23/10) và 24/10 2 người 8:00-15:00 (14 giờ, ME, thêm mới). Veneer 24/10 còn dòng soạn hàng veneer lỗi trả lại kho (2 người 8:00-9:30, 3 giờ, ME).',False),
 ('14. Beam saw 22/10: 7 dòng "HÀNG BẢNG MÀU" (W0114F08, W0276F03, W1981F1055, W2629F1222, W0164F01 x2, W2446F1200) chưa có giờ bắt đầu/kết thúc trong nguồn nên chưa đưa vào bảng (0 giờ). Cần hỏi giờ nếu muốn nhập. Hàng bảng màu theo tiền lệ ghi bộ phận TECHNICAL FINISHING.',False)]
 rv.column_dimensions['A'].width=150
 for i,(tx,b) in enumerate(Lns,1):

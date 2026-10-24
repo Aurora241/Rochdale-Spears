@@ -156,6 +156,6 @@ Người dùng mới được bàn giao việc này (chưa quen cách hoạt đ�
 - Tên bộ phận và khu vực trong bảng S32 đã đổi theo dropdown hệ thống (xem mục "Quy tắc nhập vào hệ thống").
 
 ## Cập nhật S32 ngày 24/10/2026
-- Bảng S32 hiện đến 24/10: `loss-time/outputs/Loss_time_S32_05-10_den_24-10.xlsx` (54 dòng, 1.826,33 giờ). Nguồn mới (gói update.zip): Beam saw bản (2) (thêm 22/10 và 24/10), Veneer bản (2) (thêm 2 dòng 24/10, trong đó 48 giờ sửa hàng hộc kéo có thể là giờ dự kiến), và file mới "hàng sửa khu vực MAC Mr.Hiệp" (14/10 và 23/10, khu vực Machining, bộ phận ME).
+- Bảng S32 hiện đến 24/10: `loss-time/outputs/Loss_time_S32_05-10_den_24-10.xlsx` (55 dòng, 1.840,33 giờ). Nguồn mới (gói update.zip): Beam saw bản (2) (thêm 22/10 và 24/10), Veneer bản (2) (thêm 2 dòng 24/10, sau đó bản Veneer mới nhất đổi dòng sửa hàng hộc kéo 48 giờ từ 24/10 sang 23/10 và thêm dòng 24/10 2 người 8:00-15:00, 14 giờ), và file mới "hàng sửa khu vực MAC Mr.Hiệp" (14/10 và 23/10, khu vực Machining, bộ phận ME).
 - Khi gửi nhiều phiên bản của cùng một file Beam saw/Veneer, dùng bản đầy đủ nhất (bản có nhiều dòng nhất và chứa mọi dòng của các bản cũ; đã kiểm tra bản cũ là tập con).
 - Chưa đưa vào bảng: 7 dòng Beam saw 22/10 "HÀNG BẢNG MÀU" không có giờ bắt đầu/kết thúc. Dòng MAC 23/10 ghi tổng 1:55 nhưng 9:32-11:20 là 1:48 (đối chiếu lệch 0,23 giờ). Beam saw "Unassigned" nay có 5 dòng (16/10, 20/10, 24/10).
