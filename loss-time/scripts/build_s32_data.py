@@ -27,14 +27,18 @@ for r in bs:
         flag='E';gc=(gc+'; ' if gc else '')+f'Nguồn ghi {fr_:%H:%M}-{to_:%H:%M} (giờ kết thúc nhỏ hơn giờ bắt đầu, -0.1 giờ)';to_=fr_
     add(r[6],'Beam saw',r[2],r[5],'RC - PANEL',dept,f'Beam saw - phát sinh (chi tiết {str(r[3]).strip()})',gc or f'STT {r[0]}',fr_,to_,int(r[7]),flag)
 # 2. UV hằng ngày (W41 từ 5/10): hàng làm việc 8h + OT 4h
-uv=[r for r in ld('lost time khu vực UV (1).xlsx','LOST TIME') if isinstance(r[1],dt.datetime) and r[1]>=D0]
-assert len(uv)==7
+uvraw=[r for r in ld('lost time UV 24.10.xlsx','LOST TIME') if isinstance(r[1],dt.datetime) and r[1]>=D0]
+uv=[];seen=set()
+for r in uvraw:
+    if r[1] in seen: assert any(tuple(x[:6])==tuple(r[:6]) for x in uv);continue
+    seen.add(r[1]);uv.append(r)
+print('UV báo cáo ngày:',len(uvraw),'dòng (trùng',len(uvraw)-len(uv),') ->',len(uv),'ngày')
 for r in uv:
     d=r[1];work=int(r[3] or 0);ot=int(r[4] or 0)
     if work: add(d,'UV hằng ngày',None,None,'RC - PANEL','Finishing','Không có bomtime chuyền UV','HC làm việc (ca thường)',T(7,30),T(15,30),work,'U' if d.weekday()==6 else '')
     if ot: add(d,'UV hằng ngày',None,None,'RC - PANEL','Finishing','Không có bomtime chuyền UV','HC tăng ca (OT 4 giờ)',T(15,30),T(19,30),ot,'')
 # 3. UV tổng hợp phát sinh (Sheet1 bản (1))
-s1=[r for r in ld('lost time khu vực UV (1).xlsx','Sheet1')[2:] if r[0] is not None]
+s1=[r for r in ld('lost time UV 24.10.xlsx','Sheet1')[2:] if r[0] is not None]
 g12=[r for r in s1 if r[6]==dt.datetime(2026,10,12)]
 items12=[(r[2],r[3],r[5]) for r in g12]
 hrs=[r for r in g12 if r[7] is not None]
