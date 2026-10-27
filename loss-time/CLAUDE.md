@@ -182,5 +182,6 @@ Người dùng mới được bàn giao việc này (chưa quen cách hoạt đ�
 - Bảng 25/10: 12 dòng, 122 giờ công (P20 16, P26 16, A2 90 = 20 người Assembly x 4,5).
 
 ## Cập nhật 27/10/2026
-- Nhân viên mới 23/10: Raw Cutting 1 (người ghi "0" ở cột CT/TV vẫn tính). Bảng 23/10 thêm P22 8 giờ, 24/10 thêm A2 4,5 giờ. Thứ Hai 26/10 không tăng ca (P20 38, P26 144 như Thứ Bảy); bảng 26/10: 339,5 giờ công. Từ 26/10, A2 của các nhóm Assembly vào làm trước 25/10 cộng thêm 1 ngày (Chủ nhật 25/10 đã tính); nhóm Machining/Raw Cutting không cộng. Đã kiểm tra lại độc lập số người A2 mỗi khu vực từ 15/10 đến 26/10, khớp bảng.
+- Nhân viên mới 23/10: Raw Cutting 1 (người ghi "0" ở cột CT/TV vẫn tính). Bảng 23/10 thêm P22 8 giờ, 24/10 thêm A2 4,5 giờ. Thứ Hai 26/10 không tăng ca: ngày thường hết ca 16:00, nên P26 và P20 Assembly ghi 7:30-16:00 (P20 39, P26 153), KHÔNG dùng 15:30 của Thứ Bảy/Chủ nhật (lần đầu mình ghi nhầm 15:30, người dùng sửa); bảng 26/10: 349,5 giờ công. Từ 26/10, A2 của các nhóm Assembly vào làm trước 25/10 cộng thêm 1 ngày (Chủ nhật 25/10 đã tính); nhóm Machining/Raw Cutting không cộng. Đã kiểm tra lại độc lập số người A2 mỗi khu vực từ 15/10 đến 26/10, khớp bảng.
 - Danh sách sửa/thêm mở rộng đến 26/10 (96 dòng nhập thêm gồm cả 24/10, 25/10, 26/10).
+- Quy tắc giờ khi không tăng ca: Thứ Hai-Thứ Sáu hết ca 16:00 (8,5 giờ); Thứ Bảy và Chủ nhật hết 15:30 (8 giờ). Bốn dòng P20 ngắn vẫn 7:00-7:30.
