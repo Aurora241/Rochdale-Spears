@@ -198,3 +198,7 @@ Người dùng mới được bàn giao việc này (chưa quen cách hoạt đ�
 ## Đối chiếu lần 3 (file xuất 27/10, 19/10-25/10)
 - Người dùng đã sửa gần hết: 19/10, 20/10, 22/10, 23/10 khớp bảng chuẩn; 21/10 còn lỗi nhập A2 nhóm 9/10 (Assembly 6 bị lặp, thiếu Raw Cutting 2); 24/10 thiếu P26 "Ghi nhận hàng giao kho" Machining, thiếu A2 nhóm 23/10 Raw Cutting, và 4 dòng Machining ghi nhầm bộ phận RAW CUTTING; 25/10 sai Worker Qty A2 nhóm 13/10 (4 thay vì 2), 15/10 (2 thay vì 4), 19/10 (1 thay vì 2).
 - S32 Raw Cutting vẫn còn 12 việc (UV 19-21/10, xóa dòng UV thừa 24/10, đổi ngày Beam saw, điền bộ phận). File: `outputs/Nhap_lieu_con_lai_theo_bo_phan_27-10.xlsx`. Lỗi lặp lại: nhầm Process/Dept giữa các khu vực, nhầm số người giữa các nhóm A2 cùng ngày, nhập trùng.
+
+## Phân tích A10 (27/10/2026)
+- File `outputs/Phan_tich_A10.xlsx` (scripts `analyze_a10_data.py`, `analyze_a10_report.py`, chạy trong thư mục có `sys.pkl`): 191 sự cố (186 dòng file + 5 dòng hệ thống 4-11/10), 1.402 giờ công ghi, 917 giờ sau khi loại 9 dòng bất thường (máy dừng cả ngày 00:00-23:59 và dòng trùng). CNC router chiếm 37% giờ công A10; CNCR01 (17 sự cố, 216 giờ công), CNCR03, CNCR14 là máy cần chú ý; băng chuyền Assembly ít lần nhưng giờ công lớn (11-12 người); 37% dòng chỉ ghi chung chung nên không rõ nguyên nhân; bảo trì tuần 43 báo 9 sự cố (11,95 giờ máy dừng) mà hệ thống chưa nhập.
+- A10 rất nhạy cảm: chỉ nhập số công nhân thật đứng máy do tổ trưởng xác nhận, không ước lượng.
