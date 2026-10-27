@@ -18,7 +18,7 @@ for r in rows('Nhập 23-10'):
     if r[0]=='P22': adds.append((D(23),*r,'Thiếu P22 nhân viên mới ngày 23/10 (Raw Cutting 1 người)'))
 for r in rows('Nhập 24-10'): adds.append((D(24),*r,'Thứ Bảy 24/10 chưa nhập (không tăng ca)'))
 for r in rows('Nhập 25-10'): adds.append((D(25),*r,'Chủ nhật 25/10 chỉ Assembly làm, không tăng ca'))
-for r in rows('Nhập 26-10'): adds.append((D(26),*r,'Thứ Hai 26/10 không tăng ca (hết ca 16:00)'))
+for r in rows('Nhập 26-10'): adds.append((D(26),*r,'Thứ Hai 26/10 (ngày thường, có tăng ca)'))
 wb=openpyxl.Workbook();ws=wb.active;ws.title='1. Nhập thêm'
 ws['A1']='DÒNG CẦN NHẬP THÊM (không gồm S32). Thứ tự cột nhập đúng như form: LossTime Code | Notes | Process | Dept In Charge | From | To | Worker Qty';ws['A1'].font=Font(name=F,bold=True,size=13)
 H=['Ngày (Loss Date)','LossTime Code','Notes','Process','Dept In Charge','From','To','Worker Qty','(Tham khảo) Giờ công','(Tham khảo) Lý do']
