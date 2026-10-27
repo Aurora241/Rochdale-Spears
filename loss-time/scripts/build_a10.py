@@ -16,6 +16,7 @@ rep=[
 (24,'Machining','CNCR11','Hogmag','Lỗi hút chân không',T(7,40),T(7,53),0.22,12),
 (25,'RC','VC14','Máy hút chân không','Lỗi hút chân không',T(8,25),T(10,9),1.73,12),
 ]
+HIST={'CNCR02': 'Chưa từng có trong A10. Họ CNCR: 2 người (30 lần), 3 người (14 lần)', '': 'Chưa từng có. Dòng UV khác: 5/6 nhám UV 2 người, 26/6 UVDR01 4 người, 26/6 BECY06 4 người', 'EDB01': 'Chưa từng có. Họ EDB: 2 người (3 lần), 3 người (1 lần)', 'EDB05': '1 lần: 25/6 13:50-14:30, 3 người', 'CNCR09': 'Chưa từng có. Máy chép hình tròn 60-0041 từng ghi 2 người (khác loại)', 'VEC04': '4 lần (30/12, 20/1, 23/1, 30/7): đều 2 người', 'CNCR20': '3 dòng: 1/6 hai lần 2 người; 4/4 cả ngày 4 người (dòng bất thường)', 'CNCR11': '1 lần: 9/4 Hogmag piton hút bụi, 2 người', 'VC14': 'Chưa từng có. Máy hút chân không CNCR14 từng ghi 3 người'}
 rows=[]
 for d,ar,mc,mn,fail,fr,to,h,n in rep:
     notes='-'.join(x for x in (mc,mn,fail) if x)
@@ -31,17 +32,19 @@ for a in ('Machining','Raw Cutting'):
     ws['A2'].font=Font(name=B.F,italic=True,color='C00000')
 F=B.F;bd=B.bd
 ws=wb.create_sheet('Đối chiếu báo cáo bảo trì')
-H=['Ngày','Khu vực (báo cáo)','Mã máy','Tên máy','Hiện tượng','Từ','Đến','Giờ dừng báo cáo','Giờ dừng tính lại','Chênh lệch','Cột số cuối của báo cáo (chưa rõ nghĩa, KHÔNG dùng làm số công nhân)','Giờ công (chưa tính, cần số công nhân thật)']
+H=['Ngày','Khu vực (báo cáo)','Mã máy','Tên máy','Hiện tượng','Từ','Đến','Giờ dừng báo cáo','Giờ dừng tính lại','Chênh lệch','Cột số cuối của báo cáo (chưa rõ nghĩa, KHÔNG dùng làm số công nhân)','Giờ công (chưa tính, cần số công nhân thật)','Lịch sử A10 cùng máy (CHỈ THAM KHẢO, không phải số nhập)']
 for i,h in enumerate(H,1):
     c=ws.cell(2,i,h);c.fill=B.red;c.font=B.hf;c.alignment=B.ctr;c.border=bd
 ws['A1']='ĐỐI CHIẾU VỚI BÁO CÁO BẢO TRÌ (Mr.Phong - Mr.Khiêm, Maint) 19/10-25/10';ws['A1'].font=Font(name=F,bold=True,size=13)
 for k,(d,ar,mc,mn,fail,fr,to,h,n) in enumerate(rep):
     r=3+k
     for c,v in enumerate([D(d),ar,mc,mn,fail,fr,to,h,f'=(G{r}-F{r})*24',f'=ROUND(I{r}-H{r},2)',n,None],1):
-        x=ws.cell(r,c,v);x.font=Font(name=F);x.border=bd;x.alignment=Alignment(horizontal='left' if c in(4,5) else 'center',vertical='center',wrap_text=c in(4,5))
+        x=ws.cell(r,c,v);x.font=Font(name=F);x.border=bd;x.alignment=Alignment(horizontal='left' if c in(4,5,13) else 'center',vertical='center',wrap_text=c in(4,5,13))
+    hx=ws.cell(r,13,HIST[mc]);hx.font=Font(name=F,color='7F7F7F');hx.border=bd;hx.alignment=Alignment(horizontal='left',vertical='center',wrap_text=True)
     ws.cell(r,1).number_format='dd/mm/yyyy';ws.cell(r,6).number_format=ws.cell(r,7).number_format='hh:mm';ws.cell(r,9).number_format='0.00';ws.cell(r,12).number_format='0.0'
 e=2+len(rep)
 ws.cell(e+1,8,'Tổng giờ dừng máy').font=Font(name=F,bold=True);ws.cell(e+1,9,f'=SUM(I3:I{e})').font=Font(name=F,bold=True);ws.cell(e+1,9).number_format='0.00'
 ws.cell(e+3,1,'Ghi chú: 20/10 máy bơm sơn chuyền UV không có mã máy trong báo cáo. 25/10 là Chủ nhật, báo cáo ghi sự cố máy VC14 khu vực RC (cần xác nhận Raw Cutting có làm hôm đó không). EDB05 ngày 20/10 dừng đến 21:00 (sau giờ tăng ca 20:00).').font=Font(name=F,italic=True)
+ws.column_dimensions['M'].width=60
 for col,w in zip('ABCDEFGHIJKL',[12,12,10,28,30,8,8,12,12,10,14,18]): ws.column_dimensions[col].width=w
 wb.save('Nhap_lieu_A10_19-10_den_25-10_NHAP.xlsx')
