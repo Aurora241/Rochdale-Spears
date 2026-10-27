@@ -1,6 +1,6 @@
 import openpyxl,datetime as dt
 from openpyxl.styles import Font,PatternFill,Alignment,Border,Side
-src=openpyxl.load_workbook('Nhap_lieu_05-10_den_24-10.xlsx',data_only=True)
+src=openpyxl.load_workbook('Nhap_lieu_05-10_den_26-10.xlsx',data_only=True)
 F='Times New Roman';t=Side(style='thin');bd=Border(left=t,right=t,top=t,bottom=t)
 red=PatternFill('solid',fgColor='C00000');hf=Font(name=F,bold=True,color='FFFFFF');ctr=Alignment(horizontal='center',vertical='center',wrap_text=True)
 yel=PatternFill('solid',fgColor='FFF2CC');org=PatternFill('solid',fgColor='FCE4D6');grn=PatternFill('solid',fgColor='E2EFDA');gry=PatternFill('solid',fgColor='D9D9D9')
@@ -14,7 +14,11 @@ for r in rows('Nhập 20-10'):
     if r[0]=='A2' and r[1].endswith('19/10'): adds.append((D(20),*r,'Thiếu A2 ngày 1 của nhóm 19/10'))
 for r in rows('Nhập 21-10'):
     if r[0]=='P22' and r[2] in('Machining','Raw Cutting'): adds.append((D(21),*r,'Thiếu P22 nhân viên mới ngày 21/10'))
+for r in rows('Nhập 23-10'):
+    if r[0]=='P22': adds.append((D(23),*r,'Thiếu P22 nhân viên mới ngày 23/10 (Raw Cutting 1 người)'))
 for r in rows('Nhập 24-10'): adds.append((D(24),*r,'Thứ Bảy 24/10 chưa nhập (không tăng ca)'))
+for r in rows('Nhập 25-10'): adds.append((D(25),*r,'Chủ nhật 25/10 chỉ Assembly làm, không tăng ca'))
+for r in rows('Nhập 26-10'): adds.append((D(26),*r,'Thứ Hai 26/10 không tăng ca'))
 wb=openpyxl.Workbook();ws=wb.active;ws.title='1. Nhập thêm'
 ws['A1']='DÒNG CẦN NHẬP THÊM (không gồm S32). Thứ tự cột nhập đúng như form: LossTime Code | Notes | Process | Dept In Charge | From | To | Worker Qty';ws['A1'].font=Font(name=F,bold=True,size=13)
 H=['Ngày (Loss Date)','LossTime Code','Notes','Process','Dept In Charge','From','To','Worker Qty','(Tham khảo) Giờ công','(Tham khảo) Lý do']
@@ -26,12 +30,12 @@ for k,(d,code,notes,pr,dp,fr,to,hc,why) in enumerate(adds):
     for c,v in enumerate([d,code,notes,pr,dp,fr,to,hc,f'=(G{r}-F{r})*24*H{r}',why],1):
         x=ws.cell(r,c,v);x.font=Font(name=F,color='000000' if c<=8 else '7F7F7F');x.border=bd;x.alignment=Alignment(horizontal='left' if c in(3,10) else 'center',vertical='center',wrap_text=c in(3,10))
     ws.cell(r,1).number_format='dd/mm/yyyy';ws.cell(r,6).number_format=ws.cell(r,7).number_format='hh:mm';ws.cell(r,9).number_format='0.0'
-    fill={19:yel,20:yel,21:yel}.get(d.day)
+    fill={19:yel,20:yel,21:yel,23:yel}.get(d.day)
     if fill:
         for c in range(1,9): ws.cell(r,c).fill=fill
 e=3+len(adds)
 ws.cell(e+1,8,'Tổng').font=Font(name=F,bold=True);ws.cell(e+1,9,f'=SUM(I4:I{e})').font=Font(name=F,bold=True);ws.cell(e+1,9).number_format='#,##0.0'
-ws.cell(e+3,1,'Vàng = 19/10, 20/10, 21/10 (bổ sung). Trắng = toàn bộ ngày Thứ Bảy 24/10. Chủ nhật 25/10 chưa lập (chờ xác nhận khu vực nào làm việc).').font=Font(name=F,italic=True)
+ws.cell(e+3,1,'Vàng = dòng bổ sung cho ngày đã nhập một phần (19/10, 20/10, 21/10, 23/10). Trắng = cả ngày chưa nhập: Thứ Bảy 24/10, Chủ nhật 25/10 (chỉ Assembly), Thứ Hai 26/10 (không tăng ca).').font=Font(name=F,italic=True)
 for col,w in zip('ABCDEFGHIJ',[14,12,46,14,16,8,8,10,12,40]): ws.column_dimensions[col].width=w
 ws.freeze_panes='A4';ws.auto_filter.ref=f'A3:J{e}'
 # 2 sửa
@@ -104,8 +108,11 @@ s5=wb.create_sheet('5. Tổng kết')
 s5['A1']='GIỜ CÔNG P20+P26+P22+A2 THEO NGÀY: HỆ THỐNG HIỆN TẠI VÀ SAU KHI SỬA';s5['A1'].font=Font(name=F,bold=True,size=13)
 for i,h in enumerate(['Ngày','Hệ thống hiện tại','Thêm (sheet 1)','Sửa (sheet 2)','Xóa (sheet 3)','Sau khi sửa','Bảng chuẩn của mình','Khớp'],1):
     c=s5.cell(3,i,h);c.fill=red;c.font=hf;c.alignment=ctr;c.border=bd
-cur={19:524,20:545,21:509.5,22:509,23:470,24:0}
-std={19:548,20:558.5,21:514.5,22:509,23:470,24:344}
+cur={19:524,20:545,21:509.5,22:509,23:470,24:0,25:0,26:0}
+lt=openpyxl.load_workbook('Loss_time_05-10_den_26-10.xlsx',data_only=True)
+def tot(d):
+    ws=lt[f'Loss time {d:02d}-10'];return round(sum(r[16] or 0 for r in ws.iter_rows(min_row=3,values_only=True) if r[7] in('P20','P26','P22','A2')),2)
+std={d:tot(d) for d in cur}
 sfix={21:8}; sdel={21:27}
 n=len(adds)
 for k,d in enumerate(sorted(cur)):
@@ -117,7 +124,7 @@ for k,d in enumerate(sorted(cur)):
     for c in range(1,9):
         x=s5.cell(r,c);x.font=Font(name=F);x.border=bd;x.alignment=Alignment(horizontal='center')
         if c in(2,3,4,5,6,7): x.number_format='#,##0.0;-#,##0.0;-'
-s5.cell(12,1,'Cột "Hệ thống hiện tại" lấy từ file xuất 26/10 (chỉ dòng do bạn tạo, mã P20, P26, P22, A2). "Bảng chuẩn" là bảng loss time mình lập. 25/10 (Chủ nhật) chưa có.').font=Font(name=F,italic=True)
+s5.cell(14,1,'Cột "Hệ thống hiện tại" lấy từ file xuất 26/10 (chỉ dòng do bạn tạo, mã P20, P26, P22, A2). "Bảng chuẩn" là bảng loss time mình lập. 25/10 (Chủ nhật) chưa có.').font=Font(name=F,italic=True)
 for col,w in zip('ABCDEFGH',[14,18,16,14,14,14,20,10]): s5.column_dimensions[col].width=w
 wb.move_sheet('5. Tổng kết',offset=-4)
-wb.save('Danh_sach_sua_them_19-10_den_24-10.xlsx');print('adds',len(adds))
+wb.save('Danh_sach_sua_them_19-10_den_26-10.xlsx');print('adds',len(adds))
