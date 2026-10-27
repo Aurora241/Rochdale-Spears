@@ -24,7 +24,7 @@ tot_lab=df.labor.sum();tot_c=c.labor.sum();tot_h=df.hours.sum();tot_hc=c.hours.s
 # 1 tổng quan
 ws=wb.create_sheet('1. Tổng quan');title(ws,'PHÂN TÍCH MÃ A10 - MACHINE/TOOLING FAILURE','Nguồn: file Total loss time (29/12/2025-3/10/2026, 186 dòng) + hệ thống (4/10-11/10, 5 dòng). Không gồm báo cáo bảo trì 19-25/10 (chưa có số công nhân).')
 rows=[('Số sự cố ghi nhận',len(df),'186 dòng file + 5 dòng hệ thống'),
-('Dòng bất thường (cả ngày 00:00-23:59 hoặc trùng)',int((~df.clean).sum()),'8 dòng cả ngày, 2 dòng trùng. Đã tách ra phân tích riêng'),
+('Dòng bất thường (cả ngày 00:00-23:59 hoặc trùng)',int((~df.clean).sum()),'8 dòng máy dừng cả ngày (1 dòng trong đó cũng là dòng trùng) và 1 dòng trùng khác. Đã tách ra phân tích riêng'),
 ('Giờ công A10 theo số ghi',round(tot_lab,1),'Gồm cả dòng bất thường'),
 ('Giờ công A10 sau khi loại dòng bất thường',round(tot_c,1),f'Dòng bất thường chiếm {100*(1-tot_c/tot_lab):.0f}% số giờ công ghi'),
 ('Giờ máy dừng (sau khi loại bất thường)',round(tot_hc,1),f'Trung bình {tot_hc/43:.1f} giờ/tuần (43 tuần)'),
@@ -35,11 +35,11 @@ rows=[('Số sự cố ghi nhận',len(df),'186 dòng file + 5 dòng hệ thốn
 ]
 r=table(ws,4,['Chỉ số','Giá trị','Ghi chú'],rows,[48,22,80])
 r+=2
-find=['1. A10 nhỏ về tổng nhưng bị nhiễu: hai nhóm dòng "máy hỏng cả ngày" (CNCR14 tháng 9, CNCR20 ngày 4/4, CNCR01 ngày 4/4) chiếm 479 giờ công, gần 1/3 tổng A10 ghi nhận. Nếu giữ nguyên thì tháng 9 bị thổi phồng (394 giờ thay vì 53 giờ).',
+find=['1. A10 nhỏ về tổng nhưng bị nhiễu: hai nhóm dòng "máy hỏng cả ngày" (CNCR14 tháng 9, CNCR20 ngày 4/4, CNCR01 ngày 4/4) chiếm khoảng 485 giờ công, 35% tổng A10 ghi nhận. Nếu giữ nguyên thì tháng 9 bị thổi phồng (394 giờ thay vì 53 giờ).',
 '2. Nhóm máy CNC router (CNCR) là trọng tâm: 52 sự cố, 343 giờ công (sau khi loại bất thường), 37% giờ công A10. Ba máy cần chú ý là CNCR01, CNCR03, CNCR14.',
 '3. CNCR01 hỏng nhiều và kéo dài: 17 sự cố, 216 giờ công, trong đó đợt tháng 1 liên tục 6 ngày (19-24/1) mỗi ngày 12-18 giờ, nguyên nhân thiên về điện - điều khiển và dao.',
 '4. Băng chuyền Assembly (line 4, line 1) ít sự cố nhưng giờ công rất lớn vì 11-12 người đứng chờ mỗi lần (ví dụ 7/8: 7 giờ x 11 người = 77 giờ công).',
-'5. 38% dòng chỉ ghi chung chung ("máy hư", "không hoạt động") nên không biết nguyên nhân gốc. Nên yêu cầu bảo trì ghi hiện tượng cụ thể.',
+'5. 37% dòng chỉ ghi chung chung ("máy hư", "không hoạt động") nên không biết nguyên nhân gốc. Nên yêu cầu bảo trì ghi hiện tượng cụ thể.',
 '6. Chỉ có 8 dòng không có mã máy, và vài mã ghi lệch (CNCR014 và CNCR14). Cần chuẩn hóa mã máy khi nhập.',
 '7. Dữ liệu nhập A10 đang trễ: tuần 43 bảo trì báo 9 sự cố (11,95 giờ máy dừng) trong khi hệ thống chưa có dòng A10 nào sau 11/10. Tuần 43 cao hơn trung bình 8,9 giờ/tuần.']
 ws.cell(r,1,'PHÁT HIỆN CHÍNH').font=Font(name=F,bold=True,size=12)
@@ -60,7 +60,7 @@ names={'CNCR':'CNC router','VES':'Máy may veneer','VEC':'Máy cắt veneer','WB
 rows=[(i,names.get(i,''),int(r_.machines),int(r_.n),round(r_.h,1),round(r_.lab,1),round(r_.lab_all,1)) for i,r_ in fam.iterrows()]
 table(ws,3,['Họ máy','Tên (suy ra từ mô tả)','Số máy','Số sự cố','Giờ máy dừng','Giờ công','Giờ công kể cả bất thường'],rows,[12,24,10,10,14,12,22])
 # 4 nguyên nhân
-ws=wb.create_sheet('4. Nguyên nhân');title(ws,'PHÂN LOẠI HIỆN TƯỢNG HỎNG (theo từ khóa trong cột Lí do)','Phân loại gần đúng bằng từ khóa. 38% dòng chỉ ghi chung chung nên chưa biết nguyên nhân.')
+ws=wb.create_sheet('4. Nguyên nhân');title(ws,'PHÂN LOẠI HIỆN TƯỢNG HỎNG (theo từ khóa trong cột Lí do)','Phân loại gần đúng bằng từ khóa. 37% dòng chỉ ghi chung chung nên chưa biết nguyên nhân.')
 cg=df.groupby('cat').agg(n=('labor','size'),h=('hours_clean','sum'),lab=('labor_clean','sum')).sort_values('lab',ascending=False)
 rows=[(i,int(r_.n),round(r_.n/len(df),3),round(r_.h,1),round(r_.lab,1)) for i,r_ in cg.iterrows()]
 table(ws,4,['Nhóm hiện tượng','Số sự cố','Tỉ lệ số sự cố','Giờ máy dừng','Giờ công'],rows,[40,10,14,14,12],{3:'0.0%'})
