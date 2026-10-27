@@ -29,7 +29,7 @@ def sheet(wb,title,rows):
         for x in dr:
             if prev is not None and x[1]!=prev: pass
             prev=x[1]
-            row=[x[0],x[1],x[2],x[3],x[4],x[5],x[6],x[7],f'=(G{r}-F{r})*24*H{r}',None]
+            row=[x[0],x[1],x[2],x[3],x[4],x[5],x[6],x[7],f'=IF(H{r}="","",(G{r}-F{r})*24*H{r})',None]
             for c,v in enumerate(row,1):
                 cc=ws.cell(r,c,v);cc.font=Font(name=F);cc.border=bd;cc.alignment=Alignment(horizontal='left' if c==3 else 'center',vertical='center',wrap_text=c==3)
                 if x[1] in('P22','A2'): cc.fill=grp
