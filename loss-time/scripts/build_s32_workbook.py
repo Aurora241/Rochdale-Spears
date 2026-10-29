@@ -5,7 +5,7 @@ R=pickle.load(open('s32all.pkl','rb'))
 F='Times New Roman';t=Side(style='thin');bd=Border(left=t,right=t,top=t,bottom=t)
 red=PatternFill('solid',fgColor='C00000');hf=Font(name=F,bold=True,color='FFFFFF');ctr=Alignment(horizontal='center',vertical='center',wrap_text=True)
 yel=PatternFill('solid',fgColor='FFF2CC');org=PatternFill('solid',fgColor='FCE4D6')
-SRC={'Ép nóng':'File Ép nóng','UV hằng ngày':'File UV (báo cáo ngày)','Beam saw':'File Beam saw','Veneer':'File Veneer','MAC':'File sửa hàng MAC','UV phát sinh':'File UV (phát sinh)','Thợ sơn (hình)':'Hình: thợ sơn','Cào cước (hình)':'Hình: cào cước','Bắn cát (hình)':'Hình: bắn cát'}
+SRC={'Ép nóng':'File Ép nóng','UV hằng ngày':'File UV (báo cáo ngày)','Beam saw':'File Beam saw','Veneer':'File Veneer','MAC':'File sửa hàng MAC','UV phát sinh':'File UV (phát sinh)','Thợ sơn (hình)':'Hình: thợ sơn','Cào cước (hình)':'Hình: cào cước','Bắn cát (hình)':'Hình: bắn cát','INLAY (hình)':'Hình: INLAY (RESIN)'}
 def pn(x):
     its=x['items']
     if its:
@@ -40,7 +40,7 @@ for col,w in zip('ABCDEFGHIJKLMNOPQR',[7,9,28,10,8,10,16,8,26,16,42,36,9,9,10,8,
 ws.freeze_panes='A3';ws.auto_filter.ref=f'A2:R{e}'
 M=f"'S32 5-10 đến 29-10'"
 # ---- theo ngày
-dd=sorted({x['date'] for x in R});srcs=['Ép nóng','UV hằng ngày','Beam saw','Veneer','MAC','UV phát sinh','Thợ sơn (hình)','Cào cước (hình)','Bắn cát (hình)']
+dd=sorted({x['date'] for x in R});srcs=['Ép nóng','UV hằng ngày','Beam saw','Veneer','MAC','UV phát sinh','Thợ sơn (hình)','Cào cước (hình)','Bắn cát (hình)','INLAY (hình)']
 sd=wb.create_sheet('Theo ngày')
 sd['A1']='GIỜ CÔNG S32 THEO NGÀY VÀ THEO NGUỒN';sd['A1'].font=Font(name=F,bold=True,size=14)
 hh=['Ngày','Thứ','Tuần']+[SRC[s] for s in srcs]+['Tổng ngày']
@@ -112,7 +112,7 @@ ref={
  'File Ép nóng':sumcol('Ep nong 29.10.xlsx','datta',lambda r:isinstance(r[6],dt.datetime) and r[6]>=D0,10),
  'File Veneer':sumcol('Lost time veneer 24.10b.xlsx','tổng',lambda r:r[11] is not None and isinstance(r[11],dt.datetime) and r[11]>=D0,10),
  'File sửa hàng MAC':2+2*(1+55/60)+12,
- 'Hình: thợ sơn':816+912,'Hình: cào cước':9+46,'Hình: bắn cát':32+24}
+ 'Hình: thợ sơn':816+912,'Hình: cào cước':9+46,'Hình: bắn cát':32+24,'Hình: INLAY (RESIN)':84}
 dr=wb.create_sheet('Đối chiếu nguồn')
 dr['A1']='ĐỐI CHIẾU GIỜ CÔNG VỚI SỐ GIỜ TRONG FILE/HÌNH NGUỒN';dr['A1'].font=Font(name=F,bold=True,size=14)
 for i,h in enumerate(['Nguồn','Số giờ trong file/hình nguồn','Giờ công trong bảng S32','Chênh lệch','Kết quả'],1):
@@ -159,6 +159,7 @@ Lns=[('GHI CHÚ REVIEW - BẢNG S32 (LÀM RIÊNG)',True),
 ('12. File sửa hàng MAC (Mr.Hiệp): 14/10 (AR1069F1233, 2 người, 9:00-10:00), 23/10 (AR15-1016-892, 2 người, 9:32-11:20) và dòng mới 28/10 (RH12-3791, chạy lại tay nắm, 19/20 bộ, 3 người). Khu vực Machining, bộ phận ME. Dòng 23/10: tổng ghi 1:55 nhưng 9:32-11:20 là 1:48, bảng lấy giờ bắt đầu - kết thúc (3,6 giờ công). Dòng 28/10: nguồn ghi 15:30-20:00 nhưng tổng 4:00 (có thể đã trừ nghỉ 30 phút), bảng ghi 15:30-19:30 để đúng 4 giờ = 12 giờ công (tô vàng). Sheet Đối chiếu nguồn dùng giờ tổng của nguồn nên dòng 23/10 lệch 0,23 giờ.',False),
 ('13. Veneer 23/10 và 24/10: sửa hàng hộc kéo RH12-4706-0423: 23/10 4 người 8:00-20:00 (48 giờ, ME; bản trước ghi nhầm ngày 24/10, bản mới đã đổi sang 23/10) và 24/10 2 người 8:00-15:00 (14 giờ, ME, thêm mới). Veneer 24/10 còn dòng soạn hàng veneer lỗi trả lại kho (2 người 8:00-9:30, 3 giờ, ME).',False),
 ('14. Beam saw 22/10: 7 dòng "HÀNG BẢNG MÀU" (W0114F08, W0276F03, W1981F1055, W2629F1222, W0164F01 x2, W2446F1200) chưa có giờ bắt đầu/kết thúc trong nguồn nên chưa đưa vào bảng (0 giờ). Cần hỏi giờ nếu muốn nhập. Hàng bảng màu theo tiền lệ ghi bộ phận TECHNICAL FINISHING.',False)]
+('15. INLAY (RESIN) 26/10: ảnh báo cáo có 4 dòng, mỗi dòng 5 người, 25 + 20 + 25 + 14 = 84 giờ công (AT654 RS-17-3256; AT655 RS-17-3257 hai dòng; AT384 RS-17-3080), không ghi ngày giờ. Người làm báo cáo cho biết làm lúc rảnh nên giờ nào cũng được; ngày 26/10 theo người dùng. Bảng chọn giờ bắt đầu 7:30 cho cả 4 dòng và giờ kết thúc để ra đúng số giờ công: 12:30, 11:30, 12:30, 10:18 (5 giờ, 4 giờ, 5 giờ, 2,8 giờ mỗi người). Giờ đó là giờ chọn (tô vàng), số giờ công và số người là của báo cáo. Bộ phận ghi OTHERS (INVESTIGATE) theo dòng inlay cũ, cần xác nhận. Các dòng chồng giờ nhau vì mỗi dòng 5 người khác hoặc làm xen kẽ.',False),
 rv.column_dimensions['A'].width=150
 for i,(tx,b) in enumerate(Lns,1):
     c=rv.cell(i,1,tx);c.font=Font(name=F,bold=b,size=12 if b else 11);c.alignment=Alignment(wrap_text=True,vertical='top')

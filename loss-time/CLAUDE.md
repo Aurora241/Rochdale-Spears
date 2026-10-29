@@ -156,7 +156,7 @@ Người dùng mới được bàn giao việc này (chưa quen cách hoạt đ�
 - Tên bộ phận và khu vực trong bảng S32 đã đổi theo dropdown hệ thống (xem mục "Quy tắc nhập vào hệ thống").
 
 ## Cập nhật S32 ngày 24/10/2026
-- Bảng S32 hiện đến 24/10: `loss-time/outputs/Loss_time_S32_05-10_den_29-10.xlsx` (97 dòng, 4.343,63 giờ). Nguồn mới (gói update.zip): Beam saw bản (2) (thêm 22/10 và 24/10), Veneer bản (2) (thêm 2 dòng 24/10, sau đó bản Veneer mới nhất đổi dòng sửa hàng hộc kéo 48 giờ từ 24/10 sang 23/10 và thêm dòng 24/10 2 người 8:00-15:00, 14 giờ), và file mới "hàng sửa khu vực MAC Mr.Hiệp" (14/10 và 23/10, khu vực Machining, bộ phận ME).
+- Bảng S32 hiện đến 24/10: `loss-time/outputs/Loss_time_S32_05-10_den_29-10.xlsx` (101 dòng, 4.427,63 giờ). Nguồn mới (gói update.zip): Beam saw bản (2) (thêm 22/10 và 24/10), Veneer bản (2) (thêm 2 dòng 24/10, sau đó bản Veneer mới nhất đổi dòng sửa hàng hộc kéo 48 giờ từ 24/10 sang 23/10 và thêm dòng 24/10 2 người 8:00-15:00, 14 giờ), và file mới "hàng sửa khu vực MAC Mr.Hiệp" (14/10 và 23/10, khu vực Machining, bộ phận ME).
 - Khi gửi nhiều phiên bản của cùng một file Beam saw/Veneer, dùng bản đầy đủ nhất (bản có nhiều dòng nhất và chứa mọi dòng của các bản cũ; đã kiểm tra bản cũ là tập con).
 - Chưa đưa vào bảng: 7 dòng Beam saw 22/10 "HÀNG BẢNG MÀU" không có giờ bắt đầu/kết thúc. Dòng MAC 23/10 ghi tổng 1:55 nhưng 9:32-11:20 là 1:48 (đối chiếu lệch 0,23 giờ). Beam saw "Unassigned" nay có 5 dòng (16/10, 20/10, 24/10).
 
@@ -165,7 +165,7 @@ Người dùng mới được bàn giao việc này (chưa quen cách hoạt đ�
 
 ## Cập nhật S32 ngày 26/10/2026 (3 báo cáo Assembly tuần 43)
 - Thợ sơn lòng trong tủ tuần 43: 12 người, 912 giờ (T2-T6 12 giờ, T7 8 giờ, CN 8 giờ: báo cáo tuần này có CN làm). Cào cước: 20/10 RH109F1 2 người (báo cáo ghi 7:30-20:00 nhưng 24 giờ, bảng ghi 7:30-19:30), 24/10 RH133F1 16 giờ, 25/10 (CN) RH133F1 6 giờ; tổng 46. Bắn cát 24/10: 3 người 8:00-16:00, 4 mã hàng (732 chân), 24 giờ.
-- Bảng S32 hiện đến 25/10: `loss-time/outputs/Loss_time_S32_05-10_den_29-10.xlsx` (97 dòng, 4.343,63 giờ). Các dòng Chủ nhật 25/10 (thợ sơn 96 giờ, cào cước 6 giờ) tô cam, chờ xác nhận có nhập CN không. Bắn cát tổng 32 (15/10) + 24 (24/10) = 56 giờ, vẫn chưa khớp con số 70 giờ bên kia báo.
+- Bảng S32 hiện đến 25/10: `loss-time/outputs/Loss_time_S32_05-10_den_29-10.xlsx` (101 dòng, 4.427,63 giờ). Các dòng Chủ nhật 25/10 (thợ sơn 96 giờ, cào cước 6 giờ) tô cam, chờ xác nhận có nhập CN không. Bắn cát tổng 32 (15/10) + 24 (24/10) = 56 giờ, vẫn chưa khớp con số 70 giờ bên kia báo.
 
 ## Chủ nhật và phản hồi đồng nghiệp ngày 26/10/2026
 - Chủ nhật KHÔNG phải lúc nào cũng nghỉ. Trong file có 10 Chủ nhật có đủ 20 dòng P20/P26 (và A2) của mọi khu vực (17/5, 24/5, 7/6, 14/6, 21/6, 28/6, 19/7, 2/8, 23/8, riêng 27/9 chỉ có A2 Assembly 3 người). Đồng nghiệp xác nhận 26/10: "lắp ráp làm cả chủ nhật". Tuần 43 báo cáo Assembly ghi CN 25/10 làm (thợ sơn 8 giờ, cào cước 3 giờ); 11/10 có sự cố A10 Assembly (12 người) vào Chủ nhật. Khi lập bảng một Chủ nhật phải HỎI người dùng khu vực nào có làm việc, không mặc định nghỉ.
@@ -212,4 +212,4 @@ Người dùng mới được bàn giao việc này (chưa quen cách hoạt đ�
 
 ## Cập nhật S32 ngày 29/10/2026 (update_1.zip)
 - Gói mới: Beam saw bản (2) (30 dòng, thêm 24/10, 28/10, 29/10: 3,3 giờ công), Ép nóng (thêm dòng 26/10 AT655F535, 4 người 7:00-7:30, Charge to Unassigned, 2 giờ công), hàng sửa MAC (thêm 28/10 RH12-3791 chạy lại tay nắm, 3 người, 15:30-20:00 nhưng tổng 4:00 nên bảng ghi 15:30-19:30 = 12 giờ công). Bảng S32 hiện đến 29/10: 97 dòng, 4.343,63 giờ công; mọi nguồn khớp trừ dòng MAC 23/10 lệch 0,23 giờ.
-- Bảng INLAY (RESIN) gửi qua ảnh (4 dòng AT654, AT655 x2, AT384, 5 người mỗi dòng, 25 + 20 + 25 + 14 = 84 giờ công) KHÔNG có ngày và giờ: chưa nhập, phải hỏi ngày và giờ bắt đầu/kết thúc. Process INLAY có trong hệ thống; dòng "Hỗ trợ hàng inlay p1" cũ dùng bộ phận OTHERS (INVESTIGATE).
+- Bảng INLAY (RESIN) gửi qua ảnh (4 dòng AT654, AT655 x2, AT384, 5 người mỗi dòng, 25 + 20 + 25 + 14 = 84 giờ công) không có ngày giờ. Người làm báo cáo (Dũng Quốc) cho biết làm lúc rảnh nên giờ nào cũng được; người dùng chốt ngày 26/10. Đã nhập vào S32: Process INLAY, bộ phận OTHERS (INVESTIGATE) theo dòng inlay cũ, giờ bắt đầu 7:30 và kết thúc 12:30, 11:30, 12:30, 10:18 để ra đúng 5, 4, 5, 2,8 giờ mỗi người (giờ là giờ chọn, số giờ công và số người là của báo cáo; tô vàng). Bảng S32 hiện 101 dòng, 4.427,63 giờ công.

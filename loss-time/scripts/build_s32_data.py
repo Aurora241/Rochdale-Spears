@@ -89,7 +89,11 @@ add(dt.datetime(2026,10,20),'Cào cước (hình)','RH109F1',None,'Assembly','Ma
 add(dt.datetime(2026,10,24),'Cào cước (hình)','RH133F1',None,'Assembly','Machining','Cào cước hỗ trợ MAC','Line 8 - hỗ trợ MAC',T(8,0),T(16,0),2,'')
 add(dt.datetime(2026,10,25),'Cào cước (hình)','RH133F1',None,'Assembly','Machining','Cào cước hỗ trợ MAC','Line 8 - hỗ trợ MAC (Chủ nhật)',T(8,0),T(11,0),2,'U')
 add(dt.datetime(2026,10,24),'Bắn cát (hình)','RH1792+RH2250+RH3023+RH772',None,'Assembly','Subcon','Bắn cát hỗ trợ Subcon Đại Xuyên (chân)','Line bắn cát - hỗ trợ Supcon Đại Xuyên (4 mã hàng, 1 ca)',T(8,0),T(16,0),3,'',[('RH1792','CHÂN',274),('RH2250','CHÂN',356),('RH3023','CHÂN',2),('RH772','CHÂN',100)])
-order=['Ép nóng','UV hằng ngày','Beam saw','Veneer','MAC','UV phát sinh','Thợ sơn (hình)','Cào cước (hình)','Bắn cát (hình)']
+# 7. INLAY (RESIN) 26/10 - ảnh, không có giờ: giờ bắt đầu/kết thúc chọn để khớp số giờ công trong ảnh (người làm báo cáo: làm lúc rảnh, giờ nào cũng được)
+inl=[('AT654','RS-17-3256','25 full set',25,T(12,30),'7:30-12:30 (5 giờ/người)'),('AT655','RS-17-3257','25 sét đuôi + hồng 3 đầu',25,T(11,30),'7:30-11:30 (4 giờ/người)'),('AT655','RS-17-3257','25 full sét',25,T(12,30),'7:30-12:30 (5 giờ/người)'),('AT384','RS-17-3080','25 set hồng + 8 sét hộc kéo cửa',25,T(10,18),'7:30-10:18 (2,8 giờ/người)')]
+for it,rs,note,q,to,_ in inl:
+    add(dt.datetime(2026,10,26),'INLAY (hình)',it,q,'INLAY','OTHERS (INVESTIGATE)','Hỗ trợ khu vực INLAY (RESIN) - '+note,f'Code {rs}. Giờ bắt đầu/kết thúc là giờ chọn để đủ số giờ công trong báo cáo (người làm báo cáo: làm lúc rảnh, giờ nào cũng được)',T(7,30),to,5,'P')
+order=['Ép nóng','UV hằng ngày','Beam saw','Veneer','MAC','UV phát sinh','Thợ sơn (hình)','Cào cước (hình)','Bắn cát (hình)','INLAY (hình)']
 R.sort(key=lambda x:(x['date'],order.index(x['src']),x['fr']))
 print('số dòng',len(R))
 import pickle;pickle.dump(R,open('s32all.pkl','wb'))
