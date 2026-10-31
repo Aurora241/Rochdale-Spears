@@ -217,3 +217,7 @@ Người dùng mới được bàn giao việc này (chưa quen cách hoạt đ�
 ## Cập nhật 30/10/2026
 - Nhân viên mới 28/10: Assembly 2, Machining 2, Raw Cutting 2 (1 Raw Cutting Wood + 1 Raw Cutting Panel; cả hai là Process Raw Cutting nên ghi chung một dòng Raw Cutting 2 người); P22 48 giờ, A2 từ 29/10. Đã lập 28/10 (468,5 giờ), 29/10 (429,5 giờ), 30/10 (425 giờ), mẫu ngày thường có tăng ca; 29/10 và 30/10 chưa có nhân viên mới (chờ báo). Số người A2 mỗi khu vực đã kiểm tra độc lập, khớp. File theo bộ phận: `outputs/Nhap_lieu_theo_bo_phan_28-10_den_30-10.xlsx` (thay các file theo bộ phận cũ cho 28-29/10).
 - Khi một nhóm có cả Raw Cutting Wood và Raw Cutting Panel thì gộp thành một dòng Raw Cutting (Process hệ thống chỉ có Raw Cutting).
+
+## Báo cáo bảo trì: ý nghĩa các cột (31/10/2026)
+- Báo cáo máy dừng của bảo trì có các cột: STT, Submit Date, Department (RC, Machining, PANEL), Machine Code, Machine, Problem, Status ("Machine stop"), P.I.C (Mr.Phong - Mr.Khiêm - Maint), Time/Date Breakdown, Time/Date Repaired, **Total Time stop line (h)**, **Time run**, Note (Done). Cột "Time run" (12, riêng CNCR02 là 24) là số GIỜ MÁY CHẠY MỖI NGÀY, KHÔNG phải số công nhân. Báo cáo bảo trì không có số công nhân đứng máy: A10 vẫn phải lấy số công nhân thật từ tổ trưởng.
+- Cách tính Total time stop line khi máy hỏng qua nhiều ngày: chỉ cộng giờ nằm trong khung chạy máy 7:30-20:00 (12,5 giờ/ngày). Ví dụ WBS20 hỏng 15:15 ngày 28/10 đến sửa xong 15:15 ngày 30/10 = 4,75 + 12,5 + 7,75 = 25,0 giờ. Nhập hệ thống thành mỗi ngày một dòng.
