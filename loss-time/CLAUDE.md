@@ -156,7 +156,7 @@ Người dùng mới được bàn giao việc này (chưa quen cách hoạt đ�
 - Tên bộ phận và khu vực trong bảng S32 đã đổi theo dropdown hệ thống (xem mục "Quy tắc nhập vào hệ thống").
 
 ## Cập nhật S32 ngày 24/10/2026
-- Bảng S32 hiện đến 24/10: `loss-time/outputs/Loss_time_S32_05-10_den_29-10.xlsx` (101 dòng, 4.427,63 giờ). Nguồn mới (gói update.zip): Beam saw bản (2) (thêm 22/10 và 24/10), Veneer bản (2) (thêm 2 dòng 24/10, sau đó bản Veneer mới nhất đổi dòng sửa hàng hộc kéo 48 giờ từ 24/10 sang 23/10 và thêm dòng 24/10 2 người 8:00-15:00, 14 giờ), và file mới "hàng sửa khu vực MAC Mr.Hiệp" (14/10 và 23/10, khu vực Machining, bộ phận ME).
+- Bảng S32 hiện đến 24/10: `loss-time/outputs/Loss_time_S32_05-10_den_30-10.xlsx` (101 dòng, 4.427,63 giờ). Nguồn mới (gói update.zip): Beam saw bản (2) (thêm 22/10 và 24/10), Veneer bản (2) (thêm 2 dòng 24/10, sau đó bản Veneer mới nhất đổi dòng sửa hàng hộc kéo 48 giờ từ 24/10 sang 23/10 và thêm dòng 24/10 2 người 8:00-15:00, 14 giờ), và file mới "hàng sửa khu vực MAC Mr.Hiệp" (14/10 và 23/10, khu vực Machining, bộ phận ME).
 - Khi gửi nhiều phiên bản của cùng một file Beam saw/Veneer, dùng bản đầy đủ nhất (bản có nhiều dòng nhất và chứa mọi dòng của các bản cũ; đã kiểm tra bản cũ là tập con).
 - Chưa đưa vào bảng: 7 dòng Beam saw 22/10 "HÀNG BẢNG MÀU" không có giờ bắt đầu/kết thúc. Dòng MAC 23/10 ghi tổng 1:55 nhưng 9:32-11:20 là 1:48 (đối chiếu lệch 0,23 giờ). Beam saw "Unassigned" nay có 5 dòng (16/10, 20/10, 24/10).
 
@@ -165,7 +165,7 @@ Người dùng mới được bàn giao việc này (chưa quen cách hoạt đ�
 
 ## Cập nhật S32 ngày 26/10/2026 (3 báo cáo Assembly tuần 43)
 - Thợ sơn lòng trong tủ tuần 43: 12 người, 912 giờ (T2-T6 12 giờ, T7 8 giờ, CN 8 giờ: báo cáo tuần này có CN làm). Cào cước: 20/10 RH109F1 2 người (báo cáo ghi 7:30-20:00 nhưng 24 giờ, bảng ghi 7:30-19:30), 24/10 RH133F1 16 giờ, 25/10 (CN) RH133F1 6 giờ; tổng 46. Bắn cát 24/10: 3 người 8:00-16:00, 4 mã hàng (732 chân), 24 giờ.
-- Bảng S32 hiện đến 25/10: `loss-time/outputs/Loss_time_S32_05-10_den_29-10.xlsx` (101 dòng, 4.427,63 giờ). Các dòng Chủ nhật 25/10 (thợ sơn 96 giờ, cào cước 6 giờ) tô cam, chờ xác nhận có nhập CN không. Bắn cát tổng 32 (15/10) + 24 (24/10) = 56 giờ, vẫn chưa khớp con số 70 giờ bên kia báo.
+- Bảng S32 hiện đến 25/10: `loss-time/outputs/Loss_time_S32_05-10_den_30-10.xlsx` (101 dòng, 4.427,63 giờ). Các dòng Chủ nhật 25/10 (thợ sơn 96 giờ, cào cước 6 giờ) tô cam, chờ xác nhận có nhập CN không. Bắn cát tổng 32 (15/10) + 24 (24/10) = 56 giờ, vẫn chưa khớp con số 70 giờ bên kia báo.
 
 ## Chủ nhật và phản hồi đồng nghiệp ngày 26/10/2026
 - Chủ nhật KHÔNG phải lúc nào cũng nghỉ. Trong file có 10 Chủ nhật có đủ 20 dòng P20/P26 (và A2) của mọi khu vực (17/5, 24/5, 7/6, 14/6, 21/6, 28/6, 19/7, 2/8, 23/8, riêng 27/9 chỉ có A2 Assembly 3 người). Đồng nghiệp xác nhận 26/10: "lắp ráp làm cả chủ nhật". Tuần 43 báo cáo Assembly ghi CN 25/10 làm (thợ sơn 8 giờ, cào cước 3 giờ); 11/10 có sự cố A10 Assembly (12 người) vào Chủ nhật. Khi lập bảng một Chủ nhật phải HỎI người dùng khu vực nào có làm việc, không mặc định nghỉ.
@@ -221,3 +221,8 @@ Người dùng mới được bàn giao việc này (chưa quen cách hoạt đ�
 ## Báo cáo bảo trì: ý nghĩa các cột (31/10/2026)
 - Báo cáo máy dừng của bảo trì có các cột: STT, Submit Date, Department (RC, Machining, PANEL), Machine Code, Machine, Problem, Status ("Machine stop"), P.I.C (Mr.Phong - Mr.Khiêm - Maint), Time/Date Breakdown, Time/Date Repaired, **Total Time stop line (h)**, **Time run**, Note (Done). Cột "Time run" (12, riêng CNCR02 là 24) là số GIỜ MÁY CHẠY MỖI NGÀY, KHÔNG phải số công nhân. Báo cáo bảo trì không có số công nhân đứng máy: A10 vẫn phải lấy số công nhân thật từ tổ trưởng.
 - Cách tính Total time stop line khi máy hỏng qua nhiều ngày: chỉ cộng giờ nằm trong khung chạy máy 7:30-20:00 (12,5 giờ/ngày). Ví dụ WBS20 hỏng 15:15 ngày 28/10 đến sửa xong 15:15 ngày 30/10 = 4,75 + 12,5 + 7,75 = 25,0 giờ. Nhập hệ thống thành mỗi ngày một dòng.
+
+## Cập nhật S32 ngày 31/10/2026
+- Nguồn mới: Beam saw bản mới (thêm 3 dòng hàng bảng màu 30/10, 0,9 giờ công, TECHNICAL FINISHING), Veneer bản 26.10.29 (thêm 4 dòng 29/10: code 038, 482+006, 318 làm mẫu TF và code 239 lựa hàng đổi kho ME, 39 giờ công), và file "hàng Lost Time RC .WOOD" (hàng làm lại do bong tróc sơn Resin phải bắn cát: 29/10 và 30/10, 4 người, nguồn ghi 96 giờ nên bảng ghi 7:30-19:30 mỗi ngày; bộ phận "làm lại" cần xác nhận). 3 dòng bảng màu 31/10-1/11 (nguồn ghi 12 giờ, 7:30-10:00) chưa nhập vì ngày chưa xong và giờ không khớp.
+- Bảng S32 hiện đến 30/10: 110 dòng, 4.563,53 giờ công. Báo cáo bảo trì dùng quy ước 12 giờ/ngày (96 giờ = 4 người x 12 x 2 ngày) trong khi khung chạy máy là 7:30-20:00 (12,5 giờ); khi nguồn ghi tổng giờ thì ưu tiên tổng giờ của nguồn và điều chỉnh giờ kết thúc (tô vàng).
+- INLAY (RESIN) đã nhập ngày 26/10 theo cách người làm báo cáo cho phép chọn giờ.

@@ -12,8 +12,8 @@ def add(date,src,item,qty,area,dept,lido,gc,fr,to,hc,flag='',items=None,chk=None
     dept=DM.get(dept,dept);area=AM.get(area,area)
     R.append(dict(date=date,src=src,item=item,qty=qty,area=area,dept=dept,lido=lido,gc=gc,fr=fr,to=to,hc=hc,flag=flag,items=items or []))
 # 1. Beam saw (bản 20/10 mới nhất)
-bs=[r for r in ld('LOST TIME BEMSAW 29.10.xlsx','data ') if isinstance(r[6],dt.datetime) and r[6]>=D0]
-assert len(bs)==30
+bs=[r for r in ld('LOST TIME BEMSAW 31.10.xlsx','data ') if isinstance(r[6],dt.datetime) and r[6]>=D0]
+assert len(bs)==33
 notime=[r for r in bs if r[8] is None];bs=[r for r in bs if r[8] is not None]
 print('Beam saw dòng không có giờ:',[(r[6].strftime('%d/%m'),r[2],r[3],r[5]) for r in notime])
 dm={'HÀNG BẢNG MÀU':'TF','Technical':'TF','Final machining':'Machining','FINISHING':'Finishing','Machining CNC':'Machining','Machining':'Machining','Unassigned':'(chưa phân công)','QA do không test lú':'QC'}
@@ -57,8 +57,8 @@ r=eprow(222);add(r[6],'Ép nóng',r[2],None,'RC - PANEL','P1','Hỗ trợ P1 ép
 r=eprow(224);add(r[6],'Ép nóng',r[2],None,'RC - PANEL','P1','Hỗ trợ P1 ép nóng - ép chính','Ép chính (2 mã hàng)',r[8],r[9],int(r[7]),'',grp(224,225))
 r=eprow(226);add(r[6],'Ép nóng',r[2],r[5],'RC - PANEL','(chưa phân công)',f'Ép hàng sửa (chi tiết {r[3]})','Charge to: Unassigned (file Ép nóng)',r[8],r[9],int(r[7]),'U')
 # 5. Veneer hàng BS (bản 15/10)
-ve=ld('Lost time veneer 24.10b.xlsx','tổng')
-v1,v2,v3,v4,v5,v6,v7,v8,v9=[ve[i] for i in range(1802,1811)]
+ve=ld('Lost time veneer 31.10.xlsx','tổng')
+v1,v2,v3,v4,v5,v6,v7,v8,v9,v10,v11,v12,v13=[ve[i] for i in range(1802,1815)]
 add(v1[11],'Veneer',None,None,'RC - PANEL','TF','Làm mẫu (veneer)','2 mã (code 516, code 231), 1 ca',v1[8],v1[9],int(v1[7]),'',[(v1[1],v1[3],v1[5]),(v2[1],v2[3],v2[5])])
 add(v3[11],'Veneer',None,None,'RC - PANEL','ME','Làm mẫu (veneer)','code 229',v3[8],v3[9],int(v3[7]),'',[(v3[1],v3[3],v3[5])])
 add(v4[11],'Veneer',None,None,'RC - PANEL','TF','Làm mẫu (veneer)','code 191',v4[8],v4[9],int(v4[7]),'',[(v4[1],v4[3],v4[5])])
@@ -75,6 +75,16 @@ add(m2[6],'MAC',m2[1],None,'Machining','ME','Hỗ trợ sửa hàng MAC - chạy
 add(m3[6],'MAC',m3[1],None,'Machining','ME','Hỗ trợ sửa hàng MAC - khoan lại lỗ vít 11mm',f'Chi tiết {m3[2]}, 65 bộ. Nguồn ghi tổng 1:55 nhưng 9:32-11:20 là 1:48',m3[7],m3[8],int(m3[11]),'P',[(m3[1],m3[2],65)])
 m4=[r for r in mc['Sheet4'].iter_rows(values_only=True) if isinstance(r[6],dt.datetime) and r[6]>=D0][0]
 add(m4[6],'MAC',m4[1],None,'Machining','ME','Hỗ trợ sửa hàng MAC - chạy lại tay nắm','Chi tiết 19/20 bộ. Nguồn ghi 15:30-20:00 nhưng tổng 4:00 (có thể đã trừ nghỉ 30 phút), bảng ghi 15:30-19:30',T(15,30),T(19,30),int(m4[11]),'P',[(m4[1],m4[2],'19/20 bộ')])
+for v,nt in ((v10,'code 038'),(v11,'code 482+006'),(v12,'code 318')):
+    add(v[11],'Veneer',None,None,'RC - PANEL','TF','Làm mẫu (veneer)',nt,v[8],v[9],int(v[7]),'',[(v[1],v[3],v[5])])
+add(v13[11],'Veneer',None,None,'RC - PANEL','ME','Lựa hàng đổi kho (veneer)','code 239 (102 m2)',v13[8],v13[9],int(v13[7]),'',[(v13[1],v13[2],v13[5])])
+# 5c. Hàng làm lại RC WOOD (file hàng Lost Time RC WOOD)
+rw=openpyxl.load_workbook(Z+'hang lam lai RC WOOD 31.10.xlsx',data_only=True)['Sheet3']
+w3=[r for r in rw.iter_rows(values_only=True) if isinstance(r[6],dt.datetime) and r[6]>=D0]
+w=w3[0]
+for dd in (29,30):
+    add(dt.datetime(2026,10,dd),'Làm lại RC WOOD',w[1],25,'Raw Cutting','(cần xác nhận)','Làm lại (bắn cát) hàng bong tróc sơn bề mặt Resin','A5-S2 hông thẳng, 25 set. Nguồn ghi 7:30-20:00 và tổng 96 giờ (4 người x 12 giờ x 2 ngày), bảng ghi 7:30-19:30 mỗi ngày để đúng 96 giờ',T(7,30),T(19,30),int(w[11]),'P',[(w[1],w[2],25)])
+print('Làm lại RC WOOD chưa nhập (ngày 31/10-1/11, chưa rõ giờ):',[(r[1],r[2],r[9]) for r in w3[1:]])
 # 6. Ba hình (Assembly)
 for d in range(12,17): add(dt.datetime(2026,10,d),'Thợ sơn (hình)',None,None,'Assembly','Finishing','Không có bomtime sơn lòng trong','Thợ sơn lòng trong tủ - hỗ trợ Fin',T(7,30),T(19,30),12)
 add(dt.datetime(2026,10,17),'Thợ sơn (hình)',None,None,'Assembly','Finishing','Không có bomtime sơn lòng trong','Thợ sơn lòng trong tủ - hỗ trợ Fin (thứ Bảy)',T(7,30),T(15,30),12,'P')
@@ -93,7 +103,7 @@ add(dt.datetime(2026,10,24),'Bắn cát (hình)','RH1792+RH2250+RH3023+RH772',No
 inl=[('AT654','RS-17-3256','25 full set',25,T(12,30),'7:30-12:30 (5 giờ/người)'),('AT655','RS-17-3257','25 sét đuôi + hồng 3 đầu',25,T(11,30),'7:30-11:30 (4 giờ/người)'),('AT655','RS-17-3257','25 full sét',25,T(12,30),'7:30-12:30 (5 giờ/người)'),('AT384','RS-17-3080','25 set hồng + 8 sét hộc kéo cửa',25,T(10,18),'7:30-10:18 (2,8 giờ/người)')]
 for it,rs,note,q,to,_ in inl:
     add(dt.datetime(2026,10,26),'INLAY (hình)',it,q,'INLAY','OTHERS (INVESTIGATE)','Hỗ trợ khu vực INLAY (RESIN) - '+note,f'Code {rs}. Giờ bắt đầu/kết thúc là giờ chọn để đủ số giờ công trong báo cáo (người làm báo cáo: làm lúc rảnh, giờ nào cũng được)',T(7,30),to,5,'P')
-order=['Ép nóng','UV hằng ngày','Beam saw','Veneer','MAC','UV phát sinh','Thợ sơn (hình)','Cào cước (hình)','Bắn cát (hình)','INLAY (hình)']
+order=['Ép nóng','UV hằng ngày','Beam saw','Veneer','MAC','UV phát sinh','Thợ sơn (hình)','Cào cước (hình)','Bắn cát (hình)','INLAY (hình)','Làm lại RC WOOD']
 R.sort(key=lambda x:(x['date'],order.index(x['src']),x['fr']))
 print('số dòng',len(R))
 import pickle;pickle.dump(R,open('s32all.pkl','wb'))
