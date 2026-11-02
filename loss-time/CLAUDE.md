@@ -156,7 +156,7 @@ Người dùng mới được bàn giao việc này (chưa quen cách hoạt đ�
 - Tên bộ phận và khu vực trong bảng S32 đã đổi theo dropdown hệ thống (xem mục "Quy tắc nhập vào hệ thống").
 
 ## Cập nhật S32 ngày 24/10/2026
-- Bảng S32 hiện đến 24/10: `loss-time/outputs/Loss_time_S32_05-10_den_30-10.xlsx` (101 dòng, 4.427,63 giờ). Nguồn mới (gói update.zip): Beam saw bản (2) (thêm 22/10 và 24/10), Veneer bản (2) (thêm 2 dòng 24/10, sau đó bản Veneer mới nhất đổi dòng sửa hàng hộc kéo 48 giờ từ 24/10 sang 23/10 và thêm dòng 24/10 2 người 8:00-15:00, 14 giờ), và file mới "hàng sửa khu vực MAC Mr.Hiệp" (14/10 và 23/10, khu vực Machining, bộ phận ME).
+- Bảng S32 hiện đến 24/10: `loss-time/outputs/Loss_time_S32_05-10_den_01-11.xlsx` (101 dòng, 4.427,63 giờ). Nguồn mới (gói update.zip): Beam saw bản (2) (thêm 22/10 và 24/10), Veneer bản (2) (thêm 2 dòng 24/10, sau đó bản Veneer mới nhất đổi dòng sửa hàng hộc kéo 48 giờ từ 24/10 sang 23/10 và thêm dòng 24/10 2 người 8:00-15:00, 14 giờ), và file mới "hàng sửa khu vực MAC Mr.Hiệp" (14/10 và 23/10, khu vực Machining, bộ phận ME).
 - Khi gửi nhiều phiên bản của cùng một file Beam saw/Veneer, dùng bản đầy đủ nhất (bản có nhiều dòng nhất và chứa mọi dòng của các bản cũ; đã kiểm tra bản cũ là tập con).
 - Chưa đưa vào bảng: 7 dòng Beam saw 22/10 "HÀNG BẢNG MÀU" không có giờ bắt đầu/kết thúc. Dòng MAC 23/10 ghi tổng 1:55 nhưng 9:32-11:20 là 1:48 (đối chiếu lệch 0,23 giờ). Beam saw "Unassigned" nay có 5 dòng (16/10, 20/10, 24/10).
 
@@ -165,7 +165,7 @@ Người dùng mới được bàn giao việc này (chưa quen cách hoạt đ�
 
 ## Cập nhật S32 ngày 26/10/2026 (3 báo cáo Assembly tuần 43)
 - Thợ sơn lòng trong tủ tuần 43: 12 người, 912 giờ (T2-T6 12 giờ, T7 8 giờ, CN 8 giờ: báo cáo tuần này có CN làm). Cào cước: 20/10 RH109F1 2 người (báo cáo ghi 7:30-20:00 nhưng 24 giờ, bảng ghi 7:30-19:30), 24/10 RH133F1 16 giờ, 25/10 (CN) RH133F1 6 giờ; tổng 46. Bắn cát 24/10: 3 người 8:00-16:00, 4 mã hàng (732 chân), 24 giờ.
-- Bảng S32 hiện đến 25/10: `loss-time/outputs/Loss_time_S32_05-10_den_30-10.xlsx` (101 dòng, 4.427,63 giờ). Các dòng Chủ nhật 25/10 (thợ sơn 96 giờ, cào cước 6 giờ) tô cam, chờ xác nhận có nhập CN không. Bắn cát tổng 32 (15/10) + 24 (24/10) = 56 giờ, vẫn chưa khớp con số 70 giờ bên kia báo.
+- Bảng S32 hiện đến 25/10: `loss-time/outputs/Loss_time_S32_05-10_den_01-11.xlsx` (101 dòng, 4.427,63 giờ). Các dòng Chủ nhật 25/10 (thợ sơn 96 giờ, cào cước 6 giờ) tô cam, chờ xác nhận có nhập CN không. Bắn cát tổng 32 (15/10) + 24 (24/10) = 56 giờ, vẫn chưa khớp con số 70 giờ bên kia báo.
 
 ## Chủ nhật và phản hồi đồng nghiệp ngày 26/10/2026
 - Chủ nhật KHÔNG phải lúc nào cũng nghỉ. Trong file có 10 Chủ nhật có đủ 20 dòng P20/P26 (và A2) của mọi khu vực (17/5, 24/5, 7/6, 14/6, 21/6, 28/6, 19/7, 2/8, 23/8, riêng 27/9 chỉ có A2 Assembly 3 người). Đồng nghiệp xác nhận 26/10: "lắp ráp làm cả chủ nhật". Tuần 43 báo cáo Assembly ghi CN 25/10 làm (thợ sơn 8 giờ, cào cước 3 giờ); 11/10 có sự cố A10 Assembly (12 người) vào Chủ nhật. Khi lập bảng một Chủ nhật phải HỎI người dùng khu vực nào có làm việc, không mặc định nghỉ.
@@ -231,3 +231,7 @@ Người dùng mới được bàn giao việc này (chưa quen cách hoạt đ�
 - Nhân viên mới 29/10: Assembly 1 (ghi "0" ở cột CT/TV vẫn tính); 30/10: Raw Cutting 2 (1 Panel + 1 Wood, ghi chung một dòng Raw Cutting). Đã lập 29/10 (437,5 giờ), 30/10 (445,5 giờ), Thứ Bảy 31/10 không tăng ca (348,5 giờ: P20 38, P26 144, A2 166,5), Chủ nhật 1/11 chỉ Assembly làm, không tăng ca (108,5 giờ: P20 16, P26 16, A2 76,5 = 17 người Assembly; giả định theo Chủ nhật 25/10, cần người dùng xác nhận). Hôm nay 2/11 (Thứ Hai) chưa lập.
 - Đã gộp cách đếm ngày A2 thành một hàm `kcount`: ngày làm việc không phải Chủ nhật, riêng Assembly tính thêm các Chủ nhật có làm (SUN_ASSY = 25/10 và 1/11). Khi có Chủ nhật mới Assembly làm, thêm ngày đó vào SUN_ASSY. Đã kiểm tra độc lập số người A2 mỗi khu vực từ 15/10 đến 1/11, khớp bảng.
 - File theo bộ phận mới: `outputs/Nhap_lieu_theo_bo_phan_29-10_den_01-11.xlsx` (thay cho 29/10 và 30/10 trong file 28-30/10 cũ vì đã có thêm P22 hai ngày đó).
+
+## Cập nhật S32 ngày 2/11/2026
+- Thợ sơn lòng trong tủ tuần 44 (26/10-1/11): 12 người, T2-T7 mỗi ngày 12 giờ (7:30-19:30), Chủ nhật 8 giờ (7:30-15:30), 960 giờ công. Khác tuần 42 và 43: thứ Bảy 12 giờ và có Chủ nhật 1/11 (tô cam). Bảng S32 hiện đến 1/11: 117 dòng, 5.523,53 giờ công.
+- File "hàng Lost Time RC .WOOD" gửi lại không đổi: 3 dòng làm lại 31/10-1/11 (AT25-1008-0535/0888/1089, 4 người, 7:30-10:00, nguồn ghi 12 giờ) vẫn chưa nhập vì giờ không khớp (cần hỏi cách tính 12 giờ: 4 người x 3 giờ?).
