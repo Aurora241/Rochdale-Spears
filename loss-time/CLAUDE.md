@@ -234,4 +234,4 @@ Người dùng mới được bàn giao việc này (chưa quen cách hoạt đ�
 
 ## Cập nhật S32 ngày 2/11/2026
 - Thợ sơn lòng trong tủ tuần 44 (26/10-1/11): 12 người, T2-T7 mỗi ngày 12 giờ (7:30-19:30), Chủ nhật 8 giờ (7:30-15:30), 960 giờ công. Khác tuần 42 và 43: thứ Bảy 12 giờ và có Chủ nhật 1/11 (tô cam). Bảng S32 hiện đến 1/11: 117 dòng, 5.523,53 giờ công.
-- File "hàng Lost Time RC .WOOD" gửi lại không đổi: 3 dòng làm lại 31/10-1/11 (AT25-1008-0535/0888/1089, 4 người, 7:30-10:00, nguồn ghi 12 giờ) vẫn chưa nhập vì giờ không khớp (cần hỏi cách tính 12 giờ: 4 người x 3 giờ?).
+- File "hàng Lost Time RC .WOOD" gửi lại không đổi; 3 dòng làm lại 31/10-1/11 (AT25-1008-0535/0888/1089, 4 người, nguồn ghi 12 giờ mỗi dòng) đã nhập: tổng giờ của nguồn là giờ công (như dòng 29-30/10: 96 = 4 x 24), nên 12 giờ = 4 người x 3 giờ, ghi 31/10 7:30-10:30 (tô vàng). Các ảnh trong file chỉ là ảnh minh họa hàng và phiếu routing, không có thêm số liệu. Bảng S32 hiện 120 dòng, 5.559,53 giờ công. Bài học: khi người dùng gửi lại file và hỏi, đọc toàn bộ ô và ảnh và đưa ra cách xử lý có ghi chú giả định, đừng chỉ hỏi lại.

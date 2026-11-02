@@ -84,7 +84,8 @@ w3=[r for r in rw.iter_rows(values_only=True) if isinstance(r[6],dt.datetime) an
 w=w3[0]
 for dd in (29,30):
     add(dt.datetime(2026,10,dd),'Làm lại RC WOOD',w[1],25,'Raw Cutting','(cần xác nhận)','Làm lại (bắn cát) hàng bong tróc sơn bề mặt Resin','A5-S2 hông thẳng, 25 set. Nguồn ghi 7:30-20:00 và tổng 96 giờ (4 người x 12 giờ x 2 ngày), bảng ghi 7:30-19:30 mỗi ngày để đúng 96 giờ',T(7,30),T(19,30),int(w[11]),'P',[(w[1],w[2],25)])
-print('Làm lại RC WOOD chưa nhập (ngày 31/10-1/11, chưa rõ giờ):',[(r[1],r[2],r[9]) for r in w3[1:]])
+for r in w3[1:]:
+    add(dt.datetime(2026,10,31),'Làm lại RC WOOD',r[1],25,'Raw Cutting','(cần xác nhận)','Làm lại (bắn cát) hàng bong tróc sơn bề mặt Resin - '+str(r[2]).strip(),'25 set. Nguồn ghi 31/10 7:30 đến 1/11 10:00, tổng 12 giờ (4 người x 3 giờ); bảng ghi 31/10 7:30-10:30 để đúng 12 giờ',T(7,30),T(10,30),int(r[11]),'P',[(r[1],r[2],25)])
 # 6c. Thợ sơn tuần 44 (26/10-1/11): T2-T7 12 giờ, Chủ nhật 8 giờ, 12 người, 960 giờ công
 for d in range(26,32): add(dt.datetime(2026,10,d),'Thợ sơn (hình)',None,None,'Assembly','Finishing','Không có bomtime sơn lòng trong','Thợ sơn lòng trong tủ - hỗ trợ Fin'+(' (thứ Bảy 12 giờ theo báo cáo tuần 44)' if d==31 else ''),T(7,30),T(19,30),12)
 add(dt.datetime(2026,11,1),'Thợ sơn (hình)',None,None,'Assembly','Finishing','Không có bomtime sơn lòng trong','Thợ sơn lòng trong tủ - hỗ trợ Fin (Chủ nhật)',T(7,30),T(15,30),12,'U')
