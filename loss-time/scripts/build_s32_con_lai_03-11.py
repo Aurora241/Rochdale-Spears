@@ -23,7 +23,7 @@ rows=[
 ('Raw Cutting',D(30),'ĐIỀN','Làm lại (bắn cát) AT11-1008-0535-R0000, 7:30-19:30, 4 người','Dept In Charge','(trống)','Chờ xác nhận bộ phận',0),
 ('Raw Cutting',D(31),'ĐIỀN','3 dòng làm lại AT25-1008-0535, 0888, 1089 (7:30-10:30, 4 người)','Dept In Charge','(trống)','Chờ xác nhận bộ phận',0),
 ]
-sheet('Sửa Raw Cutting - Machining - INLAY','DÒNG S32 ĐÃ NHẬP CẦN SỬA (đối chiếu file xuất 3/11, 25/10-31/10)',H,rows,[14,12,9,70,18,26,36,14,9])
+sheet('Sửa RC - Machining - INLAY','DÒNG S32 ĐÃ NHẬP CẦN SỬA (đối chiếu file xuất 3/11, 25/10-31/10)',H,rows,[14,12,9,70,18,26,36,14,9])
 rows2=[
 ('Assembly',D(31),'XÓA','Thợ sơn lòng trong tủ, 7:30-15:30, 12 người, 96 giờ (đang có thêm dòng 7:30-19:30, 144 giờ)','xóa 1 dòng','','',-96),
 ('Assembly',D(26),'NHẬP THÊM','Thợ sơn lòng trong tủ 26/10 đến 30/10: mỗi ngày 7:30-19:30, 12 người, 144 giờ','','chưa có','5 dòng (720 giờ)',720),
