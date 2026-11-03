@@ -1,0 +1,2004 @@
+{
+"VEC01": {
+"area": "RC panel",
+"group": "Guillotine Cutting",
+"qty": 1,
+"actual_ops": 4,
+"standard_ops": 4
+},
+"VEC02": {
+"area": "RC panel",
+"group": "Guillotine Cutting",
+"qty": 1,
+"actual_ops": 2,
+"standard_ops": 2
+},
+"VEC03": {
+"area": "RC panel",
+"group": "Guillotine Cutting",
+"qty": 1,
+"actual_ops": 2,
+"standard_ops": 2
+},
+"VEC04": {
+"area": "RC panel",
+"group": "Guillotine Cutting",
+"qty": 1,
+"actual_ops": 2,
+"standard_ops": 2
+},
+"VET02": {
+"area": "RC panel",
+"group": "Trimeasy",
+"qty": 1,
+"actual_ops": 2,
+"standard_ops": 2
+},
+"VES01": {
+"area": "RC panel",
+"group": "Veneer Stitching",
+"qty": 1,
+"actual_ops": 1,
+"standard_ops": 1
+},
+"VES02": {
+"area": "RC panel",
+"group": "Veneer splicer",
+"qty": 1,
+"actual_ops": 2,
+"standard_ops": 2
+},
+"VES04": {
+"area": "RC panel",
+"group": "Veneer splicer",
+"qty": 1,
+"actual_ops": 2,
+"standard_ops": 2
+},
+"VES07": {
+"area": "RC panel",
+"group": "Veneer splicer",
+"qty": 1,
+"actual_ops": 2,
+"standard_ops": 2
+},
+"VES08": {
+"area": "RC panel",
+"group": "Veneer splicer",
+"qty": 1,
+"actual_ops": 2,
+"standard_ops": 2
+},
+"VES09": {
+"area": "RC panel",
+"group": "Veneer splicer",
+"qty": 1,
+"actual_ops": 2,
+"standard_ops": 2
+},
+"DÁNVENEERTAY": {
+"area": "RC panel",
+"group": "Manual jointing veneer",
+"qty": 18,
+"actual_ops": 27,
+"standard_ops": 27
+},
+"CUFS19": {
+"area": "RC panel",
+"group": "Cut off saw",
+"qty": 1,
+"actual_ops": 2,
+"standard_ops": 2
+},
+"CUFS20": {
+"area": "RC panel",
+"group": "Cut off saw",
+"qty": 1,
+"actual_ops": 2,
+"standard_ops": 2
+},
+"BEMS01": {
+"area": "RC panel",
+"group": "Beam Saw",
+"qty": 1,
+"actual_ops": 4,
+"standard_ops": 4
+},
+"BEMS02": {
+"area": "RC panel",
+"group": "Beam Saw",
+"qty": 1,
+"actual_ops": 3,
+"standard_ops": 4
+},
+"BEMS04": {
+"area": "RC panel",
+"group": "Beam Saw",
+"qty": 1,
+"actual_ops": 3,
+"standard_ops": 4
+},
+"NHẬPLIỆU/GIAOHÀNG/SOẠNROUTING": {
+"area": "RC panel",
+"group": "1HCs nhập liệu/ 1HCs soạn routing",
+"qty": 1,
+"actual_ops": 2,
+"standard_ops": 2
+},
+"HOT01": {
+"area": "RC panel",
+"group": "5 layer hot press",
+"qty": 1,
+"actual_ops": 8,
+"standard_ops": 9
+},
+"HOT02": {
+"area": "RC panel",
+"group": "5 layer hot press",
+"qty": 1,
+"actual_ops": 5,
+"standard_ops": 5
+},
+"HOT05": {
+"area": "RC panel",
+"group": "5 layer hot press",
+"qty": 1,
+"actual_ops": 5,
+"standard_ops": 5
+},
+"HOT03": {
+"area": "RC panel",
+"group": "Hot press OTT",
+"qty": 1,
+"actual_ops": 5,
+"standard_ops": 5
+},
+"HOT04": {
+"area": "RC panel",
+"group": "Hot press Burkle",
+"qty": 1,
+"actual_ops": 1,
+"standard_ops": 5
+},
+"HF01=>HF08": {
+"area": "RC panel",
+"group": "Curved R/ F Press",
+"qty": 8,
+"actual_ops": 6,
+"standard_ops": 7
+},
+"BÀNCẢOBỊCH": {
+"area": "RC panel",
+"group": "Vacuum press",
+"qty": 16,
+"actual_ops": 25,
+"standard_ops": 25
+},
+"COP01": {
+"area": "RC panel",
+"group": "Cold press machine",
+"qty": 1,
+"actual_ops": 7,
+"standard_ops": 7
+},
+"COP02": {
+"area": "RC panel",
+"group": "Cold press machine",
+"qty": 1,
+"actual_ops": 4,
+"standard_ops": 4
+},
+"COP06": {
+"area": "RC panel",
+"group": "Cold press machine",
+"qty": 1,
+"actual_ops": 4,
+"standard_ops": 4
+},
+"COP08": {
+"area": "RC panel",
+"group": "Cold press machine",
+"qty": 1,
+"actual_ops": 4,
+"standard_ops": 4
+},
+"NHÁMBĂNGSTS01": {
+"area": "RC panel",
+"group": "Cold press machine",
+"qty": 1,
+"actual_ops": 1,
+"standard_ops": 1
+},
+"SBRS01": {
+"area": "RC panel",
+"group": "Wide brush sanding",
+"qty": 1,
+"actual_ops": 0,
+"standard_ops": 2
+},
+"SBRS02": {
+"area": "RC panel",
+"group": "Wide brush sanding",
+"qty": 1,
+"actual_ops": 1,
+"standard_ops": 2
+},
+"SBRS11": {
+"area": "RC panel",
+"group": "Wide brush sanding",
+"qty": 1,
+"actual_ops": 1,
+"standard_ops": 2
+},
+"SBRS16": {
+"area": "RC panel",
+"group": "Wide brush sanding",
+"qty": 1,
+"actual_ops": 1,
+"standard_ops": 2
+},
+"30-0981(NEW1)": {
+"area": "RC panel",
+"group": "Grain press",
+"qty": 1,
+"actual_ops": 1,
+"standard_ops": 2
+},
+"WBS08": {
+"area": "RC panel",
+"group": "Wide Belt Sander",
+"qty": 1,
+"actual_ops": 5,
+"standard_ops": 6
+},
+"WBS09": {
+"area": "RC panel",
+"group": "Wide Belt Sander",
+"qty": 1,
+"actual_ops": 3,
+"standard_ops": 3
+},
+"WBS10": {
+"area": "RC panel",
+"group": "Wide Belt Sander",
+"qty": 1,
+"actual_ops": 3,
+"standard_ops": 3
+},
+"WBS11": {
+"area": "RC panel",
+"group": "Wide Belt Sander",
+"qty": 1,
+"actual_ops": 2,
+"standard_ops": 2
+},
+"WBS21": {
+"area": "RC panel",
+"group": "Wide Belt Sander",
+"qty": 1,
+"actual_ops": 3,
+"standard_ops": 3
+},
+"STS02": {
+"area": "RC panel",
+"group": "Hand Stroke Sanding",
+"qty": 1,
+"actual_ops": 1,
+"standard_ops": 1
+},
+"STS05": {
+"area": "RC panel",
+"group": "Hand Stroke Sanding",
+"qty": 1,
+"actual_ops": 2,
+"standard_ops": 2
+},
+"STS06": {
+"area": "RC panel",
+"group": "Hand Stroke Sanding",
+"qty": 1,
+"actual_ops": 2,
+"standard_ops": 2
+},
+"RIS01": {
+"area": "RC wood",
+"group": null,
+"qty": 1,
+"actual_ops": 1,
+"standard_ops": 7
+},
+"MRIS02": {
+"area": "RC wood",
+"group": null,
+"qty": 1,
+"actual_ops": 2,
+"standard_ops": 2
+},
+"MRIS03": {
+"area": "RC wood",
+"group": null,
+"qty": 1,
+"actual_ops": 0,
+"standard_ops": 2
+},
+"CUFS02": {
+"area": "RC wood",
+"group": null,
+"qty": 1,
+"actual_ops": 2,
+"standard_ops": 2
+},
+"CUFS03": {
+"area": "RC wood",
+"group": null,
+"qty": 1,
+"actual_ops": 2,
+"standard_ops": 2
+},
+"CUFS04": {
+"area": "RC wood",
+"group": null,
+"qty": 1,
+"actual_ops": 2,
+"standard_ops": 2
+},
+"RIS02": {
+"area": "RC wood",
+"group": null,
+"qty": 1,
+"actual_ops": 1,
+"standard_ops": 3
+},
+"MRIS05": {
+"area": "RC wood",
+"group": null,
+"qty": 1,
+"actual_ops": 2,
+"standard_ops": 2
+},
+"CUFS07": {
+"area": "RC wood",
+"group": null,
+"qty": 1,
+"actual_ops": 0,
+"standard_ops": 2
+},
+"CUFS08": {
+"area": "RC wood",
+"group": null,
+"qty": 1,
+"actual_ops": 2,
+"standard_ops": 2
+},
+"CUFS14": {
+"area": "RC wood",
+"group": null,
+"qty": 1,
+"actual_ops": 2,
+"standard_ops": 2
+},
+"RIS03": {
+"area": "RC wood",
+"group": null,
+"qty": 1,
+"actual_ops": 1,
+"standard_ops": 3
+},
+"MRIS06": {
+"area": "RC wood",
+"group": null,
+"qty": 1,
+"actual_ops": 2,
+"standard_ops": 2
+},
+"MRIS07": {
+"area": "RC wood",
+"group": null,
+"qty": 1,
+"actual_ops": 2,
+"standard_ops": 2
+},
+"CUFS09": {
+"area": "RC wood",
+"group": null,
+"qty": 1,
+"actual_ops": 2,
+"standard_ops": 2
+},
+"CUFS10": {
+"area": "RC wood",
+"group": null,
+"qty": 1,
+"actual_ops": 2,
+"standard_ops": 2
+},
+"CUFS11": {
+"area": "RC wood",
+"group": null,
+"qty": 1,
+"actual_ops": 1,
+"standard_ops": 2
+},
+"RIS04": {
+"area": "RC wood",
+"group": null,
+"qty": 1,
+"actual_ops": 1,
+"standard_ops": 3
+},
+"MRIS01": {
+"area": "RC wood",
+"group": null,
+"qty": 1,
+"actual_ops": 2,
+"standard_ops": 2
+},
+"MRIS09": {
+"area": "RC wood",
+"group": null,
+"qty": 1,
+"actual_ops": 2,
+"standard_ops": 2
+},
+"CUFS01": {
+"area": "RC wood",
+"group": null,
+"qty": 1,
+"actual_ops": 2,
+"standard_ops": 2
+},
+"CUFS13": {
+"area": "MAC panel",
+"group": "Cut off saw",
+"qty": 1,
+"actual_ops": 1,
+"standard_ops": 1
+},
+"YFC-18-1": {
+"area": "RC wood",
+"group": null,
+"qty": 1,
+"actual_ops": 2,
+"standard_ops": 2
+},
+"RIS05": {
+"area": "RC wood",
+"group": null,
+"qty": 1,
+"actual_ops": 2,
+"standard_ops": 3
+},
+"MRIS04": {
+"area": "RC wood",
+"group": null,
+"qty": 1,
+"actual_ops": 0,
+"standard_ops": 2
+},
+"MRIS08": {
+"area": "RC wood",
+"group": null,
+"qty": 1,
+"actual_ops": 2,
+"standard_ops": 2
+},
+"CUFS05": {
+"area": "RC wood",
+"group": null,
+"qty": 1,
+"actual_ops": 2,
+"standard_ops": 2
+},
+"CUFS06": {
+"area": "RC wood",
+"group": null,
+"qty": 1,
+"actual_ops": 0,
+"standard_ops": 2
+},
+"CUFS12": {
+"area": "RC wood",
+"group": null,
+"qty": 1,
+"actual_ops": 2,
+"standard_ops": 2
+},
+"2SP01": {
+"area": "RC wood",
+"group": "2-side planer",
+"qty": 1,
+"actual_ops": 4,
+"standard_ops": 5
+},
+"2SP02": {
+"area": "RC wood",
+"group": "2-side planer",
+"qty": 1,
+"actual_ops": 0,
+"standard_ops": 0
+},
+"2SP03": {
+"area": "RC wood",
+"group": "2-side planer",
+"qty": 1,
+"actual_ops": 3,
+"standard_ops": 3
+},
+"2SP04": {
+"area": "RC wood",
+"group": "2-side planer",
+"qty": 1,
+"actual_ops": 2,
+"standard_ops": 2
+},
+"2SP05": {
+"area": "RC wood",
+"group": "2-side planer",
+"qty": 1,
+"actual_ops": 2,
+"standard_ops": 2
+},
+"2SP06": {
+"area": "RC wood",
+"group": "2-side planer",
+"qty": 1,
+"actual_ops": 2,
+"standard_ops": 3
+},
+"2SP09": {
+"area": "RC wood",
+"group": "2-side planer",
+"qty": 1,
+"actual_ops": 0,
+"standard_ops": 0
+},
+"JOINT01": {
+"area": "RC wood",
+"group": "Surface planer",
+"qty": 1,
+"actual_ops": 2,
+"standard_ops": 2
+},
+"JOINT02": {
+"area": "RC wood",
+"group": "Surface planer",
+"qty": 1,
+"actual_ops": 0,
+"standard_ops": 1
+},
+"RES01": {
+"area": "RC wood",
+"group": "Band re-saw",
+"qty": 1,
+"actual_ops": 2,
+"standard_ops": 2
+},
+"RES02": {
+"area": "RC wood",
+"group": "Band re-saw",
+"qty": 1,
+"actual_ops": 0,
+"standard_ops": 2
+},
+"RES03": {
+"area": "RC wood",
+"group": "Band re-saw",
+"qty": 1,
+"actual_ops": 0,
+"standard_ops": 2
+},
+"RONGCHỈ135": {
+"area": "RC wood",
+"group": "Rip saw",
+"qty": 1,
+"actual_ops": 2,
+"standard_ops": 2
+},
+"CCR01": {
+"area": "RC wood",
+"group": "Clamp carrier",
+"qty": 1,
+"actual_ops": 4,
+"standard_ops": 5
+},
+"CCR02": {
+"area": "RC wood",
+"group": "Clamp carrier",
+"qty": 1,
+"actual_ops": 0,
+"standard_ops": 2
+},
+"GLUESPREADER1": {
+"area": "RC wood",
+"group": "Clamp carrier",
+"qty": 1,
+"actual_ops": 2,
+"standard_ops": 2
+},
+"CCR03": {
+"area": "RC wood",
+"group": "Clamp carrier",
+"qty": 1,
+"actual_ops": 0,
+"standard_ops": 2
+},
+"GLUESPREADER2": {
+"area": "RC wood",
+"group": "Clamp carrier",
+"qty": 1,
+"actual_ops": 0,
+"standard_ops": 2
+},
+"CCRH03": {
+"area": "RC wood",
+"group": "2 side rotary Hydraulic Press",
+"qty": 1,
+"actual_ops": 1,
+"standard_ops": 3
+},
+"GLUESPREADER6": {
+"area": "RC wood",
+"group": "2 side rotary Hydraulic Press",
+"qty": 1,
+"actual_ops": 0,
+"standard_ops": 2
+},
+"CCRH01": {
+"area": "RC wood",
+"group": "4 side rotary Hydraulic Press",
+"qty": 1,
+"actual_ops": 2,
+"standard_ops": 2
+},
+"GLUESPREADER3": {
+"area": "RC wood",
+"group": "4 side rotary Hydraulic Press",
+"qty": 1,
+"actual_ops": 2,
+"standard_ops": 2
+},
+"CCRH02": {
+"area": "RC wood",
+"group": "4 side rotary Hydraulic Press",
+"qty": 1,
+"actual_ops": 1,
+"standard_ops": 2
+},
+"GLUESPREADER4": {
+"area": "RC wood",
+"group": "4 side rotary Hydraulic Press",
+"qty": 1,
+"actual_ops": 2,
+"standard_ops": 2
+},
+"CCRH04": {
+"area": "RC wood",
+"group": "4 side rotary Hydraulic Press",
+"qty": 1,
+"actual_ops": 2,
+"standard_ops": 2
+},
+"GLUESPREADER5": {
+"area": "RC wood",
+"group": "4 side rotary Hydraulic Press",
+"qty": 1,
+"actual_ops": 2,
+"standard_ops": 2
+},
+"4SP03": {
+"area": "RC wood",
+"group": "4-side planer",
+"qty": 1,
+"actual_ops": 3,
+"standard_ops": 4
+},
+"4SP04": {
+"area": "RC wood",
+"group": "4-side planer",
+"qty": 1,
+"actual_ops": 2,
+"standard_ops": 2
+},
+"4SP05": {
+"area": "RC wood",
+"group": "4-side planer",
+"qty": 1,
+"actual_ops": 2,
+"standard_ops": 2
+},
+"4SP07": {
+"area": "RC wood",
+"group": "4-side planer",
+"qty": 1,
+"actual_ops": 2,
+"standard_ops": 3
+},
+"4SP01": {
+"area": "RC wood",
+"group": "4-side planer",
+"qty": 1,
+"actual_ops": 3,
+"standard_ops": 3
+},
+"4SP02": {
+"area": "RC wood",
+"group": "4-side planer",
+"qty": 1,
+"actual_ops": 3,
+"standard_ops": 2
+},
+"4SP06": {
+"area": "RC wood",
+"group": "4-side planer",
+"qty": 1,
+"actual_ops": 2,
+"standard_ops": 2
+},
+"SLTS04": {
+"area": "MAC panel",
+"group": "Sliding Table Saw",
+"qty": 1,
+"actual_ops": 2,
+"standard_ops": 2
+},
+"SLTS05": {
+"area": "MAC panel",
+"group": "Sliding Table Saw",
+"qty": 1,
+"actual_ops": 1,
+"standard_ops": 1
+},
+"SLTS06": {
+"area": "MAC panel",
+"group": "Sliding Table Saw",
+"qty": 1,
+"actual_ops": 1,
+"standard_ops": 1
+},
+"SLTS07": {
+"area": "MAC panel",
+"group": "Sliding Table Saw",
+"qty": 1,
+"actual_ops": 1,
+"standard_ops": 1
+},
+"MỚI(CHƯACÓMÃ)": {
+"area": "MAC panel",
+"group": "Double End Cutting ",
+"qty": 1,
+"actual_ops": 0,
+"standard_ops": 2
+},
+"DEC05": {
+"area": "MAC panel",
+"group": "Double End Cutting ",
+"qty": 1,
+"actual_ops": 2,
+"standard_ops": 2
+},
+"DEC06": {
+"area": "MAC panel",
+"group": "Double End Cutting ",
+"qty": 1,
+"actual_ops": 3,
+"standard_ops": 3
+},
+"DEC07": {
+"area": "MAC panel",
+"group": "Double End Cutting ",
+"qty": 1,
+"actual_ops": 2,
+"standard_ops": 2
+},
+"DEC08": {
+"area": "MAC panel",
+"group": "Double End Cutting ",
+"qty": 1,
+"actual_ops": 2,
+"standard_ops": 2
+},
+"DEC04": {
+"area": "MAC panel",
+"group": "Double End Cutting ",
+"qty": 1,
+"actual_ops": 1,
+"standard_ops": 1
+},
+"RAS17": {
+"area": "MAC panel",
+"group": "Radial Arm Saw",
+"qty": 1,
+"actual_ops": 0,
+"standard_ops": 1
+},
+"30-0964": {
+"area": "MAC panel",
+"group": "Circular saw",
+"qty": 1,
+"actual_ops": 2,
+"standard_ops": 2
+},
+"CIRS02": {
+"area": "MAC panel",
+"group": "Circular saw",
+"qty": 1,
+"actual_ops": 2,
+"standard_ops": 2
+},
+"CIRS07": {
+"area": "MAC panel",
+"group": "Rong đầu bò",
+"qty": 1,
+"actual_ops": 3,
+"standard_ops": 4
+},
+"DSS09": {
+"area": "MAC panel",
+"group": "Tubi 2 trục ",
+"qty": 1,
+"actual_ops": 1,
+"standard_ops": 2
+},
+"SS05": {
+"area": "MAC panel",
+"group": "Tubi 1 trục",
+"qty": 1,
+"actual_ops": 2,
+"standard_ops": 2
+},
+"SS07": {
+"area": "MAC panel",
+"group": "Tubi 1 trục",
+"qty": 1,
+"actual_ops": 2,
+"standard_ops": 2
+},
+"TSM01": {
+"area": "MAC panel",
+"group": "Tubi 1 trục",
+"qty": 1,
+"actual_ops": 1,
+"standard_ops": 2
+},
+"OHR01": {
+"area": "MAC panel",
+"group": "Router đứng",
+"qty": 1,
+"actual_ops": 1,
+"standard_ops": 1
+},
+"OHR03": {
+"area": "MAC wood",
+"group": "Over Head Router",
+"qty": 1,
+"actual_ops": 1,
+"standard_ops": 1
+},
+"OHR05": {
+"area": "Drawer",
+"group": "Over Head Router",
+"qty": 1,
+"actual_ops": 1,
+"standard_ops": 1
+},
+"OHR07": {
+"area": "MAC panel",
+"group": "Router đứng",
+"qty": 1,
+"actual_ops": 1,
+"standard_ops": 1
+},
+"OHR08": {
+"area": "MAC panel",
+"group": "Router đứng",
+"qty": 1,
+"actual_ops": 1,
+"standard_ops": 1
+},
+"ROUTERTAY1": {
+"area": "MAC panel",
+"group": "Router tay",
+"qty": 1,
+"actual_ops": 1,
+"standard_ops": 2
+},
+"ROUTERTAY2": {
+"area": "MAC panel",
+"group": "Router tay",
+"qty": 1,
+"actual_ops": 1,
+"standard_ops": 2
+},
+"BS05": {
+"area": "MAC panel",
+"group": "Máy lọng",
+"qty": 1,
+"actual_ops": 0,
+"standard_ops": 1
+},
+"CORC01": {
+"area": "MAC panel",
+"group": "Phay ngàm, hạ gờ",
+"qty": 1,
+"actual_ops": 2,
+"standard_ops": 2
+},
+"BOHÀNGDÁNDA": {
+"area": "MAC panel",
+"group": "Bo hàng dán da",
+"qty": 1,
+"actual_ops": 1,
+"standard_ops": 1
+},
+"MOT04": {
+"area": "MAC panel",
+"group": "Oscillating Mortiser",
+"qty": 1,
+"actual_ops": 3,
+"standard_ops": 3
+},
+"MMOT03": {
+"area": "MAC panel",
+"group": "Pneumatic Oscillating Mortiser",
+"qty": 1,
+"actual_ops": 1,
+"standard_ops": 1
+},
+"MMOT05": {
+"area": "MAC panel",
+"group": "Pneumatic Oscillating Mortiser",
+"qty": 1,
+"actual_ops": 1,
+"standard_ops": 1
+},
+"DRI08": {
+"area": "Drawer",
+"group": "Single drill",
+"qty": 1,
+"actual_ops": 1,
+"standard_ops": 1
+},
+"MVDR04": {
+"area": "MAC panel",
+"group": "Multiple vertical drill",
+"qty": 1,
+"actual_ops": 2,
+"standard_ops": 2
+},
+"MHDR05": {
+"area": "MAC panel",
+"group": "Multiple horizontal drill",
+"qty": 1,
+"actual_ops": 1,
+"standard_ops": 1
+},
+"EDBM01": {
+"area": "MAC panel",
+"group": "Semi-auto edge banding",
+"qty": 1,
+"actual_ops": 2,
+"standard_ops": 2
+},
+"CECAPM01": {
+"area": "MAC panel",
+"group": "Curved edge banding",
+"qty": 1,
+"actual_ops": 1,
+"standard_ops": 2
+},
+"30-1019": {
+"area": "MAC panel",
+"group": "Curved edge banding",
+"qty": 1,
+"actual_ops": 1,
+"standard_ops": 2
+},
+"EDB01": {
+"area": "MAC panel",
+"group": "Straight edge banding",
+"qty": 1,
+"actual_ops": 4,
+"standard_ops": 4
+},
+"EDB02": {
+"area": "MAC panel",
+"group": "Straight edge banding",
+"qty": 1,
+"actual_ops": 4,
+"standard_ops": 4
+},
+"EDB05": {
+"area": "MAC panel",
+"group": "Straight edge banding",
+"qty": 1,
+"actual_ops": 4,
+"standard_ops": 3
+},
+"EDB06": {
+"area": "MAC panel",
+"group": "Straight edge banding",
+"qty": 1,
+"actual_ops": 3,
+"standard_ops": 3
+},
+"CNCR01": {
+"area": "MAC panel",
+"group": "CNC PTP",
+"qty": 1,
+"actual_ops": 2,
+"standard_ops": 3
+},
+"CNCR11": {
+"area": "MAC panel",
+"group": "CNC PTP",
+"qty": 1,
+"actual_ops": 2,
+"standard_ops": 2
+},
+"CNCR20": {
+"area": "MAC panel",
+"group": "CNC PTP",
+"qty": 1,
+"actual_ops": 2,
+"standard_ops": 2
+},
+"CNCR03": {
+"area": "MAC panel",
+"group": "CNC router",
+"qty": 1,
+"actual_ops": 1,
+"standard_ops": 1
+},
+"CNCR07": {
+"area": "MAC panel",
+"group": "CNC Soda",
+"qty": 1,
+"actual_ops": 2,
+"standard_ops": 2
+},
+"CNCR14": {
+"area": "MAC panel",
+"group": "CNC Greda",
+"qty": 1,
+"actual_ops": 1,
+"standard_ops": 1
+},
+"CNCC03": {
+"area": "MAC panel",
+"group": "CNC Carving 3D",
+"qty": 1,
+"actual_ops": 1,
+"standard_ops": 1
+},
+"CNCC01": {
+"area": "MAC panel",
+"group": "CNC Carving 2D",
+"qty": 1,
+"actual_ops": 1,
+"standard_ops": 1
+},
+"CNCC02": {
+"area": "MAC panel",
+"group": "CNC Carving 2D",
+"qty": 1,
+"actual_ops": 1,
+"standard_ops": 1
+},
+"CNCR21": {
+"area": "MAC panel",
+"group": "CNC mill & drill",
+"qty": 1,
+"actual_ops": 1,
+"standard_ops": 1
+},
+"SLTS01": {
+"area": "MAC wood",
+"group": "Máy cắt bàn",
+"qty": 1,
+"actual_ops": 3,
+"standard_ops": 3
+},
+"SLTS02": {
+"area": "MAC wood",
+"group": "Máy cắt bàn",
+"qty": 1,
+"actual_ops": 1,
+"standard_ops": 1
+},
+"SLTS03": {
+"area": "MAC wood",
+"group": "Máy cắt bàn",
+"qty": 1,
+"actual_ops": 2,
+"standard_ops": 2
+},
+"CIRS05": {
+"area": "MAC wood",
+"group": "Circular saw",
+"qty": 1,
+"actual_ops": 2,
+"standard_ops": 2
+},
+"CIRS06": {
+"area": "MAC wood",
+"group": "Circular saw",
+"qty": 1,
+"actual_ops": 2,
+"standard_ops": 2
+},
+"CIRS09": {
+"area": "MAC wood",
+"group": "Circular saw",
+"qty": 1,
+"actual_ops": 0,
+"standard_ops": 2
+},
+"DEC03": {
+"area": "MAC wood",
+"group": "Máy cắt 2 đầu",
+"qty": 1,
+"actual_ops": 4,
+"standard_ops": 4
+},
+"DEC01": {
+"area": "MAC wood",
+"group": "Máy cắt 2 đầu",
+"qty": 1,
+"actual_ops": 2,
+"standard_ops": 3
+},
+"DEC02": {
+"area": "MAC wood",
+"group": "Máy cắt 2 đầu",
+"qty": 1,
+"actual_ops": 1,
+"standard_ops": 2
+},
+"DECB01": {
+"area": "MAC wood",
+"group": "Máy cắt 2 đầu lớn",
+"qty": 1,
+"actual_ops": 3,
+"standard_ops": 3
+},
+"DECB02": {
+"area": "MAC wood",
+"group": "Máy cắt 2 đầu lớn",
+"qty": 1,
+"actual_ops": 3,
+"standard_ops": 3
+},
+"DEMS01": {
+"area": "MAC wood",
+"group": "Máy cưa khoan 2 đầu",
+"qty": 1,
+"actual_ops": 1,
+"standard_ops": 1
+},
+"DEMS02": {
+"area": "MAC wood",
+"group": "Máy cưa khoan 2 đầu",
+"qty": 1,
+"actual_ops": 0,
+"standard_ops": 1
+},
+"DEMS03": {
+"area": "MAC wood",
+"group": "Máy cưa khoan 2 đầu",
+"qty": 1,
+"actual_ops": 1,
+"standard_ops": 1
+},
+"DEMS04": {
+"area": "MAC wood",
+"group": "Máy cưa khoan 2 đầu",
+"qty": 1,
+"actual_ops": 0,
+"standard_ops": 1
+},
+"DEMS06": {
+"area": "MAC wood",
+"group": "Máy cưa khoan 2 đầu",
+"qty": 1,
+"actual_ops": 1,
+"standard_ops": 1
+},
+"RAS05": {
+"area": "Drawer",
+"group": "Radial Arm Saw",
+"qty": 1,
+"actual_ops": 2,
+"standard_ops": 2
+},
+"RAS06": {
+"area": "MAC wood",
+"group": "Radial Arm Saw",
+"qty": 1,
+"actual_ops": 1,
+"standard_ops": 1
+},
+"RAS07": {
+"area": "MAC wood",
+"group": "Radial Arm Saw",
+"qty": 1,
+"actual_ops": 1,
+"standard_ops": 1
+},
+"RAS08": {
+"area": "MAC wood",
+"group": "Radial Arm Saw",
+"qty": 1,
+"actual_ops": 1,
+"standard_ops": 1
+},
+"RAS09": {
+"area": "MAC wood",
+"group": "Radial Arm Saw",
+"qty": 1,
+"actual_ops": 0,
+"standard_ops": 1
+},
+"RAS10": {
+"area": "MAC wood",
+"group": "Radial Arm Saw",
+"qty": 1,
+"actual_ops": 1,
+"standard_ops": 1
+},
+"RAS11": {
+"area": "MAC wood",
+"group": "Radial Arm Saw",
+"qty": 1,
+"actual_ops": 0,
+"standard_ops": 1
+},
+"RAS12": {
+"area": "MAC wood",
+"group": "Radial Arm Saw",
+"qty": 1,
+"actual_ops": 1,
+"standard_ops": 1
+},
+"RAS13": {
+"area": "MAC wood",
+"group": "Radial Arm Saw",
+"qty": 1,
+"actual_ops": 1,
+"standard_ops": 1
+},
+"RAS14": {
+"area": "MAC wood",
+"group": "Radial Arm Saw",
+"qty": 1,
+"actual_ops": 1,
+"standard_ops": 1
+},
+"RAS15": {
+"area": "MAC wood",
+"group": "Radial Arm Saw",
+"qty": 1,
+"actual_ops": 1,
+"standard_ops": 1
+},
+"RAS16": {
+"area": "MAC wood",
+"group": "Radial Arm Saw",
+"qty": 1,
+"actual_ops": 1,
+"standard_ops": 1
+},
+"CUFS16": {
+"area": "MAC wood",
+"group": "Cut off saw",
+"qty": 1,
+"actual_ops": 1,
+"standard_ops": 1
+},
+"CUFS17": {
+"area": "MAC wood",
+"group": "Cut off saw",
+"qty": 1,
+"actual_ops": 1,
+"standard_ops": 1
+},
+"CIRS01": {
+"area": "MAC wood",
+"group": "Circular saw",
+"qty": 1,
+"actual_ops": 1,
+"standard_ops": 2
+},
+"60-0046": {
+"area": "MAC wood",
+"group": "Copyshaper straight with sanding",
+"qty": 1,
+"actual_ops": 2,
+"standard_ops": 2
+},
+"60-0041": {
+"area": "MAC wood",
+"group": "Copyshaper round with sanding",
+"qty": 1,
+"actual_ops": 2,
+"standard_ops": 2
+},
+"DSS04": {
+"area": "MAC wood",
+"group": "Double Head Spindle Shaper",
+"qty": 1,
+"actual_ops": 1,
+"standard_ops": 2
+},
+"DSS05": {
+"area": "Drawer",
+"group": "Double Head Spindle Shaper",
+"qty": 1,
+"actual_ops": 2,
+"standard_ops": 2
+},
+"DSS07": {
+"area": "MAC wood",
+"group": "Double Head Spindle Shaper",
+"qty": 1,
+"actual_ops": 1,
+"standard_ops": 1
+},
+"DSS08": {
+"area": "Drawer",
+"group": "Double Head Spindle Shaper",
+"qty": 1,
+"actual_ops": 0,
+"standard_ops": 1
+},
+"VBS04": {
+"area": "MAC wood",
+"group": "Double Head Spindle Shaper",
+"qty": 1,
+"actual_ops": 1,
+"standard_ops": 1
+},
+"JG0104": {
+"area": "MAC wood",
+"group": "Double Head Spindle Shaper",
+"qty": 1,
+"actual_ops": 1,
+"standard_ops": 1
+},
+"VBS02": {
+"area": "MAC wood",
+"group": "Vertical Band Saw",
+"qty": 1,
+"actual_ops": 1,
+"standard_ops": 1
+},
+"VBS01": {
+"area": "MAC wood",
+"group": "Vertical Band Saw",
+"qty": 1,
+"actual_ops": 0,
+"standard_ops": 1
+},
+"SS01": {
+"area": "MAC wood",
+"group": "Single Head Spindle Shaper",
+"qty": 1,
+"actual_ops": 2,
+"standard_ops": 3
+},
+"SS02": {
+"area": "MAC wood",
+"group": "Single Head Spindle Shaper",
+"qty": 1,
+"actual_ops": 2,
+"standard_ops": 2
+},
+"SS03": {
+"area": "MAC wood",
+"group": "Single Head Spindle Shaper",
+"qty": 1,
+"actual_ops": 2,
+"standard_ops": 2
+},
+"SS04": {
+"area": "MAC wood",
+"group": "Single Head Spindle Shaper",
+"qty": 1,
+"actual_ops": 2,
+"standard_ops": 2
+},
+"DSS03": {
+"area": "MAC wood",
+"group": "Double Head Spindle Shaper",
+"qty": 1,
+"actual_ops": 2,
+"standard_ops": 2
+},
+"MANUALROUTER612": {
+"area": "MAC wood",
+"group": "Handling Router",
+"qty": 1,
+"actual_ops": 4,
+"standard_ops": 5
+},
+"MANUALROUTER371": {
+"area": "MAC wood",
+"group": "Handling Router",
+"qty": 1,
+"actual_ops": 3,
+"standard_ops": 3
+},
+"OHR02": {
+"area": "MAC wood",
+"group": "Over Head Router",
+"qty": 1,
+"actual_ops": 1,
+"standard_ops": 1
+},
+"OHR04": {
+"area": "MAC wood",
+"group": "Over Head Router",
+"qty": 1,
+"actual_ops": 1,
+"standard_ops": 1
+},
+"OHR06": {
+"area": "MAC wood",
+"group": "Over Head Router",
+"qty": 1,
+"actual_ops": 1,
+"standard_ops": 1
+},
+"UHR01": {
+"area": "MAC wood",
+"group": "Under Head router",
+"qty": 1,
+"actual_ops": 1,
+"standard_ops": 1
+},
+"UHR02": {
+"area": "MAC wood",
+"group": "Under Head router",
+"qty": 1,
+"actual_ops": 1,
+"standard_ops": 1
+},
+"UHR04": {
+"area": "MAC wood",
+"group": "Under Head router",
+"qty": 1,
+"actual_ops": 1,
+"standard_ops": 1
+},
+"SET01": {
+"area": "MAC wood",
+"group": "Single End Tenoner",
+"qty": 1,
+"actual_ops": 3,
+"standard_ops": 3
+},
+"SET02": {
+"area": "MAC wood",
+"group": "Single End Tenoner",
+"qty": 1,
+"actual_ops": 2,
+"standard_ops": 2
+},
+"ADET01": {
+"area": "MAC wood",
+"group": "Double End Tenoner",
+"qty": 1,
+"actual_ops": 1,
+"standard_ops": 1
+},
+"ADET02": {
+"area": "MAC wood",
+"group": "Double End Tenoner",
+"qty": 1,
+"actual_ops": 1,
+"standard_ops": 1
+},
+"DETECNC": {
+"area": "MAC wood",
+"group": "Auto Double End Tenoner",
+"qty": 1,
+"actual_ops": 1,
+"standard_ops": 1
+},
+"MOT01": {
+"area": "MAC wood",
+"group": "Oscillating Mortiser ",
+"qty": 1,
+"actual_ops": 1,
+"standard_ops": 1
+},
+"MOT02": {
+"area": "MAC wood",
+"group": "Oscillating Mortiser ",
+"qty": 1,
+"actual_ops": 2,
+"standard_ops": 2
+},
+"MOT03": {
+"area": "MAC wood",
+"group": "Oscillating Mortiser ",
+"qty": 1,
+"actual_ops": 0,
+"standard_ops": 2
+},
+"MMOT01": {
+"area": "MAC wood",
+"group": "Pneumatic Oscillating Mortiser",
+"qty": 1,
+"actual_ops": 1,
+"standard_ops": 1
+},
+"MMOT02": {
+"area": "MAC wood",
+"group": "Pneumatic Oscillating Mortiser",
+"qty": 1,
+"actual_ops": 1,
+"standard_ops": 1
+},
+"MMOT04": {
+"area": "MAC wood",
+"group": "Pneumatic Oscillating Mortiser",
+"qty": 1,
+"actual_ops": 1,
+"standard_ops": 1
+},
+"MVDR01": {
+"area": "MAC wood",
+"group": "Multiple vertical drill",
+"qty": 1,
+"actual_ops": 3,
+"standard_ops": 3
+},
+"MVDR02": {
+"area": "MAC wood",
+"group": "Multiple vertical drill",
+"qty": 1,
+"actual_ops": 1,
+"standard_ops": 1
+},
+"MVDR03": {
+"area": "MAC wood",
+"group": "Multiple vertical drill",
+"qty": 1,
+"actual_ops": 1,
+"standard_ops": 1
+},
+"MHDR01": {
+"area": "MAC wood",
+"group": "Multiple horizontal drill",
+"qty": 1,
+"actual_ops": 1,
+"standard_ops": 1
+},
+"MHDR02": {
+"area": "MAC wood",
+"group": "Multiple horizontal drill",
+"qty": 1,
+"actual_ops": 1,
+"standard_ops": 1
+},
+"MHDR03": {
+"area": "MAC wood",
+"group": "Multiple horizontal drill",
+"qty": 1,
+"actual_ops": 1,
+"standard_ops": 1
+},
+"MHDR04": {
+"area": "MAC wood",
+"group": "Multiple horizontal drill",
+"qty": 1,
+"actual_ops": 1,
+"standard_ops": 1
+},
+"MVHDR01": {
+"area": "MAC wood",
+"group": "Multiple vertical & horizontal drill",
+"qty": 1,
+"actual_ops": 1,
+"standard_ops": 1
+},
+"MVHDR02": {
+"area": "MAC wood",
+"group": "Multiple vertical & horizontal drill",
+"qty": 1,
+"actual_ops": 1,
+"standard_ops": 1
+},
+"MVHDR03": {
+"area": "MAC wood",
+"group": "Multiple vertical & horizontal drill",
+"qty": 1,
+"actual_ops": 1,
+"standard_ops": 1
+},
+"AMVHDR01": {
+"area": "MAC wood",
+"group": "Auto multiple vertical & horizontal drill",
+"qty": 1,
+"actual_ops": 2,
+"standard_ops": 2
+},
+"DRI02": {
+"area": "MAC wood",
+"group": "Single drill",
+"qty": 1,
+"actual_ops": 1,
+"standard_ops": 1
+},
+"DRI03": {
+"area": "MAC wood",
+"group": "Single drill",
+"qty": 1,
+"actual_ops": 1,
+"standard_ops": 1
+},
+"DRI04": {
+"area": "MAC wood",
+"group": "Single drill",
+"qty": 1,
+"actual_ops": 1,
+"standard_ops": 1
+},
+"DRI05": {
+"area": "MAC wood",
+"group": "Single drill",
+"qty": 1,
+"actual_ops": 1,
+"standard_ops": 1
+},
+"DRI06": {
+"area": "MAC wood",
+"group": "Single drill",
+"qty": 1,
+"actual_ops": 1,
+"standard_ops": 1
+},
+"DRI07": {
+"area": "MAC wood",
+"group": "Single drill",
+"qty": 1,
+"actual_ops": 1,
+"standard_ops": 1
+},
+"LATH01": {
+"area": "MAC wood",
+"group": "Wood turning",
+"qty": 1,
+"actual_ops": 1,
+"standard_ops": 1
+},
+"LATH02": {
+"area": "MAC wood",
+"group": "Wood turning",
+"qty": 1,
+"actual_ops": 1,
+"standard_ops": 1
+},
+"LATH03": {
+"area": "MAC wood",
+"group": "Wood turning",
+"qty": 1,
+"actual_ops": 1,
+"standard_ops": 1
+},
+"LATH04": {
+"area": "MAC wood",
+"group": "Wood turning",
+"qty": 1,
+"actual_ops": 1,
+"standard_ops": 1
+},
+"LATH05": {
+"area": "MAC wood",
+"group": "Wood turning",
+"qty": 1,
+"actual_ops": 1,
+"standard_ops": 1
+},
+"LATHA01": {
+"area": "MAC wood",
+"group": "Wood turning",
+"qty": 1,
+"actual_ops": 1,
+"standard_ops": 1
+},
+"LATHA06": {
+"area": "MAC wood",
+"group": "Wood turning",
+"qty": 1,
+"actual_ops": 1,
+"standard_ops": 1
+},
+"VÁGỖTHÔNG": {
+"area": "MAC wood",
+"group": null,
+"qty": 1,
+"actual_ops": 0,
+"standard_ops": 2
+},
+"FP01": {
+"area": "MAC wood",
+"group": "Frame press",
+"qty": 1,
+"actual_ops": 4,
+"standard_ops": 4
+},
+"FP02": {
+"area": "MAC wood",
+"group": "Frame press",
+"qty": 1,
+"actual_ops": 3,
+"standard_ops": 3
+},
+"FP03": {
+"area": "MAC wood",
+"group": "Frame press",
+"qty": 1,
+"actual_ops": 3,
+"standard_ops": 3
+},
+"FP04": {
+"area": "MAC wood",
+"group": "Frame press",
+"qty": 1,
+"actual_ops": 3,
+"standard_ops": 3
+},
+"WBS01": {
+"area": "MAC wood",
+"group": "Wide Belt Sander",
+"qty": 1,
+"actual_ops": 3,
+"standard_ops": 3
+},
+"WBS02": {
+"area": "MAC wood",
+"group": "Wide Belt Sander",
+"qty": 1,
+"actual_ops": 2,
+"standard_ops": 2
+},
+"WBS03": {
+"area": "MAC wood",
+"group": "Wide Belt Sander",
+"qty": 1,
+"actual_ops": 2,
+"standard_ops": 2
+},
+"WBS04": {
+"area": "MAC wood",
+"group": "Wide Belt Sander",
+"qty": 1,
+"actual_ops": 1,
+"standard_ops": 2
+},
+"WBS05": {
+"area": "MAC wood",
+"group": "Wide Belt Sander",
+"qty": 1,
+"actual_ops": 2,
+"standard_ops": 3
+},
+"WBS07": {
+"area": "MAC wood",
+"group": "Wide Belt Sander",
+"qty": 1,
+"actual_ops": 2,
+"standard_ops": 3
+},
+"STS03": {
+"area": "MAC wood",
+"group": "Hand Stroke Sanding",
+"qty": 1,
+"actual_ops": 3,
+"standard_ops": 3
+},
+"STS04": {
+"area": "MAC wood",
+"group": "Hand Stroke Sanding",
+"qty": 1,
+"actual_ops": 2,
+"standard_ops": 2
+},
+"30-1018": {
+"area": "MAC wood",
+"group": "Hand Stroke Sanding",
+"qty": 1,
+"actual_ops": 1,
+"standard_ops": 1
+},
+"BRS01": {
+"area": "MAC wood",
+"group": "Brush sander",
+"qty": 1,
+"actual_ops": 2,
+"standard_ops": 2
+},
+"BRS04": {
+"area": "MAC wood",
+"group": "Brush sander",
+"qty": 1,
+"actual_ops": 2,
+"standard_ops": 2
+},
+"BRS06": {
+"area": "MAC wood",
+"group": "Brush sander",
+"qty": 1,
+"actual_ops": 2,
+"standard_ops": 2
+},
+"BRS07": {
+"area": "MAC wood",
+"group": "Brush sander",
+"qty": 1,
+"actual_ops": 0,
+"standard_ops": 0
+},
+"30-0060": {
+"area": "MAC wood",
+"group": "Brush sander",
+"qty": 1,
+"actual_ops": 0,
+"standard_ops": 0
+},
+"30-0063": {
+"area": "MAC wood",
+"group": "Brush sander",
+"qty": 1,
+"actual_ops": 0,
+"standard_ops": 0
+},
+"DBM6": {
+"area": "MAC wood",
+"group": "Brush sander",
+"qty": 1,
+"actual_ops": 0,
+"standard_ops": 0
+},
+"DBM11": {
+"area": "MAC wood",
+"group": "Brush sander",
+"qty": 1,
+"actual_ops": 2,
+"standard_ops": 2
+},
+"BRS20": {
+"area": "MAC wood",
+"group": "Tilting spindle sponge sanding",
+"qty": 1,
+"actual_ops": 1,
+"standard_ops": 1
+},
+"BRS21": {
+"area": "MAC wood",
+"group": "Tilting spindle sponge sanding",
+"qty": 1,
+"actual_ops": 2,
+"standard_ops": 2
+},
+"DEOE01/60-0006": {
+"area": "MAC wood",
+"group": "Sanding machine",
+"qty": 1,
+"actual_ops": 0,
+"standard_ops": 0
+},
+"SBRS09": {
+"area": "MAC wood",
+"group": "Edge sanding straight",
+"qty": 1,
+"actual_ops": 1,
+"standard_ops": 1
+},
+"SBRS10": {
+"area": "MAC wood",
+"group": "Double side sanding",
+"qty": 1,
+"actual_ops": 2,
+"standard_ops": 2
+},
+"HBS01": {
+"area": "MAC wood",
+"group": "Horizontal Belt Sanding",
+"qty": 1,
+"actual_ops": 0,
+"standard_ops": 0
+},
+"HBS04/HDSS04": {
+"area": "MAC wood",
+"group": "Edge sanding curved",
+"qty": 1,
+"actual_ops": 1,
+"standard_ops": 1
+},
+"RAS19": {
+"area": "Drawer",
+"group": "Radial Arm Saw",
+"qty": 1,
+"actual_ops": 1,
+"standard_ops": 1
+},
+"CIRS04": {
+"area": "Drawer",
+"group": "Circular saw",
+"qty": 1,
+"actual_ops": 1,
+"standard_ops": 1
+},
+"CIRS08": {
+"area": "Drawer",
+"group": "Circular saw",
+"qty": 1,
+"actual_ops": 2,
+"standard_ops": 2
+},
+"DRI09": {
+"area": "Drawer",
+"group": "Single drill",
+"qty": 1,
+"actual_ops": 1,
+"standard_ops": 1
+},
+"MDTE03": {
+"area": "Drawer",
+"group": "Dovetail Tenoner ",
+"qty": 1,
+"actual_ops": 2,
+"standard_ops": 2
+},
+"MDTE04": {
+"area": "Drawer",
+"group": "Dovetail Tenoner ",
+"qty": 1,
+"actual_ops": 1,
+"standard_ops": 1
+},
+"MDTE10": {
+"area": "Drawer",
+"group": "Dovetail Tenoner ",
+"qty": 1,
+"actual_ops": 1,
+"standard_ops": 1
+},
+"MDTE01": {
+"area": "Drawer",
+"group": "Dovetail Motiser",
+"qty": 1,
+"actual_ops": 1,
+"standard_ops": 1
+},
+"MDTE02": {
+"area": "Drawer",
+"group": "Dovetail Motiser",
+"qty": 1,
+"actual_ops": 1,
+"standard_ops": 1
+},
+"MDTE05": {
+"area": "Drawer",
+"group": "Dovetail Motiser",
+"qty": 1,
+"actual_ops": 1,
+"standard_ops": 1
+},
+"SLC01": {
+"area": "Drawer",
+"group": "Slot Cut",
+"qty": 1,
+"actual_ops": 1,
+"standard_ops": 1
+},
+"OHR09": {
+"area": "Drawer",
+"group": "Over Head Router",
+"qty": 1,
+"actual_ops": 1,
+"standard_ops": 1
+}
+}
