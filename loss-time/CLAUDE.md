@@ -238,3 +238,6 @@ Người dùng mới được bàn giao việc này (chưa quen cách hoạt đ�
 
 ## Cập nhật 3/11/2026
 - Nhân viên mới 29/10 (Assembly 1) và 30/10 (Raw Cutting 2) đã nằm trong bảng từ lần trước (người dùng gửi lại danh sách ngày 3/11, không có thay đổi). Đã lập thêm 2/11 (411,5 giờ: P20 47, P26 225, A2 139,5) và 3/11 (398 giờ: A2 126), mẫu ngày thường có tăng ca, chưa có nhân viên mới. Số người A2 đã kiểm tra độc lập, khớp. File theo bộ phận: `outputs/Nhap_lieu_theo_bo_phan_02-11_den_03-11.xlsx`.
+
+## Đối chiếu S32 tuần 44 (file xuất 3/11, 25-31/10)
+- Hệ thống 26-31/10 có 30 dòng S32 (830,6 giờ), KHÔNG có dòng UV nào và chưa có UV nguồn từ 26/10. Lỗi tìm thấy: INLAY 26/10 nhập hai dòng "25 full sét" AT655 và thiếu dòng "25 sét đuôi + hồng 3 đầu" 20 giờ (thừa 5 giờ so với 84); hàng sửa MAC 28/10 ghi Process Raw Cutting (đúng là Machining); 31/10 thợ sơn có thêm dòng 96 giờ thừa; dòng Ép nóng 26/10 và hàng làm lại RC WOOD (29/10-31/10) để trống bộ phận. Người dùng nhập "5 người của Assy hỗ trợ MAC cào cước" 62,5 giờ mỗi ngày 26-30/10 (không có trong nguồn của mình). File: `outputs/Nhap_lieu_S32_con_lai_theo_bo_phan_03-11.xlsx`.
