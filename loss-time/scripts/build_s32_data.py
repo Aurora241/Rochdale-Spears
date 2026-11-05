@@ -12,8 +12,8 @@ def add(date,src,item,qty,area,dept,lido,gc,fr,to,hc,flag='',items=None,chk=None
     dept=DM.get(dept,dept);area=AM.get(area,area)
     R.append(dict(date=date,src=src,item=item,qty=qty,area=area,dept=dept,lido=lido,gc=gc,fr=fr,to=to,hc=hc,flag=flag,items=items or []))
 # 1. Beam saw (bản 20/10 mới nhất)
-bs=[r for r in ld('LOST TIME BEMSAW 31.10.xlsx','data ') if isinstance(r[6],dt.datetime) and r[6]>=D0]
-assert len(bs)==33
+bs=[r for r in ld('LOST TIME BEMSAW 05.11.xlsx','data ') if isinstance(r[6],dt.datetime) and r[6]>=D0]
+assert len(bs)==37
 notime=[r for r in bs if r[8] is None];bs=[r for r in bs if r[8] is not None]
 print('Beam saw dòng không có giờ:',[(r[6].strftime('%d/%m'),r[2],r[3],r[5]) for r in notime])
 dm={'HÀNG BẢNG MÀU':'TF','Technical':'TF','Final machining':'Machining','FINISHING':'Finishing','Machining CNC':'Machining','Machining':'Machining','Unassigned':'(chưa phân công)','QA do không test lú':'QC'}
@@ -49,13 +49,14 @@ g13=[r for r in s1 if r[6]==dt.datetime(2026,10,13)]
 assert len(g13)==1
 r=g13[0];add(r[6],'UV phát sinh',r[2],r[5],'RC - PANEL','TF','Phát sinh khu vực UV - Back Panel','Charge to: TF',r[8],r[9],int(r[7]))
 # 4. Ép nóng (bản (1))
-ep=ld('Ep nong 29.10.xlsx','datta')
+ep=ld('Ep nong 05.11.xlsx','datta')
 def grp(i0,i1): return [(ep[i-1][2],ep[i-1][3],ep[i-1][5]) for i in range(i0,i1+1)]
 def eprow(i): return ep[i-1]
 r=eprow(219);add(r[6],'Ép nóng',r[2],None,'RC - PANEL','P1','Hỗ trợ P1 ép nóng','Hỗ trợ P1 (3 mã hàng, 1 ca)',r[8],r[9],int(r[7]),'',grp(219,221))
 r=eprow(222);add(r[6],'Ép nóng',r[2],None,'RC - PANEL','P1','Hỗ trợ P1 ép nóng - ép lót','Ép lót (2 mã hàng)',r[8],r[9],int(r[7]),'',grp(222,223))
 r=eprow(224);add(r[6],'Ép nóng',r[2],None,'RC - PANEL','P1','Hỗ trợ P1 ép nóng - ép chính','Ép chính (2 mã hàng)',r[8],r[9],int(r[7]),'',grp(224,225))
 r=eprow(226);add(r[6],'Ép nóng',r[2],r[5],'RC - PANEL','(chưa phân công)',f'Ép hàng sửa (chi tiết {r[3]})','Charge to: Unassigned (file Ép nóng)',r[8],r[9],int(r[7]),'U')
+r=eprow(227);add(r[6],'Ép nóng',r[2],None,'RC - PANEL','TF','Ép hàng sửa hàng bảng màu','Hàng bảng màu 5 mã hàng, 1 ca (4 người 7:00-10:30)',r[8],r[9],int(r[7]),'',grp(227,231))
 # 5. Veneer hàng BS (bản 15/10)
 ve=ld('Lost time veneer 31.10.xlsx','tổng')
 v1,v2,v3,v4,v5,v6,v7,v8,v9,v10,v11,v12,v13=[ve[i] for i in range(1802,1815)]
