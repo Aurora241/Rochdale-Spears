@@ -265,3 +265,5 @@ Người dùng mới được bàn giao việc này (chưa quen cách hoạt đ�
 
 ## Cập nhật 6/11/2026
 - Nhân viên mới 4/11: Machining 1 (Mr.Tiến); P22 8 giờ, A2 từ 5/11. Đã lập 4/11 (415 giờ), 5/11 (398 giờ), 6/11 (380 giờ), mẫu ngày thường có tăng ca; 5/11 và 6/11 chưa có nhân viên mới (chờ báo). Số người A2 đã kiểm tra độc lập, khớp. File theo bộ phận: `outputs/Nhap_lieu_theo_bo_phan_04-11_den_06-11.xlsx` (thay file 3-5/11 cho ngày 4/11 vì đã có thêm P22).
+
+- Quy tắc gửi file theo bộ phận (6/11/2026, người dùng phản hồi): mỗi lần gửi phải đủ TỪ ĐẦU TUẦN ĐẾN HIỆN TẠI trong một file (ví dụ 2/11-6/11), không chỉ 3 ngày gần nhất, để người dùng không tưởng dữ liệu bị cắt. File tuần 45: `outputs/Nhap_lieu_theo_bo_phan_02-11_den_06-11.xlsx`. Số dòng A2 giảm dần trong tuần là do các nhóm đủ 12 ngày A2, không phải bị cắt.
