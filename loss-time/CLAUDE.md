@@ -269,3 +269,8 @@ Người dùng mới được bàn giao việc này (chưa quen cách hoạt đ�
 - Quy tắc gửi file theo bộ phận (6/11/2026, người dùng phản hồi): mỗi lần gửi phải đủ TỪ ĐẦU TUẦN ĐẾN HIỆN TẠI trong một file (ví dụ 2/11-6/11), không chỉ 3 ngày gần nhất, để người dùng không tưởng dữ liệu bị cắt. File tuần 45: `outputs/Nhap_lieu_theo_bo_phan_02-11_den_06-11.xlsx`. Số dòng A2 giảm dần trong tuần là do các nhóm đủ 12 ngày A2, không phải bị cắt.
 
 - QUY TẮC CỨNG (người dùng nhắc lại 6/11/2026): KHÔNG tự cắt bớt dữ liệu giữa tuần. Trong tuần mọi file gửi cho người dùng (theo bộ phận hoặc đầy đủ) phải đủ từ Thứ Hai đến ngày hiện tại; không tách "vài ngày gần nhất", không nói file mới "thay" file cũ. Chỉ khi sang tuần mới (Thứ Hai) mới bắt đầu file tuần mới; tuần cũ giữ nguyên thành một file đủ cả tuần.
+
+## Cập nhật 7/11/2026
+- Nhân viên mới 5/11: Machining 2 và Assembly 3 (1 người dưới Mr.Dũng-Inlay, vẫn tính); P22 40 giờ ngày 5/11, A2 từ 6/11 (22,5 giờ). Bảng 5/11 = 438 giờ, 6/11 = 402,5 giờ; tổng W45 (2/11-6/11) = 2.113,0 giờ. Các nhóm 5/11 kết thúc A2 ngày 19/11 (nếu Assembly làm Chủ nhật 8/11 thì nhóm Assembly kết thúc sớm hơn 1 ngày).
+- Do file gốc "Loss time White Wood 2026 - New" đã mất khi container khởi động lại, bản cập nhật này được vá trực tiếp bằng `scripts/patch_hire_05-11.py` (thêm nhóm 5/11 vào 5 sheet của `Loss_time_05-10_den_06-11.xlsx`, tính lại bằng LibreOffice, rồi chạy lại `build_nhap_lieu.py` và `build_nhap_lieu_theo_bo_phan.py`). Lần sau cần dựng lại từ đầu thì nhờ người dùng gửi lại file gốc (đến 3/10); hoặc tiếp tục vá theo cách này.
+- File gửi người dùng: `outputs/Nhap_lieu_theo_bo_phan_02-11_den_06-11.xlsx` (đủ tuần W45 từ Thứ Hai đến 6/11). Thứ Bảy 7/11 và Chủ nhật 8/11 chưa lập (hỏi người dùng).
