@@ -1,8 +1,8 @@
-"""Thêm nhân viên mới 5/11 (Machining 2, Assembly 3) vào Loss_time_05-10_den_06-11.xlsx:
+"""Thêm nhân viên mới 5/11 (Machining 2, Assembly 3) vào Loss_time_05-10_den_08-11.xlsx:
 P22 ngày 5/11, A2 từ 6/11. Chạy trong thư mục outputs."""
 import openpyxl,copy,re,warnings,datetime as dt
 warnings.simplefilter('ignore')
-F='Loss_time_05-10_den_06-11.xlsx'
+F='Loss_time_05-10_den_08-11.xlsx'
 wb=openpyxl.load_workbook(F)
 NEW=[('Machining',2),('Assembly',3)]
 def cp(ws,src,dst,vals):

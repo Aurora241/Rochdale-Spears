@@ -181,6 +181,6 @@ for hdate in DAYS:
 sc.cell(r+1,1,'Mỗi ngày trong lịch ghi A2 7:30-12:00, Notes "HC mới- 50% hiệu suất- 2 tuần-dd/mm" (dd/mm = ngày vào làm). Khi có nhóm mới, thêm một dòng.').font=Font(name=F,italic=True)
 sc.column_dimensions['A'].width=22;sc.column_dimensions['B'].width=20;sc.column_dimensions['C'].width=6
 for cc in range(4,17): sc.column_dimensions[L(cc)].width=11
-wb.save('Loss_time_05-10_den_06-11.xlsx')
+wb.save('Loss_time_05-10_den_08-11.xlsx')
 print('co',len(co),'stalled',stalled)
 for D in DAYS: print(D.date(),len(day_rows(D)))
