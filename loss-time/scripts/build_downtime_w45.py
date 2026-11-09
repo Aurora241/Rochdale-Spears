@@ -73,17 +73,25 @@ rc,rf,rl,rt=build('W45 RC',('RC',))
 mac,mf,ml,mt=build('W45 MAC',('Machining',))
 asy,af,al,at=build('W45 ASSY',(),'Không có sự cố băng chuyền/máy Assembly ghi nhận trong tuần W45')
 xe,xf,xl,xt=build('W45 XE NÂNG',(),'Không có sự cố xe nâng ghi nhận trong tuần W45')
-# TOTAL
+# TOTAL (bố cục như mẫu: Month, Week W45-W48, Total, TOTAL YEAR 2026)
 tt=wb.create_sheet('TOTAL');tt['A2']='TOTAL WHITE WOOD DOWNTIME';tt['A2'].font=Font(name=F,bold=True,size=13)
-tt['A3']='Month';tt['B3']='Nov';tt['A4']='Week';tt['B4']='W45'
-for c in ('A3','B3','A4','B4'):tt[c].font=HF;tt[c].fill=ORG;tt[c].alignment=CEN;tt[c].border=bd
+tt['A3']='Month';tt['B3']='NOVEMBER';tt['G3']='TOTAL YEAR 2026'
+for i,w_ in enumerate(('W45','W46','W47','W48','Total')):tt.cell(4,2+i,w_)
+tt['A4']='Week';tt['G4']=None
+for c in ['A3','B3','G3','A4']+[f'{x}4' for x in 'BCDEF']:
+    tt[c].font=HF;tt[c].fill=ORG;tt[c].alignment=CEN;tt[c].border=bd
 for i,(nm,sh,rt_) in enumerate((('RC','W45 RC',rt),('MACHING','W45 MAC',mt),('ASSY','W45 ASSY',at),('XE NÂNG','W45 XE NÂNG',xt))):
     tt.cell(5+i,1,nm).font=HF;tt.cell(5+i,1).border=bd
     c=tt.cell(5+i,2,f"='{sh}'!N{rt_}");c.number_format='0.00';c.border=bd;c.font=NF
+    tt.cell(5+i,6,f'=SUM(B{5+i}:E{5+i})').number_format='0.00';tt.cell(5+i,6).border=bd;tt.cell(5+i,6).font=HF
+    tt.cell(5+i,7,None).border=bd
 tt.cell(9,1,'TOTAL').font=HF;tt.cell(9,1).border=bd
-c=tt.cell(9,2,'=SUM(B5:B8)');c.font=HF;c.number_format='0.00';c.border=bd
-tt['A11']='Downtime = số giờ máy dừng (Time stop line), không nhân số công nhân. RC gồm RC WOOD và RC PANEL.';tt['A11'].font=Font(name=F,italic=True)
-tt.column_dimensions['A'].width=18
+for j in range(5):
+    col=chr(66+j);c=tt.cell(9,2+j,f'=SUM({col}5:{col}8)');c.font=HF;c.number_format='0.00';c.border=bd
+tt.cell(9,7).border=bd
+tt['A11']='TOTAL YEAR 2026 để trống: cần downtime các tuần W01-W44 (chưa có dữ liệu). Cột W46-W48 điền khi có báo cáo các tuần sau.';tt['A11'].font=Font(name=F,italic=True)
+tt['A12']='Downtime = số giờ máy dừng (Time stop line), không nhân số công nhân. RC gồm RC WOOD và RC PANEL.';tt['A12'].font=Font(name=F,italic=True)
+tt.column_dimensions['A'].width=18;tt.column_dimensions['G'].width=20
 # Sheet1 (biểu đồ)
 s=wb.create_sheet('Sheet1')
 s['B1']='            TOTAL MACHINE DOWNTIME';s['B1'].font=Font(name=F,bold=True,size=13)

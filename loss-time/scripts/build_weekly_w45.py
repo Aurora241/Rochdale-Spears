@@ -67,7 +67,7 @@ def sumifs_area(areas,code=None,day=None,extra=''):
         if code:f+=f",{RNG('H')},\"{code}\""
         f+=extra+')';terms.append(f)
     return '='+'+'.join(terms)
-AREAS=[('Raw Cutting (RC WOOD + RC PANEL)',RCN),('Machining',['Machining']),('Assembly',['Assembly'])]
+AREAS=[('RC - WOOD',['RC - WOOD']),('RC - PANEL',['RC - PANEL','Raw Cutting','Raw Cutting Panel','RC']),('Machining',['Machining']),('Assembly',['Assembly'])]  # như mẫu W23: RC - WOOD (P20, P26) và RC - PANEL (còn lại)
 # --- Time part
 tp=wb.create_sheet('Time part')
 tp['A1']='LOSS TIME THEO BỘ PHẬN - TUẦN W45';tp['A1'].font=Font(name=F,bold=True,size=13)
@@ -82,16 +82,16 @@ for i,(nm,ar) in enumerate(AREAS):
     for j in range(7):
         c=tp.cell(r,2+j,sumifs_area(ar,day=f'{chr(66+j)}$3'));c.number_format='#,##0.0';c.border=bd;c.font=NF
     c=tp.cell(r,9,f'=SUM(B{r}:H{r})');c.number_format='#,##0.0';c.border=bd;c.font=BF
-tp.cell(7,1,'Total').font=BF;tp.cell(7,1).border=bd
+tp.cell(8,1,'Total').font=BF;tp.cell(8,1).border=bd
 for j in range(8):
-    col=chr(66+j);c=tp.cell(7,2+j,f'=SUM({col}4:{col}6)');c.font=BF;c.border=bd;c.number_format='#,##0.0'
+    col=chr(66+j);c=tp.cell(8,2+j,f'=SUM({col}4:{col}7)');c.font=BF;c.border=bd;c.number_format='#,##0.0'
 tp.column_dimensions['A'].width=34
 for j in range(2,10):tp.column_dimensions[chr(64+j)].width=11
 ch=BarChart();ch.type='col';ch.grouping='stacked';ch.overlap=100;ch.title='P2 LOST TIME W45 (giờ công)'
-for i in range(3):
+for i in range(4):
     s=Series(Reference(tp,min_col=2,max_col=8,min_row=4+i),title=tp.cell(4+i,1).value);ch.series.append(s)
 ch.set_categories(Reference(tp,min_col=2,max_col=8,min_row=3));ch.height=9;ch.width=18;ch.y_axis.title='giờ công'
-tp.add_chart(ch,'A10')
+tp.add_chart(ch,'A11')
 # pareto
 def val(area_list,pred):  # tính trước để sắp xếp
     tot=0
@@ -211,7 +211,7 @@ for k,v in tpl.column_dimensions.items():tc.column_dimensions[k].width=v.width o
 gn=wb.create_sheet('Ghi chú W45',0)
 notes=['GHI CHÚ BÁO CÁO LOSS TIME WHITE WOOD - TUẦN W45 (02/11 - 08/11/2026)',
 '1. Dữ liệu: bảng chuẩn P20, P26, P22, A2 (đã đối chiếu với hệ thống, Machining thứ Bảy 7/11 tính 7:30); S32 từ 11 nguồn báo cáo, gồm cào cước hỗ trợ ME 2/11; A10 lấy theo file xuất hệ thống (số công nhân do người nhập ghi).',
-'2. Giờ công mất = (To - From) x HC. Chủ nhật 8/11 chỉ Assembly làm. RC WOOD và RC PANEL được gộp thành Raw Cutting.',
+'2. Giờ công mất = (To - From) x HC. Chủ nhật 8/11 chỉ Assembly làm. Sheet Time part tách RC - WOOD (các dòng ghi RC - WOOD: P20, P26) và RC - PANEL (còn lại của Raw Cutting: A2, S32, A10 và P20/P26 của RC - PANEL), giống mẫu W23; Pareto RC gộp cả hai.',
 '3. S32 W45 chưa đủ: thiếu báo cáo UV (từ 26/10), hàng sửa MAC (sau 28/10) và Beam saw tuần 45 sau 4/11; 2 mã Ép nóng 7/11 chưa có giờ.',
 '4. Không có NCR (O15), Others Losstime, Power cut, Kaizen (P24) trong dữ liệu tuần này. File này chỉ có tuần W45; chưa gồm lũy kế các tuần trước (cần file xuất W24-W44 để nối).',
 '5. Pareto theo mẫu W23: không gồm P20 và P26.']
