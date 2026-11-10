@@ -18,7 +18,7 @@ for r in rows[14:]:
 PR={'RC - WOOD':'Raw Cutting','RC - PANEL':'Raw Cutting','RC':'Raw Cutting','Raw Cutting Panel':'Raw Cutting','RC WOOD':'Raw Cutting','Machining':'Machining','Assembly':'Assembly','INLAY':'INLAY'}
 DP={'RC - PANEL':'RAW CUTTING','RC WOOD':'RAW CUTTING','RC - WOOD':'RAW CUTTING','Machining':'MACHINING','Assembly':'ASSEMBLY','HR/HSE':'HR/ HSE'}
 mine=[]
-wb=openpyxl.load_workbook('Loss_time_05-10_den_08-11.xlsx',data_only=True)
+wb=openpyxl.load_workbook('Loss_time_05-10_den_09-11.xlsx',data_only=True)
 for d in ('02-11','03-11','04-11','05-11','06-11','07-11','08-11'):
     day=dt.datetime(2026,int(d[3:]),int(d[:2]))
     for r in wb[f'Loss time {d}'].iter_rows(min_row=3,values_only=True):

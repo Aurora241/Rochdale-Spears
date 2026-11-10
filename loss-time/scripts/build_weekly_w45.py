@@ -15,7 +15,7 @@ T=lambda h,m=0:dt.time(h,m)
 # ---------------- dữ liệu
 rows=[]   # (date, item, code máy hư, qty, ncr, khu vực, code, name code, chart, lí do, ghi chú, from, to, hc)
 NAME={'P20':'Dailly Cleaning','P26':'Recorder/ Supporter','P22':'HR Training New Workers','A2':'Training','S32':'Other Support of Production','A10':'Machine/Tooling Failure'}
-src=openpyxl.load_workbook('Loss_time_05-10_den_08-11.xlsx',data_only=True)
+src=openpyxl.load_workbook('Loss_time_05-10_den_09-11.xlsx',data_only=True)
 for d in ('02-11','03-11','04-11','05-11','06-11','07-11','08-11'):
     day=dt.datetime(2026,int(d[3:]),int(d[:2]))
     for r in src[f'Loss time {d}'].iter_rows(min_row=3,values_only=True):
