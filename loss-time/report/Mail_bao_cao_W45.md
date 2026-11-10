@@ -6,18 +6,18 @@ Em gửi báo cáo Loss time và Downtime máy của White Wood tuần W45 (từ
 1. **Loss_time_White_Wood_W45.xlsx**: loss time theo mã, theo bộ phận và theo ngày, kèm Pareto từng bộ phận.
 2. **Machining_Assy_Downtime_W45.xlsx**: downtime máy (Stop line + Repair WW) của RC, MAC, ASSY và xe nâng.
 
-**1. Loss time tuần W45: 3.626,6 giờ công**
+**1. Loss time tuần W45: 2.714,6 giờ công**
 
 | Bộ phận | Giờ công | Ghi chú |
 |---|---|---|
-| Assembly | 1.776,0 | Sơn lòng trong tủ 912 giờ (hỗ trợ Fin), Chủ nhật 8/11 chỉ Assembly làm |
+| Assembly | 864,0 | Đào tạo nhân viên mới 491,5 giờ, bắn cát 36 giờ, cào cước hỗ trợ MAC 22,5 giờ; Chủ nhật 8/11 chỉ Assembly làm |
 | Raw Cutting (RC WOOD + RC PANEL) | 1.169,5 | Đào tạo nhân viên mới 303 giờ, S32 60,8 giờ, downtime 25,7 giờ |
 | Machining | 681,1 | Đào tạo nhân viên mới 177 giờ, downtime 22,8 giờ |
 
-Theo mã loss time: P26 Recorder/Supporter 1.285,0 giờ (35,4%), S32 Hỗ trợ khác 1.032,6 giờ (28,5%), A2 Training 859,5 giờ (23,7%), P20 Vệ sinh 289,0 giờ (8,0%), P22 Đào tạo công nhân mới 112,0 giờ (3,1%), A10 Máy hư 48,5 giờ (1,3%).
+Theo mã loss time: P26 Recorder/Supporter 1.285,0 giờ (47,3%), A2 Training 859,5 giờ (31,7%), P20 Vệ sinh 289,0 giờ (10,6%), S32 Hỗ trợ khác 120,6 giờ (4,4%), P22 Đào tạo công nhân mới 112,0 giờ (4,1%), A10 Máy hư 48,5 giờ (1,8%).
 
 Điểm đáng chú ý:
-- S32 là mã lớn thứ hai, chủ yếu từ thợ sơn lòng trong tủ (912 giờ), kèm bắn cát Supcon 36 giờ, cào cước hỗ trợ MAC 22,5 giờ, Veneer làm mẫu 30,5 giờ và Ép nóng hàng sửa 24 giờ.
+- S32 chỉ 120,6 giờ công: Veneer làm mẫu 30,5 giờ, bắn cát Supcon 36 giờ, cào cước hỗ trợ MAC 22,5 giờ, Ép nóng hàng sửa 24 giờ, Beam saw 6,3 giờ, cào cước hỗ trợ ME 1,3 giờ. Thợ sơn lòng trong tủ không nhập từ tuần này nên không tính.
 - Nhân viên mới tuần này: 14 người (P22), A2 đang chạy cho các nhóm vào làm từ 21/10 trở đi.
 - Tuần W45 không có NCR (O15), Kaizen (P24), Power cut.
 

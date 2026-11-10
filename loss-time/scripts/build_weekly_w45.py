@@ -214,7 +214,8 @@ notes=['GHI CHÚ BÁO CÁO LOSS TIME WHITE WOOD - TUẦN W45 (02/11 - 08/11/2026
 '2. Giờ công mất = (To - From) x HC. Chủ nhật 8/11 chỉ Assembly làm. Sheet Time part tách RC - WOOD (các dòng ghi RC - WOOD: P20, P26) và RC - PANEL (còn lại của Raw Cutting: A2, S32, A10 và P20/P26 của RC - PANEL), giống mẫu W23; Pareto RC gộp cả hai.',
 '3. S32 W45 chưa đủ: thiếu báo cáo UV (từ 26/10), hàng sửa MAC (sau 28/10) và Beam saw tuần 45 sau 4/11; 2 mã Ép nóng 7/11 chưa có giờ.',
 '4. Không có NCR (O15), Others Losstime, Power cut, Kaizen (P24) trong dữ liệu tuần này. File này chỉ có tuần W45; chưa gồm lũy kế các tuần trước (cần file xuất W24-W44 để nối).',
-'5. Pareto theo mẫu W23: không gồm P20 và P26.']
+'5. Pareto theo mẫu W23: không gồm P20 và P26.',
+'6. Thợ sơn lòng trong tủ (note "Không có bomtime sơn lòng trong") không nhập từ 10/11/2026 (đồng nghiệp xác nhận) nên không tính vào W45.']
 for i,t_ in enumerate(notes,1):
     gn.cell(i,1,t_).font=Font(name=F,bold=(i==1),size=12 if i==1 else 11);gn.cell(i,1).alignment=Alignment(wrap_text=True,vertical='top')
 gn.column_dimensions['A'].width=150
