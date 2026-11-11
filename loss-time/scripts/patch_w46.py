@@ -2,7 +2,7 @@
 Dùng: python ../scripts/patch_w46.py dd-mm  (ví dụ 09-11), ngày thường có tăng ca, không nhân viên mới."""
 import openpyxl,copy,re,sys,warnings,datetime as dt
 warnings.simplefilter('ignore')
-nm=sys.argv[1];OLD=sys.argv[2];NEW=sys.argv[3];PREV=sys.argv[4]   # ví dụ 09-11, file cũ, file mới, sheet ngày liền trước
+nm=sys.argv[1];OLD=sys.argv[2];NEW=sys.argv[3];PREV=sys.argv[4];HIRE=[(a,int(h)) for a,h in (x.split(':') for x in sys.argv[5].split(','))] if len(sys.argv)>5 and sys.argv[5] else []   # ví dụ 09-11, file cũ, file mới, sheet ngày liền trước
 day=dt.datetime(2026,int(nm[3:]),int(nm[:2]))
 D=lambda d,m:dt.datetime(2026,m,d)
 SUN={D(25,10),D(1,11),D(8,11)}
@@ -37,11 +37,16 @@ for r in range(3,23): ws.cell(r,2).value=day
 for r in range(23,ws.max_row+1):
     for c in range(1,ws.max_column+1): ws.cell(r,c).value=None
 rows=[]
+r=23
+p22=next(rr for rr in range(3,wb['Loss time 04-11'].max_row+1) if wb['Loss time 04-11'].cell(rr,8).value=='P22');p22t=wb['Loss time 04-11']
+for ar,hc in HIRE:
+    clone(ws,p22,r,p22t)
+    for c in range(1,ws.max_column+1): ws.cell(r,c).value=fix(p22t.cell(p22,c).value,r)
+    ws.cell(r,2).value=day;ws.cell(r,7).value=ar;ws.cell(r,16).value=hc;r+=1
 for (_,g,ar,hc,gtxt) in groups:
     k=kday(g,AREA(ar),day)
     if 1<=k<=12: rows.append((g,ar,hc,k,gtxt))
 order={'Assembly':0,'Machining':1};rows.sort(key=lambda x:(x[0],order.get(x[1],2)))
-r=23
 for (g,ar,hc,k,gtxt) in rows:
     clone(ws,a2tpl,r,t)
     for c,v in enumerate(ref,1): ws.cell(r,c).value=fix(v,r)
