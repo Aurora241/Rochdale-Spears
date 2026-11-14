@@ -13,7 +13,7 @@ rep=[
 (2,'RC','VEC03','Máy cắt veneer','Dừng máy vệ sinh hút bụi',T(14,14),T(14,38),0.40),
 (2,'RC','','Máy chuyền UV','Đèn thủy ngân bị lỗi',T(17,45),T(18,25),0.67),
 (3,'RC','VEC04','Máy cắt veneer','Máy bị lỗi tự động cắt',T(18,10),T(18,50),0.67),
-(4,'Machining','STS01','Máy chà nhám băng/ Hand Stroke Sanding','Con lăn của máy không di chuyển được',T(13,20),T(13,38),0.30),
+(4,'RC','STS01','Máy chà nhám băng/ Hand Stroke Sanding','Con lăn của máy không di chuyển được',T(13,20),T(13,38),0.30),
 (4,'RC','VES09','Máy may veneer','Máy bị hư dây cu-roa',T(16,30),T(18,1),1.52),
 (4,'Machining','','Máy CNC Nesting (Panel)','Máy bị lỗi nút dừng khẩn cấp',T(19,7),T(19,37),0.50),
 (5,'Machining','DEC06','Máy cắt 2 đầu băng tải / Double End Cutting','Máy bị lỗi không lên nguồn',T(8,15),T(13,55),5.67),

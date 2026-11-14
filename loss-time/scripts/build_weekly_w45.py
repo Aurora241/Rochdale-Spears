@@ -21,9 +21,9 @@ for d in ('02-11','03-11','04-11','05-11','06-11','07-11','08-11'):
     for r in src[f'Loss time {d}'].iter_rows(min_row=3,values_only=True):
         if r[7] in('P20','P26','P22','A2') and r[6]:
             rows.append((day,None,None,None,None,r[6],r[7],NAME[r[7]],r[9],r[10],r[11],r[12],r[13],r[15]))
-s32=openpyxl.load_workbook('Loss_time_S32_05-10_den_08-11.xlsx',data_only=True)['S32 5-10 đến 08-11']
+s32=openpyxl.load_workbook('Loss_time_S32_05-10_den_13-11.xlsx',data_only=True)['S32 5-10 đến 13-11']
 for r in s32.iter_rows(min_row=3,values_only=True):
-    if r[1] and hasattr(r[1],'strftime') and r[1]>=dt.datetime(2026,11,2):
+    if r[1] and hasattr(r[1],'strftime') and dt.datetime(2026,11,2)<=r[1]<=dt.datetime(2026,11,8):
         rows.append((r[1],r[2],None,r[4],None,r[6],'S32',NAME['S32'],r[9],r[10],r[11],r[12],r[13],r[15]))
 rows.append((DAYS[0],None,None,None,None,'Machining','S32',NAME['S32'],'ME','Cào cước hỗ trợ ME','1 công nhân Mac hỗ trợ cào cước cho ME (80 phút)',T(12,28),T(13,48),1))
 ex=list(openpyxl.load_workbook(EXPORT,data_only=True).active.iter_rows(values_only=True));H=ex[13]
@@ -37,7 +37,8 @@ for r in ex[14:]:
     if d['LossTime Code']!='A10':continue
     day=dt.datetime.strptime(d['Loss Date'],'%d %b %Y');notes=(d['Notes'] or '').strip()
     m=re.match(r'^([A-Z]{2,}[0-9]{1,3})-',notes);mc=m.group(1) if m else None
-    rows.append((day,None,mc,None,None,d['Process Name'],'A10',NAME['A10'],(d['Dept In Charge'] or '').strip(),notes,None,tm(d['Loss From Time']),tm(d['Loss To Time']),d['Quantity Workers']));nA10+=1
+    proc=('Raw Cutting' if (mc=='STS01') else d['Process Name'])  # STS01 là khu vực RC (người dùng xác nhận 14/11)
+    rows.append((day,None,mc,None,None,proc,'A10',NAME['A10'],(d['Dept In Charge'] or '').strip(),notes,None,tm(d['Loss From Time']),tm(d['Loss To Time']),d['Quantity Workers']));nA10+=1
 order={'P20':0,'P26':1,'P22':2,'A2':3,'S32':4,'A10':5}
 rows.sort(key=lambda x:(x[0],order[x[6]]))
 RCN=['RC - WOOD','RC - PANEL','Raw Cutting','Raw Cutting Panel','RC']

@@ -11,8 +11,8 @@ Em gửi báo cáo Loss time và Downtime máy của White Wood tuần W45 (từ
 | Bộ phận | Giờ công | Ghi chú |
 |---|---|---|
 | Assembly | 864,0 | Đào tạo nhân viên mới 491,5 giờ, bắn cát 36 giờ, cào cước hỗ trợ MAC 22,5 giờ; Chủ nhật 8/11 chỉ Assembly làm |
-| Raw Cutting (RC WOOD + RC PANEL) | 1.169,5 | Đào tạo nhân viên mới 303 giờ, S32 60,8 giờ, downtime 25,7 giờ |
-| Machining | 681,1 | Đào tạo nhân viên mới 177 giờ, downtime 22,8 giờ |
+| Raw Cutting (RC WOOD + RC PANEL) | 1.169,8 | Đào tạo nhân viên mới 303 giờ, S32 60,8 giờ, downtime 26,0 giờ |
+| Machining | 680,8 | Đào tạo nhân viên mới 177 giờ, downtime 22,5 giờ |
 
 Theo mã loss time: P26 Recorder/Supporter 1.285,0 giờ (47,3%), A2 Training 859,5 giờ (31,7%), P20 Vệ sinh 289,0 giờ (10,6%), S32 Hỗ trợ khác 120,6 giờ (4,4%), P22 Đào tạo công nhân mới 112,0 giờ (4,1%), A10 Máy hư 48,5 giờ (1,8%).
 
@@ -22,8 +22,8 @@ Theo mã loss time: P26 Recorder/Supporter 1.285,0 giờ (47,3%), A2 Training 85
 - Tuần W45 không có NCR (O15), Kaizen (P24), Power cut.
 
 **2. Downtime máy tuần W45: 22,5 giờ (21 sự cố)**
-- RC: 10,97 giờ (12 sự cố nhỏ, dài nhất BEMS04 máy cắt MDF đứt dây cu-roa 3,5 giờ).
-- Machining: 11,53 giờ (dài nhất DEC06 máy cắt 2 đầu băng tải không lên nguồn 5,67 giờ ngày 5/11).
+- RC: 11,27 giờ (13 sự cố, dài nhất BEMS04 máy cắt MDF đứt dây cu-roa 3,5 giờ).
+- Machining: 11,23 giờ (dài nhất DEC06 máy cắt 2 đầu băng tải không lên nguồn 5,67 giờ ngày 5/11).
 - Assembly và xe nâng: không có sự cố ghi nhận.
 - Máy dừng nhiều nhất: DEC06 6,17 giờ (2 lần: 5/11 và 8/11), BEMS04 3,5 giờ, VES09 1,52 giờ, CNCR11 1,48 giờ.
 - Tổng 22,5 giờ cao hơn đường 18 giờ của mẫu 4,5 giờ (và đường 10 giờ 12,5 giờ).
