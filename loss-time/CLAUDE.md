@@ -367,3 +367,7 @@ Người dùng mới được bàn giao việc này (chưa quen cách hoạt đ�
 
 ## STS01 là khu vực RC (người dùng xác nhận 14/11/2026)
 - Máy STS01 (chà nhám băng/ Hand Stroke Sanding) thuộc RC: A10 ghi Process Raw Cutting. Sự cố 4/11 (W45) báo cáo ghi Machining nhưng đúng là Raw Cutting: người dùng sửa dòng A10 STS01 4/11 (13:20-13:38, 1 người) trên hệ thống từ Machining sang Raw Cutting. Báo cáo tuần W45 đã tính lại: downtime RC 11,27 giờ, MAC 11,23 giờ (tổng 22,5 không đổi); A10 Raw Cutting 26,0 giờ công, Machining 22,5; RC - PANEL 1.078,3, Machining 680,8. Sự cố 13/11 (W46) STS01 ghi RC, đúng khu vực.
+
+## Đối chiếu W46 (14/11/2026, file xuất 9-14/11, 234 dòng)
+- Kết quả: 17 việc cần làm trên 220 dòng chuẩn (7,7%; W45 là 42 việc): Sai mã 8 dòng (A2 nhập thành P20 ngày 12/11: 3 dòng; thành P26 ngày 13/11: 5 dòng; đúng là A2, Dept HR/ HSE), Sai Dept 8 dòng (A2 Assembly 14/11 ghi ASSEMBLY 7 dòng; P26 Raw Cutting 9/11 "Nhận hàng gỗ" ghi MACHINING 1 dòng), thiếu A10 STS01 13/11 (RC). Machining không có lỗi; S32 W46 (10 dòng) và P22, P20, P26 khác khớp. File: `outputs/Danh_sach_sua_them_W46.xlsx` có sheet "Thống kê" (theo bộ phận và theo loại lỗi).
+- Script dùng cho mọi tuần: `scripts/build_fix_list_tuan.py <file xuất> dd-mm dd-mm <file ra> <Loss_time xlsx> <S32 xlsx> <A10 nhập xlsx>` (có ghép "Sai mã" khi cùng nội dung nhưng khác mã).
