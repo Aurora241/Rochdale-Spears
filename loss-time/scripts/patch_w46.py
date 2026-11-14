@@ -27,7 +27,8 @@ for r in range(4,nv.max_row+1):
         dd,mm=map(int,g.split('/'));groups.append((r,D(dd,mm),nv.cell(r,2).value,nv.cell(r,3).value,g))
 AREA=lambda a:'Assembly' if a=='Assembly' else a
 # 1) sheet ngày
-t=wb['Loss time 06-11'];ws=wb.copy_worksheet(t);ws.title=f'Loss time {nm}'
+TPL=sys.argv[6] if len(sys.argv)>6 else '06-11'
+t=wb[f'Loss time {TPL}'];ws=wb.copy_worksheet(t);ws.title=f'Loss time {nm}'
 wb.move_sheet(ws,offset=wb.sheetnames.index(f'Loss time {PREV}')+1-wb.sheetnames.index(ws.title))
 ws['A1']=re.sub(r'\d\d/\d\d/2026',day.strftime('%d/%m/%Y'),t['A1'].value)
 tr=next(r for r in range(3,t.max_row+1) if t.cell(r,16).value=='Tổng')
