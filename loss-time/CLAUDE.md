@@ -350,3 +350,6 @@ Người dùng mới được bàn giao việc này (chưa quen cách hoạt đ�
 - Thứ Bảy 14/11: Machining và Raw Cutting làm bình thường không tăng ca (7:30-15:30), chỉ Assembly tăng ca: P20 và P26 Assembly ghi 7:30-20:00 (25 + 25 giờ công thay cho 16 + 16). Bảng 14/11 = 389 giờ công (P20 47, P26 153, A2 189), dựng bằng `scripts/patch_assembly_ot.py <file> 14-11` sau patch_w46.py (mẫu Thứ Bảy 07-11). Khi một ngày chỉ Assembly tăng ca thì dùng cùng cách.
 - Chủ nhật 15/11: nghỉ cả xưởng, không lập bảng; A2 không tính Chủ nhật (SUN_ASSY giữ 25/10, 1/11, 8/11). Tuần W46 từ 9/11 đến 14/11 = 2.711 giờ công (396 + 444 + 535 + 477 + 470 + 389).
 - Bảng nhập liệu gửi người dùng 14/11 (lần 2): `outputs/Nhap_lieu_theo_bo_phan_09-11_den_14-11.xlsx`, so với lần gửi sáng cùng ngày có 3 dòng SỬA (Assembly 14/11 To 15:30 -> 20:00).
+
+## Quy tắc dòng vàng (người dùng nhắc 14/11/2026)
+- Dòng MỚI/SỬA phải luôn tô vàng và ghi chú, tính so với bản người dùng ĐÃ NHẬP (đã xác nhận), không so với bản gửi liền trước nếu họ chưa nhập. Vì vậy khi gửi lại trong ngày (ví dụ thêm sửa Assembly tăng ca Thứ Bảy), phải giữ nguyên các dòng vàng của lần trước cho tới khi người dùng báo "đã nhập". Chỉ lấy bản gửi lần gần nhất làm mốc khi người dùng xác nhận đã nhập xong bản đó. Bản 14/11 hiện so với bản 13/11: 42 dòng vàng (Assembly 15, Machining 12, Raw Cutting 15).
