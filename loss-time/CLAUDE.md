@@ -156,7 +156,7 @@ Người dùng mới được bàn giao việc này (chưa quen cách hoạt đ�
 - Tên bộ phận và khu vực trong bảng S32 đã đổi theo dropdown hệ thống (xem mục "Quy tắc nhập vào hệ thống").
 
 ## Cập nhật S32 ngày 24/10/2026
-- Bảng S32 hiện đến 24/10: `loss-time/outputs/Loss_time_S32_05-10_den_08-11.xlsx` (101 dòng, 4.427,63 giờ). Nguồn mới (gói update.zip): Beam saw bản (2) (thêm 22/10 và 24/10), Veneer bản (2) (thêm 2 dòng 24/10, sau đó bản Veneer mới nhất đổi dòng sửa hàng hộc kéo 48 giờ từ 24/10 sang 23/10 và thêm dòng 24/10 2 người 8:00-15:00, 14 giờ), và file mới "hàng sửa khu vực MAC Mr.Hiệp" (14/10 và 23/10, khu vực Machining, bộ phận ME).
+- Bảng S32 hiện đến 24/10: `loss-time/outputs/Loss_time_S32_05-10_den_13-11.xlsx` (101 dòng, 4.427,63 giờ). Nguồn mới (gói update.zip): Beam saw bản (2) (thêm 22/10 và 24/10), Veneer bản (2) (thêm 2 dòng 24/10, sau đó bản Veneer mới nhất đổi dòng sửa hàng hộc kéo 48 giờ từ 24/10 sang 23/10 và thêm dòng 24/10 2 người 8:00-15:00, 14 giờ), và file mới "hàng sửa khu vực MAC Mr.Hiệp" (14/10 và 23/10, khu vực Machining, bộ phận ME).
 - Khi gửi nhiều phiên bản của cùng một file Beam saw/Veneer, dùng bản đầy đủ nhất (bản có nhiều dòng nhất và chứa mọi dòng của các bản cũ; đã kiểm tra bản cũ là tập con).
 - Chưa đưa vào bảng: 7 dòng Beam saw 22/10 "HÀNG BẢNG MÀU" không có giờ bắt đầu/kết thúc. Dòng MAC 23/10 ghi tổng 1:55 nhưng 9:32-11:20 là 1:48 (đối chiếu lệch 0,23 giờ). Beam saw "Unassigned" nay có 5 dòng (16/10, 20/10, 24/10).
 
@@ -165,7 +165,7 @@ Người dùng mới được bàn giao việc này (chưa quen cách hoạt đ�
 
 ## Cập nhật S32 ngày 26/10/2026 (3 báo cáo Assembly tuần 43)
 - Thợ sơn lòng trong tủ tuần 43: 12 người, 912 giờ (T2-T6 12 giờ, T7 8 giờ, CN 8 giờ: báo cáo tuần này có CN làm). Cào cước: 20/10 RH109F1 2 người (báo cáo ghi 7:30-20:00 nhưng 24 giờ, bảng ghi 7:30-19:30), 24/10 RH133F1 16 giờ, 25/10 (CN) RH133F1 6 giờ; tổng 46. Bắn cát 24/10: 3 người 8:00-16:00, 4 mã hàng (732 chân), 24 giờ.
-- Bảng S32 hiện đến 25/10: `loss-time/outputs/Loss_time_S32_05-10_den_08-11.xlsx` (101 dòng, 4.427,63 giờ). Các dòng Chủ nhật 25/10 (thợ sơn 96 giờ, cào cước 6 giờ) tô cam, chờ xác nhận có nhập CN không. Bắn cát tổng 32 (15/10) + 24 (24/10) = 56 giờ, vẫn chưa khớp con số 70 giờ bên kia báo.
+- Bảng S32 hiện đến 25/10: `loss-time/outputs/Loss_time_S32_05-10_den_13-11.xlsx` (101 dòng, 4.427,63 giờ). Các dòng Chủ nhật 25/10 (thợ sơn 96 giờ, cào cước 6 giờ) tô cam, chờ xác nhận có nhập CN không. Bắn cát tổng 32 (15/10) + 24 (24/10) = 56 giờ, vẫn chưa khớp con số 70 giờ bên kia báo.
 
 ## Chủ nhật và phản hồi đồng nghiệp ngày 26/10/2026
 - Chủ nhật KHÔNG phải lúc nào cũng nghỉ. Trong file có 10 Chủ nhật có đủ 20 dòng P20/P26 (và A2) của mọi khu vực (17/5, 24/5, 7/6, 14/6, 21/6, 28/6, 19/7, 2/8, 23/8, riêng 27/9 chỉ có A2 Assembly 3 người). Đồng nghiệp xác nhận 26/10: "lắp ráp làm cả chủ nhật". Tuần 43 báo cáo Assembly ghi CN 25/10 làm (thợ sơn 8 giờ, cào cước 3 giờ); 11/10 có sự cố A10 Assembly (12 người) vào Chủ nhật. Khi lập bảng một Chủ nhật phải HỎI người dùng khu vực nào có làm việc, không mặc định nghỉ.
@@ -287,7 +287,7 @@ Người dùng mới được bàn giao việc này (chưa quen cách hoạt đ�
 - Bảng A10 19/10-30/10 cũ vẫn dùng bản `Nhap_lieu_A10_theo_bo_phan_19-10_den_30-10.xlsx` (14 dòng chưa có số người); 31/10 và 1/11 không có sự cố trong báo cáo.
 
 ## Cập nhật S32 ngày 9/11/2026 (tuần W45)
-- Bảng S32 hiện đến 8/11: `outputs/Loss_time_S32_05-10_den_08-11.xlsx` (139 dòng, 6.590,83 giờ công; đổi tên từ ..._den_04-11; mọi nguồn khớp trừ dòng MAC 23/10 lệch 0,23 giờ). Vá bằng `scripts/patch_s32_w45.py` (nguồn gốc đã mất nên không dựng lại từ đầu được). S32 theo tuần: W41 880,8; W42 1.662,8; W43 1.782,8; W44 1.233,1; W45 1.031,3.
+- Bảng S32 hiện đến 8/11: `outputs/Loss_time_S32_05-10_den_13-11.xlsx` (139 dòng, 6.590,83 giờ công; đổi tên từ ..._den_04-11; mọi nguồn khớp trừ dòng MAC 23/10 lệch 0,23 giờ). Vá bằng `scripts/patch_s32_w45.py` (nguồn gốc đã mất nên không dựng lại từ đầu được). S32 theo tuần: W41 880,8; W42 1.662,8; W43 1.782,8; W44 1.233,1; W45 1.031,3.
 - Nguồn tuần 45: thợ sơn 12 người (T2-T6 7:30-19:30, thứ Bảy 7/11 và Chủ nhật 8/11 mỗi ngày 7:30-15:30 = 912 giờ; báo cáo tuần 45 ghi thứ Bảy 8 giờ, khác tuần 44); cào cước 6/11 RH337F1, 8/11 RH892 và RH079F3 (2 người mỗi dòng, 22,5 giờ công; báo cáo ghi giờ không khớp tổng nên dùng tổng giờ nguồn); bắn cát 5/11 Supcon Vượng Phát Lộc/Thành Lộc (3 người x 12 giờ = 36); Veneer 6/11 (code 119+007+290, 24 giờ) và 7/11 (035+007 5 giờ, 119 1,5 giờ); Ép nóng 7/11 W4074F1527EX3 (4 người 7:00-9:30, 10 giờ). Hai mã Ép nóng 7/11 (W2373F1144-EX, W2127F1039-IN) không có giờ/số người nên chưa nhập. File "time tắt đừng máy khu vực panel Mr.Tâm" chỉ có dữ liệu tháng 4-9 nên không dùng.
 - Bảng nhập liệu S32 theo bộ phận đủ tuần W45: `outputs/Nhap_lieu_S32_theo_bo_phan_02-11_den_08-11.xlsx` (19 dòng 2/11-8/11; S32 của Assembly do người dùng nhập khi cần).
 - Vẫn thiếu: UV từ 26/10, hàng sửa MAC sau 28/10, Beam saw tuần 45 (bản mới nhất chỉ đến 4/11), các việc sửa/xóa trong `Nhap_lieu_S32_con_lai_theo_bo_phan_03-11.xlsx`.
@@ -313,7 +313,7 @@ Người dùng mới được bàn giao việc này (chưa quen cách hoạt đ�
 
 ## Thợ sơn lòng trong tủ KHÔNG nhập (10/11/2026)
 - Đồng nghiệp xác nhận: note "Không có bomtime sơn lòng trong" (thợ sơn lòng trong tủ, S32 Assembly hỗ trợ Fin) không cần nhập. Người dùng xóa các dòng này trên hệ thống cho W45 (2-8/11), không nhập lại. Từ nay không lập và không nhập dòng này (thợ sơn các tuần sau chỉ ghi nhận nếu có yêu cầu mới).
-- Đã xóa 7 dòng thợ sơn W45 (912 giờ công) khỏi `outputs/Loss_time_S32_05-10_den_08-11.xlsx` (script `scripts/patch_s32_bo_son_long_trong.py`): S32 còn 132 dòng, 5.678,83 giờ công; W45 S32 = 119,3 giờ. Các tuần W42-W44 (816, 912, 960 giờ) giữ nguyên trong bảng vì đã nhập trước đó; nếu cần bỏ cả các tuần này khỏi báo cáo thì chạy lại script với ngày đầu 12/10.
+- Đã xóa 7 dòng thợ sơn W45 (912 giờ công) khỏi `outputs/Loss_time_S32_05-10_den_13-11.xlsx` (script `scripts/patch_s32_bo_son_long_trong.py`): S32 còn 132 dòng, 5.678,83 giờ công; W45 S32 = 119,3 giờ. Các tuần W42-W44 (816, 912, 960 giờ) giữ nguyên trong bảng vì đã nhập trước đó; nếu cần bỏ cả các tuần này khỏi báo cáo thì chạy lại script với ngày đầu 12/10.
 - Bảng nhập S32 W45: `outputs/Nhap_lieu_S32_theo_bo_phan_02-11_den_08-11.xlsx` (12 dòng, `scripts/build_nhap_s32_tuan.py`). Báo cáo mail W45 cập nhật: loss time 2.714,6 giờ công (Assembly 864,0; RC 1.169,5; Machining 681,1), S32 W45 120,6 giờ (gồm cào cước ME 2/11), mã: P26 47,3%, A2 31,7%, P20 10,6%, S32 4,4%, P22 4,1%, A10 1,8%.
 
 ## Cập nhật 11/11/2026 (W46: 9/11 đến 11/11)
@@ -353,3 +353,8 @@ Người dùng mới được bàn giao việc này (chưa quen cách hoạt đ�
 
 ## Quy tắc dòng vàng (người dùng nhắc 14/11/2026)
 - Dòng MỚI/SỬA phải luôn tô vàng và ghi chú, tính so với bản người dùng ĐÃ NHẬP (đã xác nhận), không so với bản gửi liền trước nếu họ chưa nhập. Vì vậy khi gửi lại trong ngày (ví dụ thêm sửa Assembly tăng ca Thứ Bảy), phải giữ nguyên các dòng vàng của lần trước cho tới khi người dùng báo "đã nhập". Chỉ lấy bản gửi lần gần nhất làm mốc khi người dùng xác nhận đã nhập xong bản đó. Bản 14/11 hiện so với bản 13/11: 42 dòng vàng (Assembly 15, Machining 12, Raw Cutting 15).
+
+## S32 tuần W46 (14/11/2026)
+- Người dùng bắt đầu tính S32 từ tuần W46 (9/11); phần nợ cũ (UV từ 26/10, hàng sửa MAC sau 28/10, Beam saw sau 4/11) bỏ, thợ sơn lòng trong tủ không nhập.
+- Gói `Lost time S32 w46.zip` (14/11): Beam saw bản (3), (4), (5) (dùng bản (5) đầy đủ nhất, các bản cũ là tập con), UV phát sinh bản (1) và (2) (dùng (2)), Ép nóng và Veneer (đều chỉ đến 7/11, không có dòng W46), UV báo cáo ngày chỉ đến 8/11. Chưa nhận hình Assembly (cào cước, bắn cát...), hàng sửa MAC, hàng làm lại RC WOOD.
+- Đã thêm 10 dòng: Beam saw 10/11 (3 dòng, Charge to Technical, "bổ sung"), 11/11 (1), 12/11 (3), bộ phận TECHNICAL FINISHING; UV phát sinh 12/11 sửa veneer sọc (3 mã cùng ca, 4 người 14:00-15:00), 13/11 sửa veneer sọc (4 người 8:00-11:00) và chạy sai màu (4 người 13:00-13:45; Charge to IE chưa có trong dropdown, ghi "(cần xác nhận)", tô cam). S32 W46 hiện 21,8 giờ công (Beam saw 2,75; UV 19). Bảng: `outputs/Loss_time_S32_05-10_den_13-11.xlsx` (145 dòng, 5.700,58 giờ công; vá bằng `scripts/patch_s32_w46.py`), bảng nhập theo bộ phận `outputs/Nhap_lieu_S32_theo_bo_phan_09-11_den_13-11.xlsx` (10 dòng; S32 Assembly do người dùng nhập khi cần).
