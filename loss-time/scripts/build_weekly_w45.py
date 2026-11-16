@@ -21,7 +21,7 @@ for d in ('02-11','03-11','04-11','05-11','06-11','07-11','08-11'):
     for r in src[f'Loss time {d}'].iter_rows(min_row=3,values_only=True):
         if r[7] in('P20','P26','P22','A2') and r[6]:
             rows.append((day,None,None,None,None,r[6],r[7],NAME[r[7]],r[9],r[10],r[11],r[12],r[13],r[15]))
-s32=openpyxl.load_workbook('Loss_time_S32_05-10_den_13-11.xlsx',data_only=True)['S32 5-10 đến 13-11']
+s32=openpyxl.load_workbook('Loss_time_S32_05-10_den_14-11.xlsx',data_only=True)['S32 5-10 đến 14-11']
 for r in s32.iter_rows(min_row=3,values_only=True):
     if r[1] and hasattr(r[1],'strftime') and dt.datetime(2026,11,2)<=r[1]<=dt.datetime(2026,11,8):
         rows.append((r[1],r[2],None,r[4],None,r[6],'S32',NAME['S32'],r[9],r[10],r[11],r[12],r[13],r[15]))

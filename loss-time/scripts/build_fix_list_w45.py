@@ -24,7 +24,7 @@ for d in ('02-11','03-11','04-11','05-11','06-11','07-11','08-11'):
     for r in wb[f'Loss time {d}'].iter_rows(min_row=3,values_only=True):
         if r[7] in('P20','P26','P22','A2') and r[6]:
             mine.append(dict(day=day,code=r[7],notes=(r[10] or '').strip(),proc=PR[r[6]],dept=DP.get(r[9],r[9]),fr=r[12],to=r[13],hc=r[15]))
-s32=openpyxl.load_workbook('Loss_time_S32_05-10_den_13-11.xlsx',data_only=True)['S32 5-10 đến 13-11']
+s32=openpyxl.load_workbook('Loss_time_S32_05-10_den_14-11.xlsx',data_only=True)['S32 5-10 đến 14-11']
 SD={'FINISHING':'FINISHING','TECHNICAL FINISHING':'TECHNICAL FINISHING','MACHINING':'MACHINING','SUBCON':'SUBCON','ME':'ME','OTHERS (INVESTIGATE)':'OTHERS (INVESTIGATE)','(cần xác nhận)':'(cần xác nhận)'}
 for r in s32.iter_rows(min_row=3,values_only=True):
     if r[1] and hasattr(r[1],'strftime') and dt.datetime(2026,11,2)<=r[1]<=dt.datetime(2026,11,8):
