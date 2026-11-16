@@ -1,5 +1,7 @@
 """File Machining_Assy_Downtime_W46.xlsx theo mẫu 'Machining & Assy Downtime' (STOP LINE + REPAIR WW) cho tuần W45 + W46 (2-15/11/2026).
 Chạy trong thư mục outputs. Dữ liệu: báo cáo bảo trì Stop line + Repair WW (STT 156-190)."""
+import sys,os;sys.path.insert(0,os.path.dirname(os.path.abspath(__file__)))
+from fix_charts import fix_charts
 import openpyxl,datetime as dt,collections
 from openpyxl.styles import Font,PatternFill,Alignment,Border,Side
 from openpyxl.chart import BarChart,LineChart,PieChart,Reference,Series
@@ -145,4 +147,5 @@ p=PieChart();p.title='Downtime từng bộ phận W46';p.height=8;p.width=10
 p.add_data(Reference(s,min_col=4,min_row=3,max_row=6),titles_from_data=True);p.set_categories(Reference(s,min_col=2,min_row=4,max_row=6));s.add_chart(p,'P2')
 s.column_dimensions['B'].width=34;s.column_dimensions['C'].width=12;s.column_dimensions['D'].width=30
 wb.move_sheet('TOTAL',offset=0)
+fix_charts(wb)
 wb.save('Machining_Assy_Downtime_W45_W46.xlsx');print('file 2 ok',sum(1 for x in rep))

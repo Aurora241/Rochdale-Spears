@@ -1,5 +1,7 @@
 """Hai file báo cáo tuần W46 (2-8/11/2026) theo mẫu W23: Loss_time_White_Wood_W46.xlsx và Machining_Assy_Downtime_W46.xlsx.
 Chạy trong thư mục outputs. Dữ liệu: bảng chuẩn P20/P26/P22/A2 + S32 (đã gồm cào cước ME 2/11) + A10 từ file xuất hệ thống (có Worker Qty)."""
+import sys,os;sys.path.insert(0,os.path.dirname(os.path.abspath(__file__)))
+from fix_charts import fix_charts
 import openpyxl,datetime as dt,re,sys,collections,warnings
 from openpyxl.styles import Font,PatternFill,Alignment,Border,Side
 from openpyxl.chart import BarChart,LineChart,PieChart,Reference,Series
@@ -205,5 +207,6 @@ notes=['GHI CHÚ BÁO CÁO LOSS TIME WHITE WOOD - TUẦN W45 (02-08/11) VÀ W46 
 for i,t_ in enumerate(notes,1):
     gn.cell(i,1,t_).font=Font(name=F,bold=(i==1),size=12 if i==1 else 11);gn.cell(i,1).alignment=Alignment(wrap_text=True,vertical='top')
 gn.column_dimensions['A'].width=150
+fix_charts(wb)
 wb.save('Loss_time_White_Wood_W45_W46.xlsx')
 print('file 1: dòng',len(rows),'A10',nA10)
