@@ -15,12 +15,12 @@ rows=[
 (D(12),'W3877F2015',100,'Raw Cutting','TECHNICAL FINISHING',BS.format('P01'),'Charge to: HÀNG BẢNG MÀU',T(13,0),T(13,9),3,'File Beam saw',None),
 (D(12),'W2804F1250',30,'Raw Cutting','TECHNICAL FINISHING',BS.format('P1'),'Charge to: HÀNG BẢNG MÀU',T(13,9),T(13,15),3,'File Beam saw',None),
 (D(12),'W4075F1527',50,'Raw Cutting','TECHNICAL FINISHING',BS.format('P1'),'Charge to: HÀNG BẢNG MÀU',T(13,15),T(13,23),3,'File Beam saw',None),
-(D(12),'RH12-1009-0040-R000+RH14-1130-0040-R000+RH18-1008-0040-R000',55,'Raw Cutting','QA/QC/TESTING','Phát sinh khu vực UV - sửa veneer sọc (3 mã hàng)','Charge to: QC A HIẾU; mã hàng xem sheet Chi tiết. 3 mã cùng ca (giờ chỉ ghi ở dòng đầu)',T(14,0),T(15,0),4,'File UV (phát sinh)',None),
-(D(13),'AT12-1140-1056-R000',14,'Raw Cutting','QA/QC/TESTING','Phát sinh khu vực UV - sửa veneer sọc','Charge to: QC A HIẾU',T(8,0),T(11,0),4,'File UV (phát sinh)',None),
-(D(13),'RH11-8245-2510-R000',16,'Raw Cutting','(cần xác nhận)','Phát sinh khu vực UV - chạy sai màu (3 dòng, 1 mã)','Charge to: IE (chưa có trong dropdown bộ phận, cần xác nhận)',T(13,0),T(13,45),4,'File UV (phát sinh)','cam'),
+(D(12),'RH12-1009-0040-R0000+RH14-1130-0040-R0000+RH18-1008-0040-R0000',55,'Raw Cutting','QA/QC/TESTING','Phát sinh khu vực UV - sửa veneer sọc (3 mã hàng)','Charge to: QC A HIẾU; mã hàng xem sheet Chi tiết. 3 mã cùng ca (giờ chỉ ghi ở dòng đầu)',T(14,0),T(15,0),4,'File UV (phát sinh)',None),
+(D(13),'AT12-1140-1056-R0000',14,'Raw Cutting','QA/QC/TESTING','Phát sinh khu vực UV - sửa veneer sọc','Charge to: QC A HIẾU',T(8,0),T(11,0),4,'File UV (phát sinh)',None),
+(D(13),'RH11-8245-2510-R0000',16,'Raw Cutting','(cần xác nhận)','Phát sinh khu vực UV - chạy sai màu (3 dòng, 1 mã)','Charge to: IE (chưa có trong dropdown bộ phận, cần xác nhận)',T(13,0),T(13,45),4,'File UV (phát sinh)','cam'),
 ]
-det=[(D(12),'File UV (phát sinh)','RH12-1009-0040-R000','Drawer',15),(D(12),'File UV (phát sinh)','RH14-1130-0040-R000','Drawer',26),(D(12),'File UV (phát sinh)','RH18-1008-0040-R000','Drawer',14),
-(D(13),'File UV (phát sinh)','AT12-1140-1056-R000','Drawer',14),(D(13),'File UV (phát sinh)','RH11-8245-2510-R000','Platform',4),(D(13),'File UV (phát sinh)','RH11-8245-2510-R000','Platform',8),(D(13),'File UV (phát sinh)','RH11-8245-2510-R000','Platform',4)]
+det=[(D(12),'File UV (phát sinh)','RH12-1009-0040-R0000','Drawer',15),(D(12),'File UV (phát sinh)','RH14-1130-0040-R0000','Drawer',26),(D(12),'File UV (phát sinh)','RH18-1008-0040-R0000','Drawer',14),
+(D(13),'File UV (phát sinh)','AT12-1140-1056-R0000','Drawer',14),(D(13),'File UV (phát sinh)','RH11-8245-2510-R0000','Platform',4),(D(13),'File UV (phát sinh)','RH11-8245-2510-R0000','Platform',8),(D(13),'File UV (phát sinh)','RH11-8245-2510-R0000','Platform',4)]
 def fix(v,row):
     if not(isinstance(v,str) and v.startswith('=')): return v
     parts=re.split(r"('[^']*')",v)
@@ -88,5 +88,5 @@ ct=wb['Chi tiết mã hàng'];lr=ct.max_row
 for i,x in enumerate(det):
     for c,v in enumerate(x,1): ct.cell(lr+1+i,c)._style=copy.copy(ct.cell(lr,c)._style);ct.cell(lr+1+i,c).value=v
 gc=wb['Ghi chú review'];g=gc.max_row;gc.cell(g+1,1)._style=copy.copy(gc.cell(g,1)._style)
-gc.cell(g+1,1).value=('17. Tuần W46 (từ 9/11): nguồn nhận được là Beam saw bản (5) và UV phát sinh bản (2). Beam saw: 10/11 (3 dòng, Charge to Technical, ghi chú "bổ sung" trong nguồn), 11/11 (1 dòng) và 12/11 (3 dòng) hàng bảng màu, bộ phận TECHNICAL FINISHING (Technical ghi giống hàng bảng màu, cần xác nhận). UV phát sinh: 12/11 sửa veneer sọc (3 mã cùng ca, 4 người 14:00-15:00 = 4 giờ công), 13/11 sửa veneer sọc AT12-1140-1056-R000 (4 người 8:00-11:00 = 12 giờ công) và chạy sai màu RH11-8245-2510-R000 (4 người 13:00-13:45 = 3 giờ công), bộ phận "IE" chưa có trong dropdown nên ghi (cần xác nhận), tô cam. Chưa có dòng nào W46 trong Veneer và Ép nóng (file chỉ đến 7/11), báo cáo UV ngày chỉ đến 8/11; chưa nhận hình Assembly, hàng sửa MAC, hàng làm lại RC WOOD.')
+gc.cell(g+1,1).value=('17. Tuần W46 (từ 9/11): nguồn nhận được là Beam saw bản (5) và UV phát sinh bản (2). Beam saw: 10/11 (3 dòng, Charge to Technical, ghi chú "bổ sung" trong nguồn), 11/11 (1 dòng) và 12/11 (3 dòng) hàng bảng màu, bộ phận TECHNICAL FINISHING (Technical ghi giống hàng bảng màu, cần xác nhận). UV phát sinh: 12/11 sửa veneer sọc (3 mã cùng ca, 4 người 14:00-15:00 = 4 giờ công), 13/11 sửa veneer sọc AT12-1140-1056-R0000 (4 người 8:00-11:00 = 12 giờ công) và chạy sai màu RH11-8245-2510-R0000 (4 người 13:00-13:45 = 3 giờ công), bộ phận "IE" chưa có trong dropdown nên ghi (cần xác nhận), tô cam. Chưa có dòng nào W46 trong Veneer và Ép nóng (file chỉ đến 7/11), báo cáo UV ngày chỉ đến 8/11; chưa nhận hình Assembly, hàng sửa MAC, hàng làm lại RC WOOD.')
 wb.save(NEW);print('đã thêm',N,'dòng; dòng cuối',nl)
