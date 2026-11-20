@@ -4,7 +4,7 @@ import openpyxl,sys,re,datetime as dt,warnings
 from openpyxl.styles import Font,PatternFill,Alignment,Border,Side
 warnings.simplefilter('ignore')
 lt,out,last=sys.argv[1:4];lastd=dt.datetime(2026,int(last[3:]),int(last[:2]))
-SUN={dt.datetime(2026,10,25),dt.datetime(2026,11,1),dt.datetime(2026,11,8)}
+SUN={dt.datetime(2026,10,25),dt.datetime(2026,11,1),dt.datetime(2026,11,8),dt.datetime(2026,11,22)}
 F='Times New Roman';t=Side(style='thin');bd=Border(left=t,right=t,top=t,bottom=t)
 red=PatternFill('solid',fgColor='C00000');gry=PatternFill('solid',fgColor='D9D9D9')
 nv=openpyxl.load_workbook(lt,data_only=True)['Nhân viên mới - A2']

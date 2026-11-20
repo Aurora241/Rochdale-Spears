@@ -3,7 +3,7 @@ python add_group_nv.py <file> dd-mm Assembly:1,Machining:1  (chạy trong output
 import openpyxl,sys,re,copy,datetime as dt,warnings
 warnings.simplefilter('ignore')
 f,dm,spec=sys.argv[1:4];day=dt.datetime(2026,int(dm[3:]),int(dm[:2]))
-SUN={dt.datetime(2026,10,25),dt.datetime(2026,11,1),dt.datetime(2026,11,8)}
+SUN={dt.datetime(2026,10,25),dt.datetime(2026,11,1),dt.datetime(2026,11,8),dt.datetime(2026,11,22)}
 def endday(g,area):
     x=g;n=0
     while n<12:
